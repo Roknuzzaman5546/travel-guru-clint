@@ -11,12 +11,12 @@ import swip3 from '../../assets/images/sundorbon.png'
 const Banner = () => {
     return (
         <div className='bgimg'>
-            <div className=" flex lg:flex-row flex-col py-28 backdrop-brightness-50">
-                <div className=" w-1/2 ml-10">
-                    <h2 className=" brightness-100 text-6xl font-bold text-white font-sans">Coxs bazar</h2>
-                    <button className=" btn btn-warning mt-40">Booking</button>
+            <div className=" flex lg:flex-row flex-col md:items-start items-center lg:py-40 backdrop-brightness-50">
+                <div className=" md:w-1/2 w-full ml-10">
+                    <h2 className="text-6xl font-bold text-white font-sans">Coxs bazar</h2>
+                    <button className=" btn btn-warning lg:mt-40 mt-5">Booking</button>
                 </div>
-                <div className=' w-1/2'>
+                <div className=' md:w-1/2 w-full'>
                     <Swiper
                         slidesPerView={3}
                         spaceBetween={30}

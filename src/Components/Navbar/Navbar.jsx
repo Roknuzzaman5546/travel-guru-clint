@@ -23,7 +23,7 @@ const Navbar = () => {
                             {link}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <a className="btn btn-ghost text-xl text-white">daisyUI</a>                    
                 </div>
                 <div className="py-1 bg-white px-2 rounded-md border border-black">
                     <FaSearch className=" text-black mr-2"></FaSearch>
