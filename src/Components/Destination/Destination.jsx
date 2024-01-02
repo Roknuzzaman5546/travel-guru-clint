@@ -15,19 +15,30 @@ const Destination = () => {
                                 <label className="label">
                                     <span className="label-text">Origin</span>
                                 </label>
-                                <input type="email" placeholder="email" className="input input-bordered" required />
+                                <input type="email" placeholder="Origin" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Destination</span>
                                 </label>
-                                <input type="password" placeholder="password" className="input input-bordered" required />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
+                                <input type="password" placeholder="Destination" className="input input-bordered" required />
+                            </div>
+                            <div className="flex justify-center items-center gap-2">
+                                <div className=" w-1/2">
+                                    <label className="label">
+                                        <span className="label-text">From</span>
+                                    </label>
+                                    <input type="password" placeholder="Destination" className="input input-bordered w-full" required />
+                                </div>
+                                <div className=" w-1/2">
+                                    <label className="label">
+                                        <span className="label-text">To</span>
+                                    </label>
+                                    <input type="password" placeholder="Destination" className="input input-bordered w-full" required />
+                                </div>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-warning">Start booking</button>
                             </div>
                         </form>
                     </div>
