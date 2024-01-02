@@ -2,7 +2,7 @@
 
 const Destination = () => {
     return (
-        <div className='bgimg '>
+        <div className='bgimg bg-fixed'>
             <div className=" flex lg:flex-row flex-col justify-between items-center lg:pt-40 pb-28 bg-[#000000B2]">
                 <div className=" md:w-1/3 w-full mx-auto">
                     <h2 className="text-6xl font-bold text-white font-serif">Coxs bazar</h2>
@@ -28,13 +28,13 @@ const Destination = () => {
                                     <label className="label">
                                         <span className="label-text">From</span>
                                     </label>
-                                    <input type="password" placeholder="Destination" className="input input-bordered w-full" required />
+                                    <input type="date" name="fromdate" id="" className="input input-bordered w-full" required />
                                 </div>
                                 <div className=" w-1/2">
                                     <label className="label">
                                         <span className="label-text">To</span>
                                     </label>
-                                    <input type="password" placeholder="Destination" className="input input-bordered w-full" required />
+                                    <input type="date" name="todate" id="" className="input input-bordered w-full" required />
                                 </div>
                             </div>
                             <div className="form-control mt-6">

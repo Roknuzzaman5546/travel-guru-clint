@@ -10,7 +10,7 @@ import swip3 from '../../assets/images/sundorbon.png'
 
 const Banner = () => {
     return (
-        <div className='bgimg'>
+        <div className='bgimg bg-fixed'>
             <div className=" flex lg:flex-row flex-col items-center lg:pt-40 pb-28 bg-[#000000B2]">
                 <div className=" md:w-1/2 w-full lg:ml-20 ml-0">
                     <h2 className="text-6xl font-bold text-white font-serif">Coxs bazar</h2>
