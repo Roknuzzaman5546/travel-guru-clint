@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
+import logimg from '../../assets/logo.png'
 
 const Navbar = () => {
 
@@ -13,7 +14,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar fixed z-10">
+            <div className="navbar fixed z-10 text-white">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -23,7 +24,7 @@ const Navbar = () => {
                             {link}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl text-white">daisyUI</a>                    
+                    <img className=" w-28 h-10" src={logimg} alt="" />
                 </div>
                 <div className="py-1 bg-white px-2 rounded-md border border-black">
                     <FaSearch className=" text-black mr-2"></FaSearch>
