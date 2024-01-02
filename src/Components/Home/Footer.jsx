@@ -6,7 +6,7 @@ const Footer = () => {
             <footer className="footer p-10 bg-black text-neutral-content">
                 <aside>
                     <img src={logoimg} alt="" />
-                    <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
+                    <p>Travel guru Ltd.<br />Providing reliable tech since 1992</p>
                 </aside>
                 <nav>
                     <header className="footer-title">Social</header>

@@ -1,9 +1,8 @@
 import aboutimg from '../../assets/images/about.jpg'
 
 const About = () => {
-
     return (
-        <div className=' w-11/12 mx-auto mt-10'>
+        <div className=' w-11/12 mx-auto my-10'>
             <h2 className=' text-5xl font-mono text-center text-black mb-5'>See about</h2>
             <div className=' flex lg:flex-row flex-col justify-around items-center gap-5'>
                 <div className=' w-1/2'>
