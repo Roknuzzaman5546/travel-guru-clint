@@ -1,43 +1,43 @@
 [
     {
       "id": 1,
-      "img": "image1.jpg",
-      "name": "Product A",
+      "img": "https://i.ibb.co/QNx18GH/sajek.jpg",
+      "name": "Sajek",
       "cost": 29.99,
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
       "id": 2,
-      "img": "image2.jpg",
-      "name": "Product B",
+      "img": "https://i.ibb.co/h7S4TSK/coxsbazar.jpg",
+      "name": "Cox'sbazar",
       "cost": 39.99,
       "details": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
       "id": 3,
-      "img": "image3.jpg",
-      "name": "Product C",
+      "img": "https://i.ibb.co/Zg1qx12/sabbir-ahmed-Zjpevc-Op-FDw-unsplash.jpg",
+      "name": "Kuakata",
       "cost": 49.99,
       "details": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
     },
     {
       "id": 4,
-      "img": "image4.jpg",
-      "name": "Product D",
+      "img": "https://i.ibb.co/3TjV5q5/inanibeach.jpg",
+      "name": "Inani see beach",
       "cost": 19.99,
       "details": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
     },
     {
       "id": 5,
-      "img": "image5.jpg",
-      "name": "Product E",
+      "img": "https://i.ibb.co/n7xsV55/jaflong.jpg",
+      "name": "Jaflong",
       "cost": 59.99,
       "details": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt."
     },
     {
       "id": 6,
-      "img": "image6.jpg",
-      "name": "Product F",
+      "img": "https://i.ibb.co/4860j3F/bandarban.jpg",
+      "name": "Bandarbon",
       "cost": 69.99,
       "details": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit."
     }

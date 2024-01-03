@@ -9,6 +9,7 @@ const Place = () => {
             .then(res => res.json())
             .then(data => setplace(data))
     }, [])
+
     return (
         <div className="my-10">
             <h2 className=" text-black text-center text-5xl font-mono">Our top place booked</h2>
