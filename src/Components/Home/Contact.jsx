@@ -3,8 +3,8 @@ import 'aos/dist/aos.css';
 import Aos from 'aos';
 import { useEffect } from 'react';
 
-const Contact = () => {
 
+const Contact = () => {
     useEffect(() => {
         Aos.init({
             duration: 700,
