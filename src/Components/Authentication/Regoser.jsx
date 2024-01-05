@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import facebook from '../../assets/images/icons/fb.png'
 import google from '../../assets/images/icons/google.png'
 import { useContext } from "react";
 import { Authcontext } from "../Authprovider/Authprovider";
+import Swal from "sweetalert2";
 
 const Regoser = () => {
-
     const { userRegister } = useContext(Authcontext)
+    const navigate = useNavigate();
 
     const handlregister = (e) => {
         e.preventDefault();
@@ -19,16 +20,12 @@ const Regoser = () => {
         userRegister(email, password)
             .then(result => {
                 console.log(result.user)
-                    .then(() => {
-                        Swal.fire("User succesfully creat and update profile!");
-                        reset();
-                        navigate('/')
-                    })
+                Swal.fire("User succesfully creat and update profile!");
+                navigate('/')
             })
             .catch(error => {
-                console.log(error)
+                console.log(error.message)
             })
-        reset();
     }
 
     return (

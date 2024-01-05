@@ -1,15 +1,33 @@
 import { NavLink } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import logimg from '../../assets/logo.png'
+import { useContext } from "react";
+import { Authcontext } from "../Authprovider/Authprovider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+    const { user, userLogout } = useContext(Authcontext)
+
+    const handlelogout = () => {
+        userLogout()
+            .then(() => {
+                Swal.fire("User log out!");
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
 
     const link = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/destination">Destination</NavLink></li>
         <li><NavLink to="/blog">Blog</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
-        <li className=" btn btn-warning"><NavLink to="/login">Login</NavLink></li>
+        {
+            user ?
+                <li className=" btn btn-warning" onClick={handlelogout}>Logout</li> :
+                <li className=" btn btn-warning"><NavLink to="/login">Login</NavLink></li>
+        }
     </>
 
     return (
