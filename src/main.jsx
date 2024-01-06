@@ -13,6 +13,7 @@ import Login from './Components/Authentication/Login';
 import Errorepage from './Components/Errorepage/Errorepage';
 import Authprovider from './Components/Authprovider/Authprovider';
 import Contact from './Components/Home/Contact';
+import Blog from './Components/Blog/BLog';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>
       }
     ]
   },
