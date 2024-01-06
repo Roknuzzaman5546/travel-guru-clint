@@ -1,18 +1,38 @@
 import { Link } from "react-router-dom";
 import facebook from '../../assets/images/icons/fb.png'
 import google from '../../assets/images/icons/google.png'
+import { useContext } from "react";
+import { Authcontext } from "../Authprovider/Authprovider";
+import Swal from "sweetalert2";
+
 
 const Login = () => {
+    const { userLogin } = useContext(Authcontext)
+    const handlelogin = (e) => {
+        e.preventDefault();
+        const from = e.target;
+        const email = from.email.value;
+        const password = from.password.value;
+        console.log(email, password)
+        userLogin(email, password)
+            .then(result => {
+                console.log(result.user)
+                Swal('User log in succesfully')
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
+    }
 
     return (
         <div className="pt-36">
             <div className="w-1/3 mx-auto border-2 py-8 px-5 rounded-md">
                 <div className=" w-10/12 mx-auto">
                     <h2 className=" text-2xl font-bold my-4">Login</h2>
-                    <form>
-                        <input placeholder="Username or email" className=" w-80 rounded p-2 border-b-2 mt-3 " type="email" name="" id="" />
+                    <form onSubmit={handlelogin}>
+                        <input placeholder="Username or email" className=" w-80 rounded p-2 border-b-2 mt-3 " type="email" name="email" id="" />
                         <br />
-                        <input placeholder="Password" className=" w-80 rounded p-2 border-b-2 mt-3" type="password" name="" id="" />
+                        <input placeholder="Password" className=" w-80 rounded p-2 border-b-2 mt-3" type="password" name="password" id="" />
                         <div className=" flex justify-between items-center mt-2">
                             <div className="form-control">
                                 <label className=" flex items-center gap-2">

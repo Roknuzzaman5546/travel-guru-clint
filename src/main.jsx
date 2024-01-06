@@ -12,6 +12,7 @@ import Regoser from './Components/Authentication/Regoser';
 import Login from './Components/Authentication/Login';
 import Errorepage from './Components/Errorepage/Errorepage';
 import Authprovider from './Components/Authprovider/Authprovider';
+import Contact from './Components/Home/Contact';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>
       }
     ]
   },
