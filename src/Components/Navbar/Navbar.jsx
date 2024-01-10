@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import logimg from '../../assets/logo.png'
 import { useContext } from "react";
@@ -23,11 +23,6 @@ const Navbar = () => {
         <li><NavLink to="/destination">Destination</NavLink></li>
         <li><NavLink to="/blog">Blog</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
-        {
-            user ?
-                <li className=" btn btn-warning" onClick={handlelogout}>Logout</li> :
-                <li className=" btn btn-warning"><NavLink to="/login">Login</NavLink></li>
-        }
     </>
 
     return (
@@ -54,6 +49,26 @@ const Navbar = () => {
                             {link}
                         </ul>
                     </div>
+                    {user ?
+                        <li>
+                            <div className="dropdown dropdown-end">
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img src={user?.photoURL} alt="" />
+                                    </div>
+                                </label>
+                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] px-2 py-5 shadow bg-gray-400 rounded-box w-52">
+                                    <li>
+                                        <a>
+                                            <h2 className=" uppercase">{user.displayName}</h2>
+                                        </a>
+                                    </li>
+                                    <li><Link to="/dashbord/studentprofile">Dashbord</Link></li>
+                                    <li><Link onClick={handlelogout}>Logout</Link></li>
+                                </ul>
+                            </div>
+                        </li>
+                        : <li><Link to="/login"><button className="btn">Login</button></Link></li>}
                 </div>
             </div>
         </div>
