@@ -4,24 +4,39 @@ import google from '../../assets/images/icons/google.png'
 import { useContext } from "react";
 import { Authcontext } from "../Authprovider/Authprovider";
 import Swal from "sweetalert2";
+import UseAxiospublic from "../Hooks/useaxiospublic";
 
 const Regoser = () => {
-    const { userRegister } = useContext(Authcontext)
+    const { userRegister, profile } = useContext(Authcontext)
+    const axiospublic = UseAxiospublic();
     const navigate = useNavigate();
 
     const handlregister = (e) => {
         e.preventDefault();
         const from = e.target;
-        const firstname = from.firstname.value;
-        const lastname = from.lastname.value;
+        const name = from.name.value;
+        const photo = from.photo.value;
         const email = from.email.value;
         const password = from.password.value;
-        console.log(email, password, firstname, lastname)
+        console.log(email, password, name, photo)
         userRegister(email, password)
             .then(result => {
                 console.log(result.user)
-                Swal.fire("User succesfully creat and update profile!");
-                navigate('/')
+                profile(name, photo)
+                    .then(() => {
+                        const userInfo = {
+                            name: name,
+                            image: photo,
+                            email: email,
+                            role: "user"
+                        }
+                        axiospublic.post('/users', userInfo)
+                            .then(res => {
+                                console.log(res.data)
+                                Swal.fire("User succesfully creat and update profile!");
+                                navigate('/')
+                            })
+                    })
             })
             .catch(error => {
                 console.log(error.message)
@@ -34,9 +49,9 @@ const Regoser = () => {
                 <div className=" w-10/12 mx-auto">
                     <h2 className=" text-2xl font-bold my-4">Create an account</h2>
                     <form onSubmit={handlregister}>
-                        <input placeholder="First name" className=" w-80 rounded p-2 border-b-2 " type="text" name="firstname" id="" />
+                        <input placeholder="Your name" className=" w-80 rounded p-2 border-b-2 " type="text" name="name" id="" />
                         <br />
-                        <input placeholder="Last name" className=" w-80 rounded p-2 border-b-2 mt-3 " type="text" name="lastname" id="" />
+                        <input placeholder="Photo url" className=" w-80 rounded p-2 border-b-2 mt-3 " type="text" name="photo" id="" />
                         <br />
                         <input placeholder="Username or email" className=" w-80 rounded p-2 border-b-2 mt-3 " type="email" name="email" id="" />
                         <br />
