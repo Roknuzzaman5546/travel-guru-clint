@@ -23,6 +23,7 @@ const Navbar = () => {
         <li><NavLink to="/destination">Destination</NavLink></li>
         <li><NavLink to="/blog">Blog</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
+        {user ? <li><Link to="/dashbord">Dashbord</Link></li> : ''}
     </>
 
     return (
@@ -60,10 +61,9 @@ const Navbar = () => {
                                 <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] px-2 py-5 shadow bg-gray-400 rounded-box w-52">
                                     <li>
                                         <a>
-                                            <h2 className=" uppercase">{user.displayName}</h2>
+                                            <h2 className=" font-bold uppercase">{user.displayName}</h2>
                                         </a>
                                     </li>
-                                    <li><Link to="/dashbord/studentprofile">Dashbord</Link></li>
                                     <li><Link onClick={handlelogout}>Logout</Link></li>
                                 </ul>
                             </div>

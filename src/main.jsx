@@ -18,6 +18,8 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import Clintprivet from './Components/Privet/Clintprivet';
+import Dashbord from './Main/Dashbord';
 const queryClient = new QueryClient()
 
 
@@ -49,10 +51,14 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <Blog></Blog>
+        element: <Clintprivet><Blog></Blog></Clintprivet>
       }
     ]
   },
+  {
+    path: "/dashbord",
+    element: <Clintprivet><Dashbord></Dashbord></Clintprivet>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
