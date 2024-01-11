@@ -20,6 +20,7 @@ import {
 } from '@tanstack/react-query'
 import Clintprivet from './Components/Privet/Clintprivet';
 import Dashbord from './Main/Dashbord';
+import Allplace from './Components/Dashbord/Globaldash/Allplace';
 const queryClient = new QueryClient()
 
 
@@ -57,7 +58,13 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashbord",
-    element: <Clintprivet><Dashbord></Dashbord></Clintprivet>
+    element: <Clintprivet><Dashbord></Dashbord></Clintprivet>,
+    children: [
+      {
+        path: 'allplace',
+        element:<Allplace></Allplace>
+      }
+    ]
   }
 ]);
 
