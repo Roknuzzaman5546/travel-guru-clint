@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import UseAxiospublic from "./useaxiospublic";
 
-const Useplace = () => {
+const usePlace = () => {
     const axiospublic = UseAxiospublic()
     const { data: place = [] } = useQuery({
         queryKey: ['place'],
@@ -11,6 +11,7 @@ const Useplace = () => {
             return res.data;
         }
     })
+    return [place]
 };
 
-export default Useplace;
+export default usePlace;

@@ -1,11 +1,13 @@
-import { FaCalendar, FaCartShopping, FaCookie, FaHouseMedical, FaHouse, FaUtensils, FaList, FaBook, FaUsers } from "react-icons/fa6";
+import { FaCalendar, FaCartShopping, FaCookie, FaHouseMedical, FaHouse, FaUtensils, FaList, FaBook, FaUsers, FaLocationDot } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
-import { CiMenuBurger, CiShoppingBasket } from "react-icons/ci";
-import { FaSearch } from "react-icons/fa";
+import { FaHotel, FaSearch } from "react-icons/fa";
 import logimg from '../assets/logo.png'
+import { useContext } from "react";
+import { Authcontext } from "../Components/Authprovider/Authprovider";
 
 
 const Dashbord = () => {
+    const { user } = useContext(Authcontext)
     const isAdmin = false;
     return (
         <div>
@@ -18,7 +20,11 @@ const Dashbord = () => {
                             </div>
                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                 <div className="flex lg:hidden">
-                                    <div className=" w-64 h-screen shadow-md lg:bg-gray-200 bg-slate-400">
+                                    <div className=" w-64 h-screen shadow-md lg:bg-gray-200 bg-slate-400 text-black font-mono font-bold text-xlflex flex-col items-center">
+                                        <div className=' flex flex-col items-center my-2'>
+                                            <img className=' w-40 h-36 rounded-full' src={user?.photoURL} alt="" />
+                                            <h2 className=' text-2xl font-bold font-alfa text-orange-400'>{user?.displayName}</h2>
+                                        </div>
                                         <ul className="menu">
                                             {
                                                 isAdmin ?
@@ -59,12 +65,12 @@ const Dashbord = () => {
                                             <li><NavLink to="/">
                                                 <FaHouseMedical></FaHouseMedical>
                                                 Home</NavLink></li>
-                                            <li><NavLink to="/menu">
-                                                <CiMenuBurger />
-                                                Menu</NavLink></li>
-                                            <li><NavLink to="/shop/salad">
-                                                <CiShoppingBasket></CiShoppingBasket>
-                                                Shop</NavLink></li>
+                                            <li><NavLink to="/allplace">
+                                                <FaLocationDot></FaLocationDot>
+                                                All places</NavLink></li>
+                                            <li><NavLink to="/hotel">
+                                                <FaHotel></FaHotel>
+                                                All Hotel</NavLink></li>
                                         </ul>
                                     </div>
                                     <div className=" flex-1">
@@ -96,7 +102,11 @@ const Dashbord = () => {
             </div>
             <div>
                 <div className=" lg:flex mt-2 pl-3 hidden">
-                    <div className=" w-64 h-screen shadow-md bg-gray-200">
+                    <div className=" w-64 h-screen shadow-md bg-gray-200 text-black font-mono font-bold text-xl flex flex-col items-center">
+                        <div className=' flex flex-col items-center my-2'>
+                            <img className=' w-40 h-36 rounded-full' src={user?.photoURL} alt="" />
+                            <h2 className=' text-2xl font-bold font-alfa text-orange-400'>{user?.displayName}</h2>
+                        </div>
                         <ul className="menu">
                             {
                                 isAdmin ?
@@ -105,11 +115,14 @@ const Dashbord = () => {
                                             <FaHouse></FaHouse>
                                             Admin home</NavLink></li>
                                         <li><NavLink to="/dashbord/additems">
-                                            <FaUtensils></FaUtensils>
-                                            Add  items</NavLink></li>
+                                            <FaLocationDot></FaLocationDot>
+                                            Add  place</NavLink></li>
+                                        <li><NavLink to="/dashbord/additems">
+                                            <FaHotel></FaHotel>
+                                            Add  hotel</NavLink></li>
                                         <li><NavLink to="/dashbord/manageitems">
                                             <FaList></FaList>
-                                            Manageitems</NavLink></li>
+                                            MnageItem</NavLink></li>
                                         <li><NavLink to="/dashbord/manageBookings">
                                             <FaBook></FaBook>
                                             Bookings</NavLink></li>
@@ -123,11 +136,11 @@ const Dashbord = () => {
                                             <FaHouseMedical></FaHouseMedical>
                                             User home</NavLink></li>
                                         <li><NavLink to="/dashbord/cookie">
-                                            <FaCookie></FaCookie>
-                                            Add item</NavLink></li>
+                                            <FaHotel></FaHotel>
+                                            My hotel booking</NavLink></li>
                                         <li><NavLink to="/dashbord/cart">
-                                            <FaCartShopping></FaCartShopping>
-                                            My cart</NavLink></li>
+                                            <FaLocationDot></FaLocationDot>
+                                            My place booking</NavLink></li>
                                         <li><NavLink to="/dashbord/booking">
                                             <FaCalendar></FaCalendar>
                                             User Bookings ()</NavLink></li>
@@ -137,12 +150,12 @@ const Dashbord = () => {
                             <li><NavLink to="/">
                                 <FaHouseMedical></FaHouseMedical>
                                 Home</NavLink></li>
-                            <li><NavLink to="/menu">
-                                <CiMenuBurger />
-                                Menu</NavLink></li>
-                            <li><NavLink to="/shop/salad">
-                                <CiShoppingBasket></CiShoppingBasket>
-                                Shop</NavLink></li>
+                            <li><NavLink to="/allplace">
+                                <FaLocationDot></FaLocationDot>
+                                All places</NavLink></li>
+                            <li><NavLink to="/hotel">
+                                <FaHotel></FaHotel>
+                                All Hotel</NavLink></li>
                         </ul>
                     </div>
                     <div className=" flex-1">

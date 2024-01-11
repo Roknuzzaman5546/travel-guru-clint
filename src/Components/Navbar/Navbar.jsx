@@ -39,10 +39,10 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <img className=" w-28 h-10" src={logimg} alt="" />
-                </div>
-                <div className="py-1 lg:ml-0 ml-16 bg-white px-2 rounded-md border border-black">
-                    <FaSearch className=" text-black mr-2"></FaSearch>
-                    <input className=" text-black bg-none" placeholder="Search your destination....." type="text" name="" id="" />
+                    <div className="py-1 lg:ml-10 ml-16 bg-white px-2 rounded-md border border-black flex items-center gap-1">
+                        <FaSearch className=" text-black mr-2"></FaSearch>
+                        <input className=" text-black bg-none" placeholder="Search your destination....." type="text" name="" id="" />
+                    </div>
                 </div>
                 <div className="navbar-end">
                     <div className="hidden lg:flex">
