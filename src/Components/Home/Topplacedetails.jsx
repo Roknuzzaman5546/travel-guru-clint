@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const Topplacedetails = ({ item }) => {
-    const { img, name, cost } = item;
+    const { img, name, cost, _id } = item;
     return (
         <div>
             <div className="card card-compact bg-base-100 shadow-xl">
@@ -8,7 +10,7 @@ const Topplacedetails = ({ item }) => {
                     <h2 className="card-title">{name}</h2>
                     <p>{cost} $</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-warning">Book Now</button>
+                        <Link to={`/placedetails:${_id}`}><button className="btn btn-warning">Details</button></Link>
                     </div>
                 </div>
             </div>

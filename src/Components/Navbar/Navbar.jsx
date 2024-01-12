@@ -23,7 +23,7 @@ const Navbar = () => {
         <li><NavLink to="/destination">Destination</NavLink></li>
         <li><NavLink to="/blog">Blog</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
-        {user ? <li><Link to="/dashbord">Dashbord</Link></li> : ''}
+        {user ? <li><Link to="/dashbord/allplace">Dashbord</Link></li> : ''}
     </>
 
     return (
