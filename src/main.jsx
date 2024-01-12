@@ -21,6 +21,7 @@ import {
 import Clintprivet from './Components/Privet/Clintprivet';
 import Dashbord from './Main/Dashbord';
 import Allplace from './Components/Dashbord/Globaldash/Allplace';
+import Allhotel from './Components/Dashbord/Globaldash/Allhotel';
 const queryClient = new QueryClient()
 
 
@@ -62,7 +63,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'allplace',
-        element:<Allplace></Allplace>
+        element: <Allplace></Allplace>
+      },
+      {
+        path: 'hotel',
+        element: <Allhotel></Allhotel>
       }
     ]
   }
