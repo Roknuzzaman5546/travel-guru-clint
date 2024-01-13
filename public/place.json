@@ -1,45 +1,44 @@
 [
-    {
-      "id": 1,
+  {
       "img": "https://i.ibb.co/QNx18GH/sajek.jpg",
       "name": "Sajek",
       "cost": 29.99,
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    },
-    {
-      "id": 2,
+      "details": "Sajek Valley is one of the most popular tourist spots in Bangladesh situated among the hills of the Kasalong range of mountains in Sajek union, Baghaichhari Upazila in Rangamati District.[3] The valley is 2,000 feet (610 m) above sea level.[4] Sajek Valley is known as the Queen of Hills & Roof of Rangamati.The name of Sajek Valley came from the Sajek River that originates from Karnafuli river. The Sajek river works as a border between Bangladesh and India.[5]",
+      "rating": 4.5
+  },
+  {
       "img": "https://i.ibb.co/h7S4TSK/coxsbazar.jpg",
       "name": "Cox'sbazar",
       "cost": 39.99,
-      "details": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      "id": 3,
+      "details": "Cox's Bazar (/ˌkɒksɪz bəˈzɑː/; Bengali: কক্সবাজার, romanized: Kôksbajar; pronounced [kɔksbadʒaɾ]) is a city, fishing port, tourism centre, and district headquarters in Southeastern Bangladesh. The iconic Cox's Bazar Beach, one of the most popular tourist attractions in Bangladesh, is the longest uninterrupted beach in the world.[2] It is located 150 km (93 mi) south of the city of Chittagong. Cox's Bazar is also known by the name Panowa, which translates literally as Another old name was. Kutupalong refugee camp with more than a million Rohingya refugees is in Cox's Bazar.[3][4].The city covers an area of 23.4 km2 (9.0 sq mi) with 58 mahallas and 27 wards and as of 2011 had a population of 223,522.[1] Cox's Bazar is connected by road and air with Chittagong.[5][6]",
+      "rating": 4.2
+  },
+  {
       "img": "https://i.ibb.co/Zg1qx12/sabbir-ahmed-Zjpevc-Op-FDw-unsplash.jpg",
       "name": "Kuakata",
       "cost": 49.99,
-      "details": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
-    },
-    {
-      "id": 4,
+      "details": "Kuakata Beach (Bengali: কুয়াকাটা সমুদ্র সৈকত) is a beach situated in Kuakata, Patuakhali District, Bangladesh.[1][2][3] Its length is 18 km.[4] It is known as (Daughter of Sea).[5] It is one of top tourist attraction in Bangladesh but due to pollution, uncontrolled tourism and other issues Kuakata Beach is losing its b",
+      "rating": 4.8
+  },
+  {
       "img": "https://i.ibb.co/3TjV5q5/inanibeach.jpg",
       "name": "Inani see beach",
       "cost": 19.99,
-      "details": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
-    },
-    {
-      "id": 5,
+      "details": "If you want to witness the Cox's Bazar Tourist Spots,[4] first you have to come to Cox's Bazar. There are different types of AC-non-AC bus services to come to Cox's Bazar. Among them, Sadia, S Alam's Mercedes Benz, Green Line, Hanif Enterprise, Shyamoli Paribahan, Sohag Paribahan, S. Alam Paribahan, St. Martin Hyundai etc. are notable. The fare ranges from Tk 900 to Tk 2,500 per person, depending on the bus. Apart from this, you can go to Cox's Bazar by train from Dhaka via Chittagong. And if there is no tension about the budget, then you can choose the air route to Go to Cox's Bazar. In this case, depending on the time and the class of the aircraft, you will need 4600 to 12,000 Taka.",
+      "rating": 3.9
+  },
+  {
       "img": "https://i.ibb.co/n7xsV55/jaflong.jpg",
       "name": "Jaflong",
       "cost": 59.99,
-      "details": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt."
-    },
-    {
-      "id": 6,
+      "details": "Jaflong (Bengali: জাফলং) is a hill station and tourist destination in the Division of Sylhet, Bangladesh. It is located in Gowainghat Upazila of Sylhet District and situated at the border between Bangladesh and the Indian state of Meghalaya, overshadowed by subtropical mountains and rainforests. It is known for its stone collections and is home of the Khasi tribe.[1][2]Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.Jaflong is a tourist spot in Sylhet division. It is about 60 km from Sylhet town and takes two hours drive to reach there. Jaflong is located amidst tea gardens and hills. It is situated beside the river Sari in the lap of Hill Khashia.",
+      "rating": 4.7
+  },
+  {
       "img": "https://i.ibb.co/4860j3F/bandarban.jpg",
       "name": "Bandarbon",
       "cost": 69.99,
-      "details": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit."
-    }
-  ]
-  
+      "details": "Bandarban (Bengali: বান্দরবান, Chakma: 𑄝𑄚𑄴𑄘𑄧𑄢𑄴𑄝𑄚𑄴) is a district in South-Eastern Bangladesh, and a part of the Chittagong Division.[5] It is one of the three hill districts of Bangladesh and a part of the Chittagong Hill Tracts, the others being Rangamati District and Khagrachhari District. Bandarban district (4,479 km2) is not only the most remote district of the country, but also the least populous (population 388,000).[6] There is an army contingent at Bandarban Cantonment.According to the 2022 Census of Bangladesh, Bandarban District had 106,167 households and a population of 481,109, 40.4% of whom lived in urban areas. The population density was 107 people per km2. The literacy rate (age 7 and over) was 63.4%, compared to the national average of 74.7%.[3]",
+      "rating": 4.1
+  }
+]
