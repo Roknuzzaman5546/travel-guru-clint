@@ -1,6 +1,35 @@
+import { useContext } from "react";
+import { Authcontext } from "../Authprovider/Authprovider";
+import Swal from "sweetalert2";
+import UseAxiospublic from "../Hooks/useaxiospublic";
 
 
 const Destination = () => {
+    const { user } = useContext(Authcontext)
+    const axiospublic = UseAxiospublic();
+    const handledestination = e => {
+        e.preventDefault();
+        const from = e.target;
+        const origin = from.origin.value;
+        const destination = from.destination.value;
+        const fromdate = from.fromdate.value;
+        const todate = from.todate.value;
+        const Destination = {
+            origin: origin,
+            destination: destination,
+            fromdate: fromdate,
+            todate: todate,
+            email: user.email,
+            photo: user.photoURL,
+            name: user.displayName
+        }
+        console.log(Destination)
+        axiospublic.post('/destination', Destination)
+            .then(res => {
+                console.log(res.data)
+                Swal.fire("Destination has added")
+            })
+    }
     return (
         <div className='bgimg bg-fixed'>
             <div className=" flex lg:flex-row flex-col justify-between items-center lg:pt-40 pb-28 bg-[#000000B2]">
@@ -10,18 +39,18 @@ const Destination = () => {
                 </div>
                 <div className=' md:w-1/3 w-full mx-auto'>
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form className="card-body">
+                        <form className="card-body" onSubmit={handledestination}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Origin</span>
                                 </label>
-                                <input type="email" placeholder="Origin" className="input input-bordered" required />
+                                <input type="text" placeholder="Origin" defaultValue="Dhaka" className="input input-bordered" name="origin" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Destination</span>
                                 </label>
-                                <input type="password" placeholder="Destination" className="input input-bordered" required />
+                                <input type="text" name="destination" placeholder="Destination" className="input input-bordered" required />
                             </div>
                             <div className="flex justify-center items-center gap-2">
                                 <div className=" w-1/2">
