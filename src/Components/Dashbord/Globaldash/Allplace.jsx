@@ -3,7 +3,6 @@ import usePlace from "../../Hooks/Useplace";
 
 const Allplace = () => {
     const [place] = usePlace();
-    console.log(place)
     return (
         <div className="w-11/12 mx-auto">
             <h2 className=" text-5xl font-bold font-mono text-center mt-2 mb-10">All Tour place</h2>

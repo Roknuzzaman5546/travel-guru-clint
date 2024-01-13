@@ -94,15 +94,15 @@ const Dashbord = () => {
                                 <li><NavLink to="/destination">Destination</NavLink></li>
                                 <li><NavLink to="/blog">Blog</NavLink></li>
                                 <li><NavLink to="/contact">Contact</NavLink></li>
-                                <button className="btn btn-ghost btn-circle">
+                                <li><button className="btn btn-ghost btn-circle">
                                     <FaCartPlus className=" text-2xl font-bold"></FaCartPlus>
-                                </button>
-                                <button className="btn btn-ghost btn-circle">
-                                    <FaHotel lassName=" text-3xl font-bold"></FaHotel>
-                                </button>
-                                <button className="btn btn-ghost btn-circle">
+                                </button></li>
+                                <li><button className="btn btn-ghost btn-circle">
+                                    <FaHotel className="text-2xl font-bold"></FaHotel>
+                                </button></li>
+                                <li><button className="btn btn-ghost btn-circle">
                                     <IoNotifications className=" text-2xl font-bold"></IoNotifications>
-                                </button>
+                                </button></li>
                             </ul>
                         </div>
                     </div>
@@ -119,7 +119,7 @@ const Dashbord = () => {
                             {
                                 isAdmin ?
                                     <>
-                                        <li><NavLink to="/dashbord/home">
+                                        <li><NavLink to="/dashbord/adminhome">
                                             <FaHouse></FaHouse>
                                             Admin home</NavLink></li>
                                         <li><NavLink to="/dashbord/additems">
@@ -140,7 +140,7 @@ const Dashbord = () => {
                                     </>
                                     :
                                     <>
-                                        <li><NavLink to="/dashbord/home">
+                                        <li><NavLink to="/dashbord/userhome">
                                             <FaHouseMedical></FaHouseMedical>
                                             User home</NavLink></li>
                                         <li><NavLink to="/dashbord/cookie">
