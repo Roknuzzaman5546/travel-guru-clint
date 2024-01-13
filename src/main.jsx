@@ -22,6 +22,7 @@ import Clintprivet from './Components/Privet/Clintprivet';
 import Dashbord from './Main/Dashbord';
 import Allplace from './Components/Dashbord/Globaldash/Allplace';
 import Allhotel from './Components/Dashbord/Globaldash/Allhotel';
+import Placedtails from './Components/Home/Placedtails';
 const queryClient = new QueryClient()
 
 
@@ -68,6 +69,11 @@ const router = createBrowserRouter([
       {
         path: 'hotel',
         element: <Allhotel></Allhotel>
+      },
+      {
+        path: 'place/:id',
+        element: <Placedtails></Placedtails>,
+        loader: () => fetch('http://localhost:5000/place')
       }
     ]
   }

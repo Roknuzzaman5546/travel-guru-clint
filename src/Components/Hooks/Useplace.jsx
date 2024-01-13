@@ -7,7 +7,6 @@ const usePlace = () => {
         queryKey: ['place'],
         queryFn: async () => {
             const res = await axiospublic.get(`/place`)
-            console.log(res.data)
             return res.data;
         }
     })
