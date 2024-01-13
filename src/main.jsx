@@ -23,6 +23,7 @@ import Dashbord from './Main/Dashbord';
 import Allplace from './Components/Dashbord/Globaldash/Allplace';
 import Allhotel from './Components/Dashbord/Globaldash/Allhotel';
 import Placedtails from './Components/Home/Placedtails';
+import Singlehoteldetails from './Components/Home/Singlehoteldetails';
 const queryClient = new QueryClient()
 
 
@@ -74,6 +75,11 @@ const router = createBrowserRouter([
         path: 'place/:id',
         element: <Placedtails></Placedtails>,
         loader: () => fetch('http://localhost:5000/place')
+      },
+      {
+        path: 'hotel/:id',
+        element: <Singlehoteldetails></Singlehoteldetails>,
+        loader: () => fetch('http://localhost:5000/hotel')
       }
     ]
   }
