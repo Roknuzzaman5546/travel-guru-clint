@@ -1,11 +1,16 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import 'aos/dist/aos.css';
 import Aos from 'aos';
 import { Rating } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
+import { Authcontext } from "../Authprovider/Authprovider";
+import UseAxiospublic from "../Hooks/useaxiospublic";
+import Swal from "sweetalert2";
 
 const Placedtails = () => {
+    const { user } = useContext(Authcontext)
+    const axiospublic = UseAxiospublic();
     useEffect(() => {
         Aos.init({
             duration: 700,
@@ -15,6 +20,25 @@ const Placedtails = () => {
     const places = useLoaderData();
     const { id } = useParams();
     const place = places.find(item => item._id === id)
+
+    const handleplacebook = (place) => {
+        const placebook = {
+            name: place.name,
+            title: place.title,
+            img: place.img,
+            cost: place.cost,
+            rating: place.rating,
+            details: place.details,
+            email: user.email,
+            userName: user.displayName,
+            userphoto: user.photoURL
+        }
+        axiospublic.post('/placebook', placebook)
+            .then(res => {
+                console.log(res.data)
+                Swal.fire(`${place.name} is booked succesfully`)
+            })
+    }
 
     return (
         <div className=" w-10/12 mx-auto">
@@ -40,7 +64,7 @@ const Placedtails = () => {
                     <p className="font-serif text-xl mt-2"><span className=" text-xl font-bold font-serif">Details:</span> {place.details}</p>
                     <div className=" flex justify-between items-center mt-2 mb-5">
                         <Link to='/dashbord/allplace'><button className=" btn btn-warning font-bold font-mono text-xl">View all place</button></Link>
-                        <Link><button className=" btn btn-warning font-bold font-mono text-xl">Book now</button></Link>
+                        <button onClick={() => handleplacebook(place)} className=" btn btn-warning font-bold font-mono text-xl">Book now</button>
                     </div>
                 </div>
             </div>

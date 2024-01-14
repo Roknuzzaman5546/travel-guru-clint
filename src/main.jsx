@@ -25,6 +25,9 @@ import Allhotel from './Components/Dashbord/Globaldash/Allhotel';
 import Placedtails from './Components/Home/Placedtails';
 import Singlehoteldetails from './Components/Home/Singlehoteldetails';
 import Userhome from './Components/Dashbord/Userdash/Userhome';
+import Userhotelbooking from './Components/Dashbord/Userdash/Userhotelbooking';
+import Userplacebooking from './Components/Dashbord/Userdash/Userplacebooking';
+import Userdestinationbooking from './Components/Dashbord/Userdash/Userdestinationbooking';
 const queryClient = new QueryClient()
 
 
@@ -85,6 +88,18 @@ const router = createBrowserRouter([
       {
         path: 'userhome',
         element: <Userhome></Userhome>
+      },
+      {
+        path: 'hotelbook',
+        element: <Userhotelbooking></Userhotelbooking>
+      },
+      {
+        path: 'placebook',
+        element: <Userplacebooking></Userplacebooking>
+      },
+      {
+        path: 'destinationbook',
+        element: <Userdestinationbooking></Userdestinationbooking>
       }
     ]
   }

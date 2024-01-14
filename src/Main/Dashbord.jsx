@@ -5,6 +5,7 @@ import { FaHotel, FaSearch } from "react-icons/fa";
 import logimg from '../assets/logo.png'
 import { useContext } from "react";
 import { Authcontext } from "../Components/Authprovider/Authprovider";
+import { GiJourney } from "react-icons/gi";
 
 
 const Dashbord = () => {
@@ -30,7 +31,7 @@ const Dashbord = () => {
                                             {
                                                 isAdmin ?
                                                     <>
-                                                        <li><NavLink to="/dashbord/home">
+                                                        <li><NavLink to="/dashbord/adminhome">
                                                             <FaHouse></FaHouse>
                                                             Admin home</NavLink></li>
                                                         <li><NavLink to="/dashbord/additems">
@@ -48,7 +49,7 @@ const Dashbord = () => {
                                                     </>
                                                     :
                                                     <>
-                                                        <li><NavLink to="/dashbord/home">
+                                                        <li><NavLink to="/dashbord/userhome">
                                                             <FaHouseMedical></FaHouseMedical>
                                                             User home</NavLink></li>
                                                         <li><NavLink to="/dashbord/cookie">
@@ -73,9 +74,6 @@ const Dashbord = () => {
                                                 <FaHotel></FaHotel>
                                                 All Hotel</NavLink></li>
                                         </ul>
-                                    </div>
-                                    <div className=" flex-1">
-                                        <Outlet></Outlet>
                                     </div>
                                 </div>
                             </ul>
@@ -143,15 +141,15 @@ const Dashbord = () => {
                                         <li><NavLink to="/dashbord/userhome">
                                             <FaHouseMedical></FaHouseMedical>
                                             User home</NavLink></li>
-                                        <li><NavLink to="/dashbord/cookie">
+                                        <li><NavLink to="/dashbord/hotelbook">
                                             <FaHotel></FaHotel>
                                             My hotel booking</NavLink></li>
-                                        <li><NavLink to="/dashbord/cart">
+                                        <li><NavLink to="/dashbord/placebook">
                                             <FaLocationDot></FaLocationDot>
                                             My place booking</NavLink></li>
-                                        <li><NavLink to="/dashbord/booking">
-                                            <FaCalendar></FaCalendar>
-                                            User Bookings ()</NavLink></li>
+                                        <li><NavLink to="/dashbord/destinationbook">
+                                            <GiJourney></GiJourney>
+                                            My destination Booking</NavLink></li>
                                     </>
                             }
                             <div className="divider"></div>
@@ -169,6 +167,9 @@ const Dashbord = () => {
                     <div className=" flex-1">
                         <Outlet></Outlet>
                     </div>
+                </div>
+                <div className=" flex lg:hidden">
+                    <Outlet></Outlet>
                 </div>
             </div>
         </div>
