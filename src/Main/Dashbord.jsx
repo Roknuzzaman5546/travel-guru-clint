@@ -1,7 +1,8 @@
-import { FaCalendar, FaCartShopping, FaCookie, FaHouseMedical, FaHouse, FaUtensils, FaList, FaBook, FaUsers, FaLocationDot, FaCartPlus } from "react-icons/fa6";
+import { FaHouseMedical, FaHouse, FaList, FaUsers, FaLocationDot, FaCartPlus, FaBookBookmark } from "react-icons/fa6";
+import { MdOutlineReviews } from "react-icons/md";
 import { IoNotifications } from "react-icons/io5";
 import { NavLink, Outlet } from "react-router-dom";
-import { FaHotel, FaSearch } from "react-icons/fa";
+import { FaEdit, FaHotel, FaSearch } from "react-icons/fa";
 import logimg from '../assets/logo.png'
 import { useContext } from "react";
 import { Authcontext } from "../Components/Authprovider/Authprovider";
@@ -10,7 +11,7 @@ import { GiJourney } from "react-icons/gi";
 
 const Dashbord = () => {
     const { user } = useContext(Authcontext)
-    const isAdmin = false;
+    const isAdmin = true;
     return (
         <div>
             <div>
@@ -34,14 +35,20 @@ const Dashbord = () => {
                                                         <li><NavLink to="/dashbord/adminhome">
                                                             <FaHouse></FaHouse>
                                                             Admin home</NavLink></li>
-                                                        <li><NavLink to="/dashbord/additems">
-                                                            <FaUtensils></FaUtensils>
-                                                            Add  items</NavLink></li>
-                                                        <li><NavLink to="/dashbord/manageitems">
+                                                        <li><NavLink to="/dashbord/addplace">
+                                                            <FaLocationDot></FaLocationDot>
+                                                            Add  place</NavLink></li>
+                                                        <li><NavLink to="/dashbord/addihotel">
+                                                            <FaHotel></FaHotel>
+                                                            Add  hotel</NavLink></li>
+                                                        <li><NavLink to="/dashbord/manageplace">
                                                             <FaList></FaList>
-                                                            Manageitems</NavLink></li>
-                                                        <li><NavLink to="/dashbord/manageBookings">
-                                                            <FaBook></FaBook>
+                                                            ManagePlace</NavLink></li>
+                                                        <li><NavLink to="/dashbord/managehotel">
+                                                            <FaEdit></FaEdit>
+                                                            ManageHotel</NavLink></li>
+                                                        <li><NavLink to="/dashbord/bookings">
+                                                            <FaBookBookmark></FaBookBookmark>
                                                             Bookings</NavLink></li>
                                                         <li><NavLink to="/dashbord/Users">
                                                             <FaUsers></FaUsers>
@@ -52,15 +59,18 @@ const Dashbord = () => {
                                                         <li><NavLink to="/dashbord/userhome">
                                                             <FaHouseMedical></FaHouseMedical>
                                                             User home</NavLink></li>
-                                                        <li><NavLink to="/dashbord/cookie">
-                                                            <FaCookie></FaCookie>
-                                                            Add item</NavLink></li>
-                                                        <li><NavLink to="/dashbord/cart">
-                                                            <FaCartShopping></FaCartShopping>
-                                                            My cart</NavLink></li>
-                                                        <li><NavLink to="/dashbord/booking">
-                                                            <FaCalendar></FaCalendar>
-                                                            User Bookings ()</NavLink></li>
+                                                        <li><NavLink to="/dashbord/hotelbook">
+                                                            <FaHotel></FaHotel>
+                                                            My hotel booking</NavLink></li>
+                                                        <li><NavLink to="/dashbord/placebook">
+                                                            <FaLocationDot></FaLocationDot>
+                                                            My place booking</NavLink></li>
+                                                        <li><NavLink to="/dashbord/destinationbook">
+                                                            <GiJourney></GiJourney>
+                                                            My destination Booking</NavLink></li>
+                                                        <li><NavLink to="/dashbord/addreview">
+                                                            <MdOutlineReviews></MdOutlineReviews>
+                                                            My destination Booking</NavLink></li>
                                                     </>
                                             }
                                             <div className="divider"></div>
@@ -120,17 +130,20 @@ const Dashbord = () => {
                                         <li><NavLink to="/dashbord/adminhome">
                                             <FaHouse></FaHouse>
                                             Admin home</NavLink></li>
-                                        <li><NavLink to="/dashbord/additems">
+                                        <li><NavLink to="/dashbord/addplace">
                                             <FaLocationDot></FaLocationDot>
                                             Add  place</NavLink></li>
-                                        <li><NavLink to="/dashbord/additems">
+                                        <li><NavLink to="/dashbord/addihotel">
                                             <FaHotel></FaHotel>
                                             Add  hotel</NavLink></li>
-                                        <li><NavLink to="/dashbord/manageitems">
+                                        <li><NavLink to="/dashbord/manageplace">
                                             <FaList></FaList>
-                                            MnageItem</NavLink></li>
-                                        <li><NavLink to="/dashbord/manageBookings">
-                                            <FaBook></FaBook>
+                                            ManagePlace</NavLink></li>
+                                        <li><NavLink to="/dashbord/managehotel">
+                                            <FaEdit></FaEdit>
+                                            ManageHotel</NavLink></li>
+                                        <li><NavLink to="/dashbord/bookings">
+                                            <FaBookBookmark></FaBookBookmark>
                                             Bookings</NavLink></li>
                                         <li><NavLink to="/dashbord/Users">
                                             <FaUsers></FaUsers>
@@ -149,6 +162,9 @@ const Dashbord = () => {
                                             My place booking</NavLink></li>
                                         <li><NavLink to="/dashbord/destinationbook">
                                             <GiJourney></GiJourney>
+                                            My destination Booking</NavLink></li>
+                                        <li><NavLink to="/dashbord/addreview">
+                                            <MdOutlineReviews></MdOutlineReviews>
                                             My destination Booking</NavLink></li>
                                     </>
                             }

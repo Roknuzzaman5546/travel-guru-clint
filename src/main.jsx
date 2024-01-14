@@ -28,6 +28,7 @@ import Userhome from './Components/Dashbord/Userdash/Userhome';
 import Userhotelbooking from './Components/Dashbord/Userdash/Userhotelbooking';
 import Userplacebooking from './Components/Dashbord/Userdash/Userplacebooking';
 import Userdestinationbooking from './Components/Dashbord/Userdash/Userdestinationbooking';
+import Adminhome from './Components/Dashbord/Admindash/Adminhome';
 const queryClient = new QueryClient()
 
 
@@ -100,6 +101,10 @@ const router = createBrowserRouter([
       {
         path: 'destinationbook',
         element: <Userdestinationbooking></Userdestinationbooking>
+      },
+      {
+        path: 'adminhome',
+        element: <Adminhome></Adminhome>
       }
     ]
   }

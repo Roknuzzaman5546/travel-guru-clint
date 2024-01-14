@@ -43,7 +43,7 @@ const Singlehoteldetails = () => {
 
     return (
         <div className=" w-10/12 mx-auto">
-            <div data-aos="zoom-in" className=" mt-5">
+            <div data-aos="zoom-in" className="mb-3 mt-5">
                 <h1 className="text-4xl border-2 border-b-slate-400 border-t-slate-400 py-5 w-1/2 mx-auto text-center font-Chinzel uppercase font-bold font-rancho">{hotel.hotelName}</h1>
                 <h1 className=" text-center text-yellow-500 text-xl">---This place is details here---</h1>
             </div>
