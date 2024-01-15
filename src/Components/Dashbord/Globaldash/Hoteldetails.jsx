@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 
 const Hoteldetails = ({ item }) => {
+    
     const { imageUrl, hotelName, bookingCost, _id } = item;
+
     return (
         <div>
             <div className="card card-compact bg-base-100 shadow-xl">
