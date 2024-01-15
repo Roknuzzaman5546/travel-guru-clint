@@ -23,13 +23,13 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/destination">Destination</NavLink></li>
         <li><NavLink to="/allplace">All place</NavLink></li>
-        <li><NavLink to="/hotel">All hotel</NavLink></li>
+        <li><NavLink to="/hotel">ll hotel</NavLink></li>
         {user ? Admin ? <li><Link to="/dashbord/adminhome">Dashbord</Link></li> : <li><Link to="/dashbord/userhome">Dashbord</Link></li> : ''}
     </>
 
     return (
         <div>
-            <div className="navbar text-white bg-gray-400">
+            <div className="navbar text-white py-2 font-bold font-sans bg-[#8e9eab]">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

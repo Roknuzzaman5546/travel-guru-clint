@@ -15,7 +15,7 @@ const Dashbord = () => {
     return (
         <div>
             <div>
-                <div className="navbar text-white bg-gray-600 py-1">
+                <div className="navbar text-white font-bold py-2 font-sans bg-[#8e9eab]">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -38,7 +38,7 @@ const Dashbord = () => {
                                                         <li><NavLink to="/dashbord/addplace">
                                                             <FaLocationDot></FaLocationDot>
                                                             Add  place</NavLink></li>
-                                                        <li><NavLink to="/dashbord/addihotel">
+                                                        <li><NavLink to="/dashbord/addhotel">
                                                             <FaHotel></FaHotel>
                                                             Add  hotel</NavLink></li>
                                                         <li><NavLink to="/dashbord/manageplace">
@@ -118,7 +118,7 @@ const Dashbord = () => {
             </div>
             <div>
                 <div className=" lg:flex mt-2 pl-3 hidden">
-                    <div className=" w-64 h-screen shadow-md bg-gray-400 text-black font-mono font-bold text-xl flex flex-col items-center">
+                    <div className=" w-64 h-screen shadow-md bg-gray-200 text-black font-mono font-bold text-xl flex flex-col items-center">
                         <div className=' flex flex-col items-center my-2'>
                             <img className=' w-40 h-36 rounded-full' src={user?.photoURL} alt="" />
                             <h2 className=' text-2xl font-bold font-alfa text-orange-400'>{user?.displayName}</h2>
@@ -133,7 +133,7 @@ const Dashbord = () => {
                                         <li><NavLink to="/dashbord/addplace">
                                             <FaLocationDot></FaLocationDot>
                                             Add  place</NavLink></li>
-                                        <li><NavLink to="/dashbord/addihotel">
+                                        <li><NavLink to="/dashbord/addhotel">
                                             <FaHotel></FaHotel>
                                             Add  hotel</NavLink></li>
                                         <li><NavLink to="/dashbord/manageplace">
