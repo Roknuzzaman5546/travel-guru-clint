@@ -10,7 +10,7 @@ const Hoteldetails = ({ item }) => {
                     <h2 className="card-title">Name: {hotelName}</h2>
                     <p>Booking cost: {bookingCost} $</p>
                     <div className="card-actions justify-end">
-                        <Link to={`/dashbord/hotel/${_id}`}><button className="btn btn-warning">Details</button></Link>
+                        <Link to={`/hotel/${_id}`}><button className="btn btn-warning">Details</button></Link>
                     </div>
                 </div>
             </div>

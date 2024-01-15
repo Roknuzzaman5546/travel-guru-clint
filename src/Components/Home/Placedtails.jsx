@@ -47,7 +47,7 @@ const Placedtails = () => {
                 <h1 className=" text-center text-yellow-500 text-xl">---This place is details here---</h1>
             </div>
             <div>
-                <img className=" w-9/12 mx-auto h-96" src={place.img} alt="" />
+                <img className=" w-9/12 mx-auto h-[480px]" src={place.img} alt="" />
                 <div>
                     <div className=" flex justify-between items-center mt-4">
                         <h2 className=" text-3xl font-bold font-serif">{place.name}</h2>
@@ -63,7 +63,7 @@ const Placedtails = () => {
                     </div>
                     <p className="font-serif text-xl mt-2"><span className=" text-xl font-bold font-serif">Details:</span> {place.details}</p>
                     <div className=" flex justify-between items-center mt-2 mb-5">
-                        <Link to='/dashbord/allplace'><button className=" btn btn-warning font-bold font-mono text-xl">View all place</button></Link>
+                        <Link to='/allplace'><button className=" btn btn-warning font-bold font-mono text-xl">View all place</button></Link>
                         <button onClick={() => handleplacebook(place)} className=" btn btn-warning font-bold font-mono text-xl">Book now</button>
                     </div>
                 </div>

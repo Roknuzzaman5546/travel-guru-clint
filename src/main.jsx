@@ -12,7 +12,6 @@ import Regoser from './Components/Authentication/Regoser';
 import Login from './Components/Authentication/Login';
 import Errorepage from './Components/Errorepage/Errorepage';
 import Authprovider from './Components/Authprovider/Authprovider';
-import Contact from './Components/Home/Contact';
 import Blog from './Components/Blog/BLog';
 import {
   QueryClient,
@@ -55,20 +54,6 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
-        path: "/contact",
-        element: <Contact></Contact>
-      },
-      {
-        path: "/blog",
-        element: <Clintprivet><Blog></Blog></Clintprivet>
-      }
-    ]
-  },
-  {
-    path: "/dashbord",
-    element: <Clintprivet><Dashbord></Dashbord></Clintprivet>,
-    children: [
-      {
         path: 'allplace',
         element: <Allplace></Allplace>
       },
@@ -86,6 +71,16 @@ const router = createBrowserRouter([
         element: <Singlehoteldetails></Singlehoteldetails>,
         loader: () => fetch('http://localhost:5000/hotel')
       },
+      {
+        path: "/blog",
+        element: <Clintprivet><Blog></Blog></Clintprivet>
+      }
+    ]
+  },
+  {
+    path: "/dashbord",
+    element: <Clintprivet><Dashbord></Dashbord></Clintprivet>,
+    children: [
       {
         path: 'userhome',
         element: <Userhome></Userhome>

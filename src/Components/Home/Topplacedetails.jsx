@@ -10,7 +10,7 @@ const Topplacedetails = ({ item }) => {
                     <h2 className="card-title">{name}</h2>
                     <p>{cost} $</p>
                     <div className="card-actions justify-end">
-                        <Link to={`/dashbord/place/${_id}`}><button className="btn btn-warning">Details</button></Link>
+                        <Link to={`/place/${_id}`}><button className="btn btn-warning">Details</button></Link>
                     </div>
                 </div>
             </div>

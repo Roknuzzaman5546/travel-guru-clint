@@ -77,10 +77,10 @@ const Dashbord = () => {
                                             <li><NavLink to="/">
                                                 <FaHouseMedical></FaHouseMedical>
                                                 Home</NavLink></li>
-                                            <li><NavLink to="/dashbord/allplace">
+                                            <li><NavLink to="/allplace">
                                                 <FaLocationDot></FaLocationDot>
                                                 All places</NavLink></li>
-                                            <li><NavLink to="/dashbord/hotel">
+                                            <li><NavLink to="/hotel">
                                                 <FaHotel></FaHotel>
                                                 All Hotel</NavLink></li>
                                         </ul>
@@ -172,10 +172,10 @@ const Dashbord = () => {
                             <li><NavLink to="/">
                                 <FaHouseMedical></FaHouseMedical>
                                 Home</NavLink></li>
-                            <li><NavLink to="/dashbord/allplace">
+                            <li><NavLink to="/allplace">
                                 <FaLocationDot></FaLocationDot>
                                 All places</NavLink></li>
-                            <li><NavLink to="/dashbord/hotel">
+                            <li><NavLink to="/hotel">
                                 <FaHotel></FaHotel>
                                 All Hotel</NavLink></li>
                         </ul>
