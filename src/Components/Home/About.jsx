@@ -7,9 +7,9 @@ const About = () => {
         <div className=' md:max-w-screen-2xl w-11/12 mx-auto my-24'>
             <h2 className=' text-5xl font-bold font-mono text-center text-black mb-10'>See about</h2>
             <div className=' flex lg:flex-row flex-col md:justify-around justify-between items-center md:gap-5 gap-32'>
-                <div className=' w-2/5 relative'>
+                <div className=' lg:w-2/5 w-full relative'>
                     <img className=' rounded-lg md:w-full w-[80%] h-full' src={aboutimg} alt="" />
-                    <img className=' rounded-md absolute lg:h-72 md:h-72 h-60 lg:w-96 md:w-96 w-60 lg:top-56 md:top-56  top-32 lg:left-[300px] md:left-[330px] left-60' src={about2img} alt="" />
+                    <img className=' rounded-md absolute lg:h-72 md:h-72 h-60 lg:w-96 md:w-96 w-60 lg:top-56 md:top-56 top-24 lg:left-[300px] md:left-[330px] left-60' src={about2img} alt="" />
                 </div>
                 <div className=' md:w-2/5 w-full space-y-4'>
                     <h2 className=' text-5xl font-bold font-mono'>Enjoy Our <br /> Place & Hotel For A Weekend Longer Stay</h2>

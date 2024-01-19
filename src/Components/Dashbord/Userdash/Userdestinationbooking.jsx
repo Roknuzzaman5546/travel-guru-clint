@@ -1,4 +1,5 @@
 import useDestination from "../../Hooks/useDestination";
+import './booking.css'
 
 const Userdestinationbooking = () => {
     const [destination] = useDestination();
@@ -10,7 +11,9 @@ const Userdestinationbooking = () => {
                 {
                     destination.map(item => <div key={item._id}>
                         <div className="flex justify-center gap-2 bg-base-100 shadow-xl rounded-xl mb-5">
-                            <img className=" rounded-lg w-2/3 h-60" src={item.photo} alt="Album" />
+                            <div className="rounded-lg overflows w-full">
+                                <img className=" rounded-lg w-full h-60 background-image" src={item.photo} alt="Album" />
+                            </div>
                             <div className=" w-full flex flex-col justify-between">
                                 <h2 className=" text-2xl font-bold font-sans">From:{item.origin}</h2>
                                 <p className=" text-xl font-bold font-mono">Destination:{item.destination}</p>

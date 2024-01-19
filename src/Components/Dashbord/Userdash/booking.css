@@ -1,0 +1,24 @@
+.background-image {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: url('../../../../../assets/Template_files/city-1.jpg'); */
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+    transition: transform 0.3s linear;
+    -webkit-transition: transform 0.3s linear;
+    -moz-transition: transform 0.3s linear;
+    -ms-transition: transform 0.3s linear;
+    -o-transition: transform 0.3s linear;
+}
+.overflows {
+    overflow: hidden;
+}
+
+.background-image:hover {
+    color: #000000B2;
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+    /* Adjust the scale factor as needed */
+}
