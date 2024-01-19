@@ -3,7 +3,7 @@ import Banner from "./Banner";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Place from "./Place";
-
+    
 const Home = () => {
     return (
         <div>

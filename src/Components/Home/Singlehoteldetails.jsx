@@ -19,7 +19,7 @@ const Singlehoteldetails = () => {
     }, []);
     const hotels = useLoaderData();
     const { id } = useParams();
-    const hotel = hotels.find(item => item._id === id)
+    const hotel = hotels.find(item => item._id == id)
 
     const handlehotelbook = (hotel) => {
         const hotelbook = {

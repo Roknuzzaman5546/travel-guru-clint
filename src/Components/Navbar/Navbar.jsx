@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
-import logimg from '../../assets/logo.png'
+import logimg from '../../assets/images/logo2.png'
 import { useContext } from "react";
 import { Authcontext } from "../Authprovider/Authprovider";
 import Swal from "sweetalert2";
@@ -29,7 +29,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar text-white py-2 font-bold font-sans bg-[#8e9eab]">
+            <div className="navbar text-black py-5 px-2 font-sans bg-gray-200">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
