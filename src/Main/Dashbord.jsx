@@ -11,7 +11,7 @@ import { GiJourney } from "react-icons/gi";
 
 const Dashbord = () => {
     const { user } = useContext(Authcontext)
-    const isAdmin = true;
+    const isAdmin = false;
     return (
         <div>
             <div>
