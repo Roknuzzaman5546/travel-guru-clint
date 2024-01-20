@@ -1,8 +1,33 @@
+import { useContext } from "react";
 import useDestination from "../../Hooks/useDestination";
 import './booking.css'
+import { Authcontext } from "../../Authprovider/Authprovider";
+import UseAxiospublic from "../../Hooks/useaxiospublic";
+import Swal from "sweetalert2";
 
 const Userdestinationbooking = () => {
+    const { user } = useContext(Authcontext)
+    const axiospublic = UseAxiospublic();
     const [destination] = useDestination();
+
+    const handledestinationlbook = (item) => {
+        const hotelbook = {
+            name: item.destination,
+            title: item.origin,
+            img: item.photo,
+            cost: item.fromdate,
+            rating: item.todate,
+            email: user.email,
+            userName: user.displayName,
+            userphoto: user.photoURL
+        }
+        console.log(hotelbook)
+        axiospublic.post('/choicelist', hotelbook)
+            .then(res => {
+                console.log(res.data)
+                Swal.fire(`${item.destination} is choiced succesfully`)
+            })
+    }
 
     return (
         <div className=" w-11/12 mx-auto">
@@ -25,7 +50,7 @@ const Userdestinationbooking = () => {
                                 </div>
                                 <div className="card-actions justify-end mt-2">
                                     <button className="btn btn-warning btn-outline mb-2 ">Canchel</button>
-                                    <button className="btn btn-warning btn-outline mb-2 mr-2">Book confirm</button>
+                                    <button onClick={() => handledestinationlbook(item)} className="btn btn-warning btn-outline mb-2 mr-2">Add Choice list</button>
                                 </div>
                             </div>
                         </div>

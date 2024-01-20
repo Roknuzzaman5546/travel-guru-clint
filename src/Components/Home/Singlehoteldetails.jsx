@@ -27,8 +27,6 @@ const Singlehoteldetails = () => {
             title: hotel.title,
             img: hotel.imageUrl,
             cost: hotel.bookingCost,
-            rating: hotel.rating,
-            details: hotel.details,
             email: user.email,
             userName: user.displayName,
             userphoto: user.photoURL

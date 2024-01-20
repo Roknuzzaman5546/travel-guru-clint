@@ -7,29 +7,30 @@ import UseAxiospublic from "../Hooks/useaxiospublic";
 const Destination = () => {
     const { user } = useContext(Authcontext)
     const axiospublic = UseAxiospublic();
+
     const handledestination = e => {
         e.preventDefault();
         const from = e.target;
         const origin = from.origin.value;
         const destination = from.destination.value;
         const fromdate = from.fromdate.value;
-        const todate = from.todate.value;
         const Destination = {
-            origin: origin,
-            destination: destination,
-            fromdate: fromdate,
-            todate: todate,
+            name: destination,
+            title: origin,
+            img: user.photoURL,
+            cost: fromdate,
             email: user.email,
-            photo: user.photoURL,
-            name: user.displayName
+            userName: user.displayName,
+            userphoto: user.photoURL
         }
         console.log(Destination)
         axiospublic.post('/choicelist', Destination)
             .then(res => {
                 console.log(res.data)
-                Swal.fire("Destination has added")
+                Swal.fire("Destination has added to Choicelist")
             })
     }
+
     return (
         <div className='bgimg bg-fixed'>
             <div className=" flex lg:flex-row flex-col justify-between items-center lg:pt-40 pb-28 bg-[#000000B2]">
