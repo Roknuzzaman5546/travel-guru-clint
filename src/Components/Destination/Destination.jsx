@@ -24,7 +24,7 @@ const Destination = () => {
             name: user.displayName
         }
         console.log(Destination)
-        axiospublic.post('/destination', Destination)
+        axiospublic.post('/choicelist', Destination)
             .then(res => {
                 console.log(res.data)
                 Swal.fire("Destination has added")

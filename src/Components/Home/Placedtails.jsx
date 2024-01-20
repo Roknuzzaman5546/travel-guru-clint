@@ -33,10 +33,10 @@ const Placedtails = () => {
             userName: user.displayName,
             userphoto: user.photoURL
         }
-        axiospublic.post('/placebook', placebook)
+        axiospublic.post('/choicelist', placebook)
             .then(res => {
                 console.log(res.data)
-                Swal.fire(`${place.name} is booked succesfully`)
+                Swal.fire(`${place.name} is Choiced succesfully`)
             })
     }
 
@@ -64,7 +64,7 @@ const Placedtails = () => {
                     <p className="font-serif text-xl mt-2"><span className=" text-xl font-bold font-serif">Details:</span> {place.details}</p>
                     <div className=" flex justify-between items-center mt-2 mb-5">
                         <Link to='/allplace'><button className=" btn btn-warning font-bold font-mono text-xl">View all place</button></Link>
-                        <button onClick={() => handleplacebook(place)} className=" btn btn-warning font-bold font-mono text-xl">Book now</button>
+                        <button onClick={() => handleplacebook(place)} className=" btn btn-warning font-bold font-mono text-xl">Add choice list</button>
                     </div>
                 </div>
             </div>

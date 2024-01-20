@@ -5,7 +5,7 @@ import usePlace from "../../Hooks/Useplace";
 import useHotel from "../../Hooks/useHotel";
 import { FaCcPaypal, FaHotel, FaShoppingCart } from "react-icons/fa";
 import { FaBook, FaStar } from "react-icons/fa6";
-import useDestination from "../../Hooks/useDestination";
+import useChoicelist from "../../Hooks/useChoicelist";
 import { GiJourney } from "react-icons/gi";
 
 
@@ -14,7 +14,7 @@ const Userhome = () => {
     const { user } = useContext(Authcontext)
     const [place] = usePlace();
     const [hotel] = useHotel();
-    const [destination] = useDestination();
+    const [destination] = useChoicelist();
 
     return (
         <div className=" w-11/12 mx-auto">

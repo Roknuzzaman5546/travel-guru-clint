@@ -3,17 +3,18 @@ import UseAxiospublic from "./useaxiospublic";
 import { useContext } from "react";
 import { Authcontext } from "../Authprovider/Authprovider";
 
-const usePlacebook = () => {
+const useChoicelist = () => {
     const axiospublic = UseAxiospublic()
     const { user } = useContext(Authcontext)
-    const { data: placebook = [], refetch } = useQuery({
-        queryKey: ['placebook'],
+    const { data: choice = [], refetch } = useQuery({
+        queryKey: ['choice'],
         queryFn: async () => {
-            const res = await axiospublic.get(`/placebook?email=${user.email}`)
+            const res = await axiospublic.get(`/choicelist?email=${user.email}`)
+            console.log(res.data)
             return res.data;
         }
     })
-    return [placebook, refetch]
+    return [choice, refetch]
 };
 
-export default usePlacebook;
+export default useChoicelist;

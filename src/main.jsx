@@ -24,14 +24,13 @@ import Allhotel from './Components/Dashbord/Globaldash/Allhotel';
 import Placedtails from './Components/Home/Placedtails';
 import Singlehoteldetails from './Components/Home/Singlehoteldetails';
 import Userhome from './Components/Dashbord/Userdash/Userhome';
-import Userhotelbooking from './Components/Dashbord/Userdash/Userhotelbooking';
-import Userplacebooking from './Components/Dashbord/Userdash/Userplacebooking';
-import Userdestinationbooking from './Components/Dashbord/Userdash/Userdestinationbooking';
+import Choicelist from './Components/Dashbord/Userdash/Choicelist';
 import Adminhome from './Components/Dashbord/Admindash/Adminhome';
 import Addplace from './Components/Dashbord/Admindash/Addplace';
 import Addhotel from './Components/Dashbord/Admindash/Addhotel';
 import Manageplace from './Components/Dashbord/Admindash/Manageplace';
 import Managehotel from './Components/Dashbord/Admindash/Managehotel';
+import Payment from './Components/Dashbord/Globaldash/Payment';
 const queryClient = new QueryClient()
 
 
@@ -66,12 +65,12 @@ const router = createBrowserRouter([
         element: <Allhotel></Allhotel>
       },
       {
-        path: 'place/:id',
+        path: '/place/:id',
         element: <Placedtails></Placedtails>,
         loader: () => fetch('http://localhost:5000/place')
       },
       {
-        path: 'hotel/:id',
+        path: '/hotel/:id',
         element: <Singlehoteldetails></Singlehoteldetails>,
         loader: () => fetch('http://localhost:5000/hotel')
       },
@@ -90,16 +89,8 @@ const router = createBrowserRouter([
         element: <Userhome></Userhome>
       },
       {
-        path: 'hotelbook',
-        element: <Userhotelbooking></Userhotelbooking>
-      },
-      {
-        path: 'placebook',
-        element: <Userplacebooking></Userplacebooking>
-      },
-      {
-        path: 'destinationbook',
-        element: <Userdestinationbooking></Userdestinationbooking>
+        path: 'choicelist',
+        element: <Choicelist></Choicelist>
       },
       {
         path: 'adminhome',
@@ -120,7 +111,11 @@ const router = createBrowserRouter([
       {
         path: 'managehotel',
         element: <Managehotel></Managehotel>
-      }
+      },
+      {
+        path: 'hotel/payment:id',
+        element: <Payment></Payment>,
+      } 
     ]
   }
 ]);

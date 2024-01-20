@@ -4,23 +4,20 @@ import { FaBookmark, FaUser } from "react-icons/fa";
 import useUser from "../../Hooks/useUser";
 import usePlace from "../../Hooks/Useplace";
 import useHotel from "../../Hooks/useHotel";
-import useDestination from "../../Hooks/useDestination";
-import usePlacebook from "../../Hooks/usePlacebook"
-import useHotelbook from "../../Hooks/useHotelbook"
 import { FaSitemap, FaTrailer } from "react-icons/fa6";
+import useChoicelist from "../../Hooks/useChoicelist";
 
 const Adminhome = () => {
     const { user } = useContext(Authcontext)
     const [users] = useUser();
     const [place] = usePlace();
     const [hotel] = useHotel();
-    const [destination] = useDestination();
-    const [placebook] = usePlacebook();
-    const [hotelbook] = useHotelbook();
+    const [choice] = useChoicelist();
+
 
     let allusers = users.length;
-    let items = place.length + hotel.length + destination.length;
-    let bookItems = placebook.length + hotelbook.length;
+    let items = place.length + hotel.length;
+    let bookItems = choice.length;
 
     return (
         <div className=" w-11/12 mx-auto">

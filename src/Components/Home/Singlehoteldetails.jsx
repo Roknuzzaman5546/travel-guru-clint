@@ -34,10 +34,10 @@ const Singlehoteldetails = () => {
             userphoto: user.photoURL
         }
         console.log(hotelbook)
-        axiospublic.post('/hotelbook', hotelbook)
+        axiospublic.post('/choicelist', hotelbook)
             .then(res => {
                 console.log(res.data)
-                Swal.fire(`${hotel.hotelName} is booked succesfully`)
+                Swal.fire(`${hotel.hotelName} is choiced succesfully`)
             })
     }
 
@@ -65,7 +65,7 @@ const Singlehoteldetails = () => {
                     <p className="font-serif text-xl mt-2"><span className=" text-xl font-bold font-serif">Details:</span> {hotel.details}</p>
                     <div className=" flex justify-between items-center mt-2 mb-5">
                         <Link to='/hotel'><button className=" btn btn-warning font-bold font-mono text-xl">View all place</button></Link>
-                        <button onClick={() => handlehotelbook(hotel)} className=" btn btn-warning font-bold font-mono text-xl">Book now</button>
+                        <button onClick={() => handlehotelbook(hotel)} className=" btn btn-warning font-bold font-mono text-xl">Add choice list</button>
                     </div>
                 </div>
             </div>

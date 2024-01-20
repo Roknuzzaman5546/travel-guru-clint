@@ -1,12 +1,11 @@
 import { FaHouseMedical, FaHouse, FaList, FaUsers, FaLocationDot, FaCartPlus, FaBookBookmark } from "react-icons/fa6";
-import { MdOutlineReviews } from "react-icons/md";
+import { MdPayment, MdReviews } from "react-icons/md";
 import { IoNotifications } from "react-icons/io5";
 import { NavLink, Outlet } from "react-router-dom";
 import { FaEdit, FaHotel, FaSearch } from "react-icons/fa";
 import logimg from '../assets/logo.png'
 import { useContext } from "react";
 import { Authcontext } from "../Components/Authprovider/Authprovider";
-import { GiJourney } from "react-icons/gi";
 
 
 const Dashbord = () => {
@@ -59,18 +58,18 @@ const Dashbord = () => {
                                                         <li><NavLink to="/dashbord/userhome">
                                                             <FaHouseMedical></FaHouseMedical>
                                                             User home</NavLink></li>
-                                                        <li><NavLink to="/dashbord/hotelbook">
-                                                            <FaHotel></FaHotel>
-                                                            My hotel booking</NavLink></li>
-                                                        <li><NavLink to="/dashbord/placebook">
-                                                            <FaLocationDot></FaLocationDot>
-                                                            My place booking</NavLink></li>
-                                                        <li><NavLink to="/dashbord/destinationbook">
-                                                            <GiJourney></GiJourney>
-                                                            My destination Booking</NavLink></li>
+                                                        <li><NavLink to="/dashbord/choicelist">
+                                                            <FaList></FaList>
+                                                            My Choice List</NavLink></li>
+                                                        <li><NavLink to="/dashbord/payhistory">
+                                                            <MdPayment></MdPayment>
+                                                            Payment History</NavLink></li>
                                                         <li><NavLink to="/dashbord/addreview">
-                                                            <MdOutlineReviews></MdOutlineReviews>
-                                                            My destination Booking</NavLink></li>
+                                                            <MdReviews></MdReviews>
+                                                            Add Reviews</NavLink></li>
+                                                        <li><NavLink to="/dashbord/bookings">
+                                                            <FaBookBookmark></FaBookBookmark>
+                                                            My bookings</NavLink></li>
                                                     </>
                                             }
                                             <div className="divider"></div>
@@ -154,18 +153,18 @@ const Dashbord = () => {
                                         <li><NavLink to="/dashbord/userhome">
                                             <FaHouseMedical></FaHouseMedical>
                                             User home</NavLink></li>
-                                        <li><NavLink to="/dashbord/hotelbook">
-                                            <FaHotel></FaHotel>
-                                            My hotel booking</NavLink></li>
-                                        <li><NavLink to="/dashbord/placebook">
-                                            <FaLocationDot></FaLocationDot>
-                                            My place booking</NavLink></li>
-                                        <li><NavLink to="/dashbord/destinationbook">
-                                            <GiJourney></GiJourney>
-                                            My destination Booking</NavLink></li>
+                                        <li><NavLink to="/dashbord/choicelist">
+                                            <FaList></FaList>
+                                            My Choice List</NavLink></li>
+                                        <li><NavLink to="/dashbord/payhistory">
+                                            <MdPayment></MdPayment>
+                                            Payment History</NavLink></li>
                                         <li><NavLink to="/dashbord/addreview">
-                                            <MdOutlineReviews></MdOutlineReviews>
-                                            My destination Booking</NavLink></li>
+                                            <MdReviews></MdReviews>
+                                            Add Reviews</NavLink></li>
+                                        <li><NavLink to="/dashbord/bookings">
+                                            <FaBookBookmark></FaBookBookmark>
+                                            My bookings</NavLink></li>
                                     </>
                             }
                             <div className="divider"></div>
