@@ -31,6 +31,7 @@ import Addhotel from './Components/Dashbord/Admindash/Addhotel';
 import Manageplace from './Components/Dashbord/Admindash/Manageplace';
 import Managehotel from './Components/Dashbord/Admindash/Managehotel';
 import Payment from './Components/Dashbord/Globaldash/Payment';
+import Review from './Components/Dashbord/Userdash/Review';
 const queryClient = new QueryClient()
 
 
@@ -113,9 +114,13 @@ const router = createBrowserRouter([
         element: <Managehotel></Managehotel>
       },
       {
-        path: 'hotel/payment:id',
+        path: 'payment',
         element: <Payment></Payment>,
-      } 
+      },
+      {
+        path: 'addreview',
+        element: <Review></Review>
+      }
     ]
   }
 ]);

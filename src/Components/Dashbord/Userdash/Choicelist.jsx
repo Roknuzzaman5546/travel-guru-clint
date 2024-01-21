@@ -8,11 +8,17 @@ const Choicelist = () => {
 
     return (
         <div className=" w-11/12 mx-auto">
-            <h2 className=" text-center text-violet-600 text-5xl font-bold font-mono mb-10 mt-5">Your all add coices is here</h2>
+            <h2 className=" text-center text-violet-600 text-5xl font-bold font-mono mb-2 mt-5">Your all add coices is here</h2>
+            <div className=" flex justify-between items-center mt-10 mb-3">
+                <h2 className=" text-3xl font-bold font-mono text-[#ff9c1c]">Place, Hotel & Destination</h2>
+                <Link to={`/dashbord/payment`}>
+                    <button className=" bg-[#000] hover:bg-[#ff9c1c] text-white px-6 py-4 rounded-md text-xl font-bold font-mono transition">Pay for Booking</button>
+                </Link>
+            </div>
             <div className=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4">
                 {
                     choice.map(item => <div key={item._id}>
-                        <div className="flex justify-center gap-2 bg-base-100 shadow-xl rounded-xl mb-5">
+                        <div className="flex justify-center gap-4 bg-base-100 shadow-xl rounded-xl mb-5">
                             <div className="rounded-lg overflows w-full">
                                 <img className="rounded-lg w-full h-60 background-image" src={item.img} alt="Album" />
                             </div>
@@ -21,15 +27,19 @@ const Choicelist = () => {
                                 <p className=" text-xl font-bold font-mono">{item.title}</p>
                                 <p className=" text-xl font-bold font-mono">You:{item.userName}</p>
                                 <p className=" text-xl font-bold font-mono">Email:{item.email}</p>
-                                <p className=" text-xl font-bold font-mono">Cost:{item.cost}</p>
-                                <div className="card-actions justify-end mb-2 mr-1">
-                                    <button className="btn btn-warning btn-outline mb-2 ">Canchel</button>
-                                    <Link to={`/dashbord/payment/${item._id}`}><button className="btn btn-warning btn-outline mb-2 mr-2 text-black">Book confirm</button></Link>
+                                <p className=" text-xl font-bold font-mono">Cost:{item.cost} $</p>
+                                <div className="card-actions justify-end mr-4">
+                                    <button className=" bg-[#ff9c1c] mb-4 hover:bg-[#000] text-white px-5 py-3.5 rounded-md text-xl font-bold font-mono transition">Canchel</button>
                                 </div>
                             </div>
                         </div>
                     </div>)
                 }
+            </div>
+            <div className=" items-center flex flex-col mb-8 mt-3">
+                <Link to={`/dashbord/payment`}>
+                    <button className=" bg-[#ff9c1c] hover:bg-[#000] text-white px-6 py-4 rounded-md text-xl font-bold font-mono transition">Pay for Booking</button>
+                </Link>
             </div>
         </div>
     );

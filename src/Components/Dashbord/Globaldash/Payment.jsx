@@ -7,7 +7,7 @@ const stripePromis = loadStripe(import.meta.env.VITE_PAYMENT)
 
 const Payment = ({ enrollclass }) => {
     return (
-        <div className=" mt-10 ml-5">
+        <div className=" mt-10 w-4/5 mx-auto">
             <h2 className=' my-16 text-4xl font-bold font-mono text-center'>Payment & do confirm your booking</h2>
             <div>
                 <Elements stripe={stripePromis}>

@@ -13,12 +13,12 @@ const Destination = () => {
         const from = e.target;
         const origin = from.origin.value;
         const destination = from.destination.value;
-        const fromdate = from.fromdate.value;
+        const cost = from.cost.value;
         const Destination = {
             name: destination,
             title: origin,
             img: user.photoURL,
-            cost: fromdate,
+            cost: cost,
             email: user.email,
             userName: user.displayName,
             userphoto: user.photoURL
@@ -53,19 +53,17 @@ const Destination = () => {
                                 </label>
                                 <input type="text" name="destination" placeholder="Destination" className="input input-bordered" required />
                             </div>
-                            <div className="flex justify-center items-center gap-2">
-                                <div className=" w-1/2">
-                                    <label className="label">
-                                        <span className="label-text">From</span>
-                                    </label>
-                                    <input type="date" name="fromdate" id="" className="input input-bordered w-full" required />
-                                </div>
-                                <div className=" w-1/2">
-                                    <label className="label">
-                                        <span className="label-text">To</span>
-                                    </label>
-                                    <input type="date" name="todate" id="" className="input input-bordered w-full" required />
-                                </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Your Ammount</span>
+                                </label>
+                                <input type="text" name="cost" placeholder="Cost" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Date</span>
+                                </label>
+                                <input type="date" name="date" id="" className="input input-bordered w-full" required />
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-warning">Start booking</button>

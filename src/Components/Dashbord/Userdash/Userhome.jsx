@@ -9,7 +9,6 @@ import useChoicelist from "../../Hooks/useChoicelist";
 import { GiJourney } from "react-icons/gi";
 
 
-
 const Userhome = () => {
     const { user } = useContext(Authcontext)
     const [place] = usePlace();
