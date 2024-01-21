@@ -70,7 +70,7 @@ const Review = () => {
                             <label className="label">
                                 <span className=" text-xl font-mono font-bold">Kindly express your care in a short way.</span>
                             </label>
-                            <textarea name="details" className="textarea rounded-md text-xl font-bold font-mono h-40" placeholder="Review in detail"></textarea>
+                            <textarea name="details" className="textarea rounded-md text-xl font-bold font-mono h-40" placeholder="Please type 30 or less then word"></textarea>
                         </div>
                         <input type="submit" value="Submit Review" className="bg-[#000] hover:bg-[#ff9c1c] text-white px-6 py-4 rounded-md text-xl font-bold font-mono mt-3" />
                     </form>

@@ -4,6 +4,8 @@ import Contact from "./Contact";
 import Footer from "./Footer";
 import Hotel from "./Hotel";
 import Place from "./Place";
+import ReviewHome from "./Review";
+import Tourguru from "./Tourguru";
     
 const Home = () => {
     return (
@@ -12,6 +14,8 @@ const Home = () => {
             <About></About>
             <Place></Place>
             <Hotel></Hotel>
+            <Tourguru></Tourguru>
+            <ReviewHome></ReviewHome>
             <Contact></Contact>
             <Footer> </Footer>
         </div>
