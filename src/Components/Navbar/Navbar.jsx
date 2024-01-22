@@ -46,7 +46,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className={` fixed bg-[#000000] w-full top-0 left-0 z-[99999] ${isNavbarJumping ? 'animate-jump shadow-md' : ''}`} >
+        <div className={` sticky bg-[#000000] w-full top-0 left-0 z-[99999] ${isNavbarJumping ? 'animate-jump shadow-md' : ''}`} >
             <div className="navbar w-11/12 mx-auto text-white py-5 px-2 font-bold text-xl font-mono">
                 <div className="navbar-start">
                     <div className="dropdown">

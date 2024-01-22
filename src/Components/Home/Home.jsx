@@ -1,6 +1,7 @@
 import About from "./About";
 import Banner from "./Banner";
 import Contact from "./Contact";
+import Offer from "./Extra/Offer";
 import Footer from "./Footer";
 import Hotel from "./Hotel";
 import Place from "./Place";
@@ -16,6 +17,7 @@ const Home = () => {
             <Hotel></Hotel>
             <Tourguru></Tourguru>
             <ReviewHome></ReviewHome>
+            <Offer></Offer>
             <Contact></Contact>
             <Footer> </Footer>
         </div>

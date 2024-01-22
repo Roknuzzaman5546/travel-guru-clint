@@ -1,0 +1,7 @@
+.offerbg {
+    background-image: url('../../../assets/images/sikim.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+}

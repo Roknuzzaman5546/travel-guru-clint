@@ -14,8 +14,8 @@ const Contact = () => {
 
     return (
         <div className=" md:max-w-screen-2xl w-11/12 mx-auto mb-20 mt-28">
-            <div className=" flex justify-around items-center gap-5">
-                <div className=" w-1/2">
+            <div className=" flex md:flex-row flex-col justify-around items-center gap-5">
+                <div className=" md:w-1/2 w-[11/12]">
                     <p className=" text-red-500 text-6xl font-bold font-mono">Contact Us</p>
                     <h2 className=" text-4xl font-extrabold my-4">How Can We Help You?</h2>
                     <p className=" leading-10 text-gray-500 mb-7 text-left text-xl">
@@ -29,7 +29,7 @@ const Contact = () => {
                         <a target="blank" href="https://www.linkedin.com/in/roknuzzaman-sojib-b794552a3/" className="bg-gray-200  rounded-full text-[#002172] text-xl p-2"><FaLinkedin></FaLinkedin></a>
                     </div>
                 </div>
-                <div className=" w-1/2">
+                <div className=" md:w-1/2 w-11/12">
                     {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
                     <form onSubmit={handleSubmit(onSubmit)}>
                         {/* register your input into the hook by invoking the "register" function */}

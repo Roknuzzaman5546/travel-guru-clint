@@ -11,7 +11,7 @@ import swip3 from '../../assets/images/sundorbon.png'
 const Banner = () => {
     return (
         <div className='bgimg bg-fixed'>
-            <div className=" flex lg:flex-row flex-col md:justify-center justify-between items-center lg:pt-60 pt-40 pb-28 bg-[#000000B2] gap-10">
+            <div className=" flex lg:flex-row flex-col md:justify-center justify-between items-center pt-40 pb-28 bg-[#000000B2] gap-10">
                 <div className=" md:w-1/2 w-full ml-20">
                     <h2 className="text-6xl font-bold text-white font-serif">Coxs bazar</h2>
                     <button className=" btn btn-warning mt-5">Booking</button>
