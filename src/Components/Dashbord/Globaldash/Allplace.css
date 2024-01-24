@@ -1,0 +1,6 @@
+.placebgimg {
+    background-image: url('../../../assets/images/place.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

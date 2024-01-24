@@ -35,7 +35,7 @@ const Review = () => {
     }
 
     return (
-        <div className=" w-11/12 mx-auto">
+        <div className="md:max-w-screen-2xl w-11/12 mx-auto">
             <div className=" text-center mt-4  mb-4">
                 <h2 className=" text-4xl font-bold font-mono text-pink-500">GIVE A REVIEW...</h2>
                 <p className=" text-yellow-500 text-xl font-mono font-bold mt-2">---Sharing is Caring!!!---</p>
