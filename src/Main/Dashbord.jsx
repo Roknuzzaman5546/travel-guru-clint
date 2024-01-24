@@ -49,7 +49,7 @@ const Dashbord = () => {
                                                         <li><NavLink to="/dashbord/bookings">
                                                             <FaBookBookmark></FaBookBookmark>
                                                             Bookings</NavLink></li>
-                                                        <li><NavLink to="/dashbord/Users">
+                                                        <li><NavLink to="/dashbord/users">
                                                             <FaUsers></FaUsers>
                                                             All Users</NavLink></li>
                                                     </>
@@ -144,7 +144,7 @@ const Dashbord = () => {
                                         <li><NavLink to="/dashbord/bookings">
                                             <FaBookBookmark></FaBookBookmark>
                                             Bookings</NavLink></li>
-                                        <li><NavLink to="/dashbord/Users">
+                                        <li><NavLink to="/dashbord/users">
                                             <FaUsers></FaUsers>
                                             All Users</NavLink></li>
                                     </>

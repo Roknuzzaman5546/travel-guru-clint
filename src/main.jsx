@@ -32,6 +32,7 @@ import Manageplace from './Components/Dashbord/Admindash/Manageplace';
 import Managehotel from './Components/Dashbord/Admindash/Managehotel';
 import Payment from './Components/Dashbord/Globaldash/Payment';
 import Review from './Components/Dashbord/Userdash/Review';
+import Alluser from './Components/Dashbord/Admindash/Alluser';
 const queryClient = new QueryClient()
 
 
@@ -120,6 +121,10 @@ const router = createBrowserRouter([
       {
         path: 'addreview',
         element: <Review></Review>
+      },
+      {
+        path: 'users',
+        element: <Alluser></Alluser>
       }
     ]
   }
