@@ -36,11 +36,11 @@ const Choicelist = () => {
                     </div>)
                 }
             </div>
-            <div className=" items-center flex flex-col mb-8 mt-3">
+            {/* <div className=" items-center flex flex-col mb-8 mt-3">
                 <Link to={`/dashbord/payment`}>
                     <button className=" bg-[#ff9c1c] hover:bg-[#000] text-white px-6 py-4 rounded-md text-xl font-bold font-mono transition">Pay for Booking</button>
                 </Link>
-            </div>
+            </div> */}
         </div>
     );
 };

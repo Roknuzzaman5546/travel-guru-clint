@@ -1,24 +1,30 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import UseAxiospublic from "../../Hooks/useaxiospublic";
 import useChoicelist from "../../Hooks/useChoicelist";
+import { Authcontext } from "../../Authprovider/Authprovider";
+import Swal from "sweetalert2";
+// import { useNavigate } from "react-router-dom";
 
 const Cheakoutfrom = () => {
     const [error, setError] = useState('');
+    // const navigate = useNavigate();
+    const { user } = useContext(Authcontext);
     const [clientSecret, SetclientSecret] = useState();
+    const [transictionid, setTransictionid] = useState();
     const stripe = useStripe();
     const elements = useElements();
     const axiospublic = UseAxiospublic();
     const [choice] = useChoicelist();
 
     const totalprice = choice.reduce((total, item) => total + item.cost, 0)
-    console.log(totalprice)
+    // console.log(totalprice)
     const total = parseInt(totalprice)
 
     useEffect(() => {
         axiospublic.post('/create-payment-intent', { cost: total })
             .then(res => {
-                console.log(res.data.clientSecret)
+                // console.log(res.data.clientSecret)
                 SetclientSecret(res.data.clientSecret)
             })
     }, [axiospublic, total])
@@ -43,6 +49,46 @@ const Cheakoutfrom = () => {
         if (paymentMethod) {
             console.log('payment method', paymentMethod)
             setError('')
+        }
+
+        // Confirm payment
+
+        const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: card,
+                billing_details: {
+                    email: user?.email || "anonymous",
+                    name: user?.displayName || 'anonymous',
+                },
+            }
+        })
+        if (confirmError) {
+            console.log("confirm eroor")
+        }
+        else {
+            console.log("payment intent", paymentIntent)
+            if (paymentIntent.status === "succeeded") {
+                console.log("transiction id", paymentIntent.id)
+                setTransictionid(paymentIntent.id)
+                const payment = {
+                    email: user?.email,
+                    transictionid: paymentIntent.id,
+                    price: totalprice,
+                    choicelistIds: choice.map(item => item._id),
+                    status: "pending"
+                }
+                const res = await axiospublic.post("/payment", payment)
+                if(res){
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Payment successfully",
+                        showConfirmButton: false,
+                        timer: 1500,
+                      });
+                    //   navigate("/")
+                }
+            }
         }
     }
 
@@ -71,6 +117,7 @@ const Cheakoutfrom = () => {
                         Pay
                     </button>
                     <p className=" text-red-400 ">{error}</p>
+                    {transictionid && <p className=" text-green-500 font-bold">Your transiction id: {transictionid}</p>}
                 </div>
             </form>
         </div>

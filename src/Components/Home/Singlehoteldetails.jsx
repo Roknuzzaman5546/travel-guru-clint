@@ -31,7 +31,7 @@ const Singlehoteldetails = () => {
             userName: user.displayName,
             userphoto: user.photoURL
         }
-        console.log(hotelbook)
+        // console.log(hotelbook)
         axiospublic.post('/choicelist', hotelbook)
             .then(res => {
                 console.log(res.data)

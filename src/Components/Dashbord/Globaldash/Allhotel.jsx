@@ -15,7 +15,6 @@ const Allhotel = () => {
     // now this time itemper page static.after when we will do backed in then we will do it's daynamic
     const itemsperPage = 6;
     const numberofPages = Math.ceil(count / itemsperPage)
-    console.log(numberofPages)
 
     const pages = [];
     for (let i = 0; i < numberofPages; i++) {

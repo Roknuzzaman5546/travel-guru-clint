@@ -10,7 +10,7 @@ import { Authcontext } from "../Components/Authprovider/Authprovider";
 
 const Dashbord = () => {
     const { user } = useContext(Authcontext)
-    const isAdmin = true;
+    const isAdmin = false;
     return (
         <div>
             <div>
@@ -46,7 +46,7 @@ const Dashbord = () => {
                                                         <li><NavLink to="/dashbord/managehotel">
                                                             <FaEdit></FaEdit>
                                                             ManageHotel</NavLink></li>
-                                                        <li><NavLink to="/dashbord/bookings">
+                                                        <li><NavLink to="/dashbord/adminbookings">
                                                             <FaBookBookmark></FaBookBookmark>
                                                             Bookings</NavLink></li>
                                                         <li><NavLink to="/dashbord/users">
@@ -67,7 +67,7 @@ const Dashbord = () => {
                                                         <li><NavLink to="/dashbord/addreview">
                                                             <MdReviews></MdReviews>
                                                             Add Reviews</NavLink></li>
-                                                        <li><NavLink to="/dashbord/bookings">
+                                                        <li><NavLink to="/dashbord/userbookings">
                                                             <FaBookBookmark></FaBookBookmark>
                                                             My bookings</NavLink></li>
                                                     </>
@@ -141,7 +141,7 @@ const Dashbord = () => {
                                         <li><NavLink to="/dashbord/managehotel">
                                             <FaEdit></FaEdit>
                                             ManageHotel</NavLink></li>
-                                        <li><NavLink to="/dashbord/bookings">
+                                        <li><NavLink to="/dashbord/adminbookings">
                                             <FaBookBookmark></FaBookBookmark>
                                             Bookings</NavLink></li>
                                         <li><NavLink to="/dashbord/users">
@@ -162,7 +162,7 @@ const Dashbord = () => {
                                         <li><NavLink to="/dashbord/addreview">
                                             <MdReviews></MdReviews>
                                             Add Reviews</NavLink></li>
-                                        <li><NavLink to="/dashbord/bookings">
+                                        <li><NavLink to="/dashbord/userbookings">
                                             <FaBookBookmark></FaBookBookmark>
                                             My bookings</NavLink></li>
                                     </>
