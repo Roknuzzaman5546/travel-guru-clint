@@ -1,4 +1,4 @@
-import { FaHouseMedical, FaHouse, FaList, FaUsers, FaLocationDot, FaCartPlus, FaBookBookmark } from "react-icons/fa6";
+import { FaHouseMedical, FaHouse, FaList, FaUsers, FaLocationDot, FaCartPlus, } from "react-icons/fa6";
 import { MdPayment, MdReviews } from "react-icons/md";
 import { IoNotifications } from "react-icons/io5";
 import { NavLink, Outlet } from "react-router-dom";
@@ -10,7 +10,7 @@ import { Authcontext } from "../Components/Authprovider/Authprovider";
 
 const Dashbord = () => {
     const { user } = useContext(Authcontext)
-    const isAdmin = false;
+    const isAdmin = true;
     return (
         <div>
             <div>
@@ -46,9 +46,6 @@ const Dashbord = () => {
                                                         <li><NavLink to="/dashbord/managehotel">
                                                             <FaEdit></FaEdit>
                                                             ManageHotel</NavLink></li>
-                                                        <li><NavLink to="/dashbord/adminbookings">
-                                                            <FaBookBookmark></FaBookBookmark>
-                                                            Bookings</NavLink></li>
                                                         <li><NavLink to="/dashbord/users">
                                                             <FaUsers></FaUsers>
                                                             All Users</NavLink></li>
@@ -67,9 +64,6 @@ const Dashbord = () => {
                                                         <li><NavLink to="/dashbord/addreview">
                                                             <MdReviews></MdReviews>
                                                             Add Reviews</NavLink></li>
-                                                        <li><NavLink to="/dashbord/userbookings">
-                                                            <FaBookBookmark></FaBookBookmark>
-                                                            My bookings</NavLink></li>
                                                     </>
                                             }
                                             <div className="divider"></div>
@@ -141,9 +135,6 @@ const Dashbord = () => {
                                         <li><NavLink to="/dashbord/managehotel">
                                             <FaEdit></FaEdit>
                                             ManageHotel</NavLink></li>
-                                        <li><NavLink to="/dashbord/adminbookings">
-                                            <FaBookBookmark></FaBookBookmark>
-                                            Bookings</NavLink></li>
                                         <li><NavLink to="/dashbord/users">
                                             <FaUsers></FaUsers>
                                             All Users</NavLink></li>
@@ -162,9 +153,6 @@ const Dashbord = () => {
                                         <li><NavLink to="/dashbord/addreview">
                                             <MdReviews></MdReviews>
                                             Add Reviews</NavLink></li>
-                                        <li><NavLink to="/dashbord/userbookings">
-                                            <FaBookBookmark></FaBookBookmark>
-                                            My bookings</NavLink></li>
                                     </>
                             }
                             <div className="divider"></div>

@@ -71,21 +71,23 @@ const Cheakoutfrom = () => {
                 console.log("transiction id", paymentIntent.id)
                 setTransictionid(paymentIntent.id)
                 const payment = {
+                    name: user?.displayName,
                     email: user?.email,
                     transictionid: paymentIntent.id,
                     price: totalprice,
+                    date: new Date().toLocaleDateString("en-GB"),
                     choicelistIds: choice.map(item => item._id),
                     status: "pending"
                 }
                 const res = await axiospublic.post("/payment", payment)
-                if(res){
+                if (res) {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
                         title: "Payment successfully",
                         showConfirmButton: false,
                         timer: 1500,
-                      });
+                    });
                     //   navigate("/")
                 }
             }
