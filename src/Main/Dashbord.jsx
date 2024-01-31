@@ -14,7 +14,7 @@ const Dashbord = () => {
     return (
         <div>
             <div>
-                <div className="navbar text-white font-bold py-2 font-sans bg-[#8e9eab]">
+                <div className="navbar text-white font-bold py-2 font-sans bg-[#6a859f]">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

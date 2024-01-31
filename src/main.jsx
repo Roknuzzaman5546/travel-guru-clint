@@ -33,7 +33,6 @@ import Managehotel from './Components/Dashbord/Admindash/Managehotel';
 import Payment from './Components/Dashbord/Globaldash/Payment';
 import Review from './Components/Dashbord/Userdash/Review';
 import Alluser from './Components/Dashbord/Admindash/Alluser';
-import MyBookings from './Components/Dashbord/Userdash/MyBookings';
 import Paymenthistory from './Components/Dashbord/Userdash/Paymenthistory';
 const queryClient = new QueryClient()
 
@@ -127,10 +126,6 @@ const router = createBrowserRouter([
       {
         path: 'users',
         element: <Alluser></Alluser>
-      },
-      {
-        path: "userbookings",
-        element: <MyBookings></MyBookings>
       },
       {
         path: "payhistory",
