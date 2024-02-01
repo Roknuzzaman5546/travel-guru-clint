@@ -23,6 +23,7 @@ const Singlehoteldetails = () => {
 
     const handlehotelbook = (hotel) => {
         const hotelbook = {
+            id: hotel._id,
             name: hotel.hotelName,
             title: hotel.title,
             img: hotel.imageUrl,
