@@ -6,14 +6,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 // import './styles.css';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import useHotel from '../Hooks/useHotel';
 import { Link } from 'react-router-dom';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import { Rating } from '@smastrom/react-rating';
+import { useRef } from 'react';
 
 const Hotel = () => {
     const [hotel] = useHotel();
+    const progressCircle = useRef(null);
+    const progressContent = useRef(null);
+    const onAutoplayTimeLeft = (s, time, progress) => {
+        progressCircle.current.style.setProperty("--progress", 1 - progress);
+        progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+    };
 
 
     return (
@@ -25,14 +32,28 @@ const Hotel = () => {
                     </div>
                     <div>
                         <Swiper
-                            slidesPerView={3}
+                            breakpoints={{
+                                650: {
+                                    width: 800,
+                                    slidesPerView: 1,
+                                },
+                                800: {
+                                    width: 1000,
+                                    slidesPerView: 2,
+                                }
+                            }}
+                            autoplay={{
+                                delay: 2500,
+                                disableOnInteraction: false,
+                            }}
+                            onAutoplayTimeLeft={onAutoplayTimeLeft}
                             centeredSlides={true}
                             spaceBetween={30}
                             pagination={{
                                 type: 'fraction',
                             }}
                             navigation={true}
-                            modules={[Pagination, Navigation]}
+                            modules={[Pagination, Navigation, Autoplay]}
                             className="mySwiper"
                         >
                             <div className=' w-[80%] mx-auto '>
@@ -64,6 +85,12 @@ const Hotel = () => {
                                         </SwiperSlide>
                                     </div>)
                                 }
+                            </div>
+                            <div className="autoplay-progress hidden" slot="container-end">
+                                <svg viewBox="0 0 48 48" ref={progressCircle}>
+                                    <circle cx="24" cy="24" r="20"></circle>
+                                </svg>
+                                <span ref={progressContent}></span>
                             </div>
                         </Swiper>
                     </div>
