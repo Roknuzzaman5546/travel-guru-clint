@@ -6,12 +6,14 @@ const About = () => {
     return (
         <div className=' md:max-w-screen-2xl w-11/12 mx-auto my-24'>
             <h2 className=' text-5xl font-bold font-mono text-center text-black mb-10'>See about</h2>
-            <div className=' flex lg:flex-row flex-col md:justify-around justify-between items-center md:gap-5 gap-32'>
+            <div className='max-w-[1296px] mx-auto flex flex-col lg:flex-row lg:justify-center xl:justify-between gap-[100px]'>
                 <div className=' lg:w-2/5 w-full relative'>
-                    <img className=' rounded-lg md:w-full w-[80%] h-full' src={aboutimg} alt="" />
-                    <img className=' rounded-md absolute lg:h-72 md:h-72 h-60 lg:w-96 md:w-96 w-60 lg:top-56 md:top-56 top-24 lg:left-[300px] md:left-[330px] left-60' src={about2img} alt="" />
+                    <img className=' lg:max-w-[400px] md:min-w-[574px] lg:min-w-[324px] xl:min-w-[504px] xl:min-h-[504px] rounded-[5px] z-10' src={aboutimg} alt="" />
+                    <div className='absolute top-[250px] md:left-[5px] md:top-[50px] lg:left-[280px] lg:top-[250px] xl:left-[300px]  xl:top-[305px] min-w-[160px] lg:min-w-[200px] xl:min-w-[300px] min-h-[280px] hidden lg:flex'>
+                        <img className='min-w-full min-h-full rounded-[5px]' src={about2img} alt="" />
+                    </div>
                 </div>
-                <div className=' md:w-2/5 w-full space-y-4'>
+                <div className=' lg:w-2/5 w-full space-y-4'>
                     <h2 className=' text-5xl font-bold font-mono'>Enjoy Our <br /> Place & Hotel For A Weekend Longer Stay</h2>
                     <p className=' text-xl'>Please <Link to="contact"><span className=' text-red-400 font-bold'>Contact</span></Link> us in our contact page</p>
                     <p>Founded on the principles of wanderlust and a love for exploration, [Your Website Name] is more than just a travel website; its a community of passionate globetrotters dedicated to curating exceptional travel experiences. From the moment you land on our site to the return home, we are committed to making every step of your journey seamless and unforgettable.Your adventure begins with a click, where our carefully designed user interface invites you to explore a world of possibilities. Navigate with ease, discover handpicked destinations, and immerse yourself in a treasure trove of travel inspiration that sparks the wanderer within you. At [Your Website Name], we understand that the journey begins the moment you engage with our platform, and we take pride in crafting an online experience as memorable as the destinations we showcase.</p>

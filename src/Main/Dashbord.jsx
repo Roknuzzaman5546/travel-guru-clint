@@ -14,7 +14,7 @@ const Dashbord = () => {
     return (
         <div>
             <div>
-                <div className="navbar text-white font-bold py-2 font-sans bg-[#6a859f]">
+                <div className="navbar text-white font-bold py-2 font-sans bg-[#000000]">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -83,12 +83,6 @@ const Dashbord = () => {
                         </div>
                         <img className=" w-28 h-10 lg:flex hidden" src={logimg} alt="" />
                     </div>
-                    <div className="navbar-center">
-                        <div className="py-1 lg:ml-0 ml-5 bg-white px-2 rounded-md border border-black flex gap-1 items-center">
-                            <FaSearch className=" text-black mr-2"></FaSearch>
-                            <input className=" text-black bg-none" placeholder="Search your destination....." type="text" name="" id="" />
-                        </div>
-                    </div>
                     <div className="navbar-end">
                         <div className=" lg:flex hidden">
                             <ul className="menu menu-horizontal px-1 items-center">
@@ -110,10 +104,10 @@ const Dashbord = () => {
                 </div>
             </div>
             <div>
-                <div className=" lg:flex mt-2 pl-3 hidden">
-                    <div className=" w-64 h-screen shadow-md bg-gray-200 text-black font-mono font-bold text-xl flex flex-col items-center">
-                        <div className=' flex flex-col items-center my-2'>
-                            <img className=' w-40 h-36 rounded-full' src={user?.photoURL} alt="" />
+                <div className=" lg:flex hidden">
+                    <div className=" w-64 h-screen shadow-md bg-[#ff9c1c] text-black font-mono font-bold text-xl flex flex-col items-center rounded-md border-2">
+                        <div className=' flex flex-col items-center mb-2 mt-5'>
+                            <img className=' w-28 h-28 rounded-full' src={user?.photoURL} alt="" />
                             <h2 className=' text-2xl font-bold font-alfa text-orange-400'>{user?.displayName}</h2>
                         </div>
                         <ul className="menu">

@@ -42,15 +42,15 @@ const Userhome = () => {
                 </div>
             </div>
             <div className=" flex lg:flex-row flex-col justify-center items-center mb-5">
-                <div className=" lg:w-1/2 w-full lg:h-[469px] h-[300px] border-r-2 border-[#5b3d12] bg-[#D1A054] flex justify-center items-center mt-5">
+                <div className=" lg:w-1/2 w-full lg:h-[469px] h-[300px] border-r-2 border-[#5b3d12] bg-[#ff9c1c] flex justify-center items-center mt-5">
                     <div className=" flex flex-col gap-2 items-center">
                         <img className="w-60 h-60 rounded-full" src={user.photoURL} alt="" />
                         <div className=" text-5xl text-black font-bold font-mono">{user.displayName}</div>
                     </div>
                 </div>
-                <div className=" lg:w-1/2 lg:h-[469px] w-full h-[300px] bg-[#FEF9C3] flex justify-center items-center mt-5">
+                <div className=" lg:w-1/2 lg:h-[469px] w-full h-[300px] bg-[#000] flex justify-center items-center mt-5">
                     <div>
-                        <h2 className=" text-2xl font-bold font-mono mb-2">Your Activities</h2>
+                        <h2 className=" text-2xl font-bold font-mono mb-2 text-white">Your Activities</h2>
                         <div>
                             <div className=" flex items-center gap-1">
                                 <FaShoppingCart className="text-blue-500"></FaShoppingCart>

@@ -16,17 +16,17 @@ const Contact = () => {
         <div className=" md:max-w-screen-2xl w-11/12 mx-auto mb-20 mt-28">
             <div className=" flex md:flex-row flex-col justify-around items-center gap-5">
                 <div className=" md:w-1/2 w-[11/12]">
-                    <p className=" text-red-500 text-6xl font-bold font-mono">Contact Us</p>
+                    <p className=" text-6xl font-bold font-mono">Contact <span className="text-[#ff9c1c]">Us</span></p>
                     <h2 className=" text-4xl font-extrabold my-4">How Can We Help You?</h2>
                     <p className=" leading-10 text-gray-500 mb-7 text-left text-xl">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores pariatur a eius ea similique quod dicta ipsa vel quidem repellendus, beatae nulla veniam, quaerat veritatis architecto. Aliquid doloremque nesciunt nobis, debitis, quas veniam dolore culpa corrupti maxime cum similique.
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores pariatur a eius ea similique quod dicta ipsa vel quidem repellendus, beatae nulla veniam, quaerat veritatis architecto. 
                     </p>
                     <div className=" flex items-center gap-5 text-xl">
-                        <a target="blank" href="https://www.facebook.com/roknujjamansajib" className=" bg-gray-200  rounded-full text-[#002172] text-xl p-2"><FaFacebook></FaFacebook></a>
-                        <a target="blank" href="https://twitter.com/Roknuzzaman5546" className="bg-gray-200 text-xl  rounded-full text-[#002172] p-2"><FaTwitter></FaTwitter></a>
-                        <a target="blank" href="https://www.instagram.com/roknujjamansajib/" className="bg-gray-200  rounded-full text-[#002172] text-xl p-2"><FaInstagram></FaInstagram></a>
-                        <a target="blank" href="https://www.linkedin.com/in/roknuzzaman-sojib-b794552a3/" className="bg-gray-200  rounded-full text-[#002172] text-xl p-2"><FaLinkedin></FaLinkedin></a>
+                        <a target="blank" href="https://www.facebook.com/roknujjamansajib" className=" bg-[#000000]  rounded-full text-[#000] text-xl p-2"><FaFacebook></FaFacebook></a>
+                        <a target="blank" href="https://twitter.com/Roknuzzaman5546" className="bg-[#000000] text-xl  rounded-full text-[#000] p-2"><FaTwitter></FaTwitter></a>
+                        <a target="blank" href="https://www.instagram.com/roknujjamansajib/" className="bg-[#000000]  rounded-full text-[#000] text-xl p-2"><FaInstagram></FaInstagram></a>
+                        <a target="blank" href="https://www.linkedin.com/in/roknuzzaman-sojib-b794552a3/" className="bg-[#000000]  rounded-full text-[#000] text-xl p-2"><FaLinkedin></FaLinkedin></a>
                     </div>
                 </div>
                 <div className=" md:w-1/2 w-11/12">
@@ -51,7 +51,7 @@ const Contact = () => {
                             <input type="checkbox" className="checkbox" />
                             <p className=" text-xl">I agree to the <Link to="/conditions"><span className=" text-orange-600">terms & conditions</span></Link> and <Link to="privacy"><span className="text-orange-600">privacy policy</span></Link></p>
                         </div>
-                        <input type="submit" value="Send Message" className=" rounded px-8 py-4 mt-3 bg-[#EC3323] hover:bg-[#000] text-white" />
+                        <input type="submit" value="Send Message" className=" rounded px-8 py-4 mt-3 bg-[#ff9c1c] hover:bg-[#000] text-white" />
                     </form>
                 </div>
             </div>

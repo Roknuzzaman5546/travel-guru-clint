@@ -68,15 +68,15 @@ const Allhotel = () => {
                 <div className="flex flex-col justify-center items-center my-10">
                     <div className="join">
                         <div className=" flex items-center">
-                            <button className="mr-5 items-center flex justify-center btn-circle text-gray-400 hover:bg-[#EC3323]" onClick={handlePrev}><FaArrowLeft></FaArrowLeft></button>
+                            <button className="mr-5 btn-circle items-center flex justify-center hover:bg-[#000] text-gray-400 hover:text-white" onClick={handlePrev}><FaArrowLeft></FaArrowLeft></button>
                             {
                                 pages.map(page => <button
                                     key={page}
                                     onClick={() => handlechangepage(page)}
-                                    className={currentpage == page ? " btn btn-circle bg-[#EC3323] mr-5" : "btn btn-circle hover:bg-[#EC3323] mr-5"}>{page}
+                                    className={currentpage == page ? " h-12 w-12 text-white rounded-full bg-[#ff9c1c] hover:bg-[#000] mr-5" : "h-12 w-12 rounded-full hover:text-white bg-[#000000]  hover:bg-[#ff9c1c] mr-5"}>{page}
                                 </button>)
                             }
-                            <button className="ml-5 btn-circle items-center flex justify-center hover:bg-[#EC3323] text-gray-400" onClick={handleNext}><FaArrowRight></FaArrowRight></button>
+                            <button className="ml-5 btn-circle items-center flex justify-center hover:bg-[#000] text-gray-400 hover:text-white" onClick={handleNext}><FaArrowRight></FaArrowRight></button>
                         </div>
                     </div>
                 </div>
