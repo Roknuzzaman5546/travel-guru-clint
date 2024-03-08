@@ -68,7 +68,7 @@ const Review = () => {
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className=" text-xl font-mono font-bold">Kindly express your care in a short way.</span>
+                                <span className=" text-xl font-mono font-bold">Kindly express your care in a short way</span>
                             </label>
                             <textarea name="details" className="textarea rounded-md text-xl font-bold font-mono h-40" placeholder="Please type 30 or less then word"></textarea>
                         </div>

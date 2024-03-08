@@ -5,6 +5,7 @@ import './Allhotel.css'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useState } from "react";
 import Footer from "../../Home/Footer";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Allhotel = () => {
     const [hotel] = useHotel();
@@ -49,16 +50,82 @@ const Allhotel = () => {
         <div>
             <div className="hotelbgimg">
                 <div className=" bg-[#000000B2]">
-                    <div className=" max-w-screen-2xl mx-auto py-24">
+                    <div className=" w-[20%] mx-auto py-24 text-center">
                         <h2 className="text-6xl font-bold text-yellow-600 font-serif">All Hotel</h2>
                         <div className="mt-2">
                             <NavLink to='/' className='navAfter relative font-medium text-base text-white mx-3'>Home</NavLink>
-                            <NavLink to='/hotel' className='navAfter relative font-medium text-base text-white mx-3 '>All hotel</NavLink>
+                            <NavLink to='/hotel' className=' text-red-600 font-medium text-base mx-3 '>All hotel</NavLink>
                         </div>
                     </div>
                 </div>
             </div>
-            <h2 className=" text-4xl font-bold font-mono text-center mt-4 mb-10">ALl hotels</h2>
+            <div className=" bg-[#000] h-20 w-full mb-10">
+                <div className=" w-[88%] mx-auto flex justify-around items-center pt-3">
+                    <div className=" md:w-[50%] w-full md:ml-3 mx-auto">
+                        <form>
+                            <label
+                                htmlFor="default-search"
+                                className="mb-2 text-sm font-medium text-[#ff9c1c] sr-only dark:text-white"
+                            >
+                                Search
+                            </label>
+                            <div className="relative">
+                                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                    <svg
+                                        className="w-4 h-4 text-[#000]"
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            stroke="currentColor"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                                        />
+                                    </svg>
+                                </div>
+                                <input
+                                    type="text"
+                                    id="default-search"
+                                    name="searchbar"
+                                    className="block w-full p-4 ps-10 text-sm font-bold text-black border rounded-lg bg-[#ff9c1c]"
+                                    required
+                                />
+                                <button
+                                    type="submit"
+                                    className="text-white absolute end-2.5 bottom-2.5 bg-[#000] hover:bg-white hover:text-black focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-4 py-2 "
+                                >
+                                    Search
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    {/* sort  */}
+                    <div className=" flex justify-center mx-auto md:mr-3">
+                        <details className="dropdown">
+                            <summary className="m-1 btn bg-[#ff9c1c] text-white hover:bg-white hover:text-black">
+                                Sort By Price{" "}
+                                <MdKeyboardArrowDown className="text-xl"></MdKeyboardArrowDown>
+                            </summary>
+                            <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                                <li>
+                                    <a className="font-bold">
+                                        High to Low
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className="font-bold">
+                                        Low to High
+                                    </a>
+                                </li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
             <div className="lg:max-w-screen-2xl w-11/12  mx-auto">
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
                     {
@@ -73,7 +140,7 @@ const Allhotel = () => {
                                 pages.map(page => <button
                                     key={page}
                                     onClick={() => handlechangepage(page)}
-                                    className={currentpage == page ? " h-12 w-12 text-white rounded-full bg-[#ff9c1c] hover:bg-[#000] mr-5" : "h-12 w-12 rounded-full hover:text-white bg-[#000000]  hover:bg-[#ff9c1c] mr-5"}>{page}
+                                    className={currentpage == page ? " h-12 w-12 font-bold text-white rounded-full bg-[#ff9c1c] hover:bg-[#000] mr-5" : "h-12 w-12 rounded-full bg-gray-200 hover:text-white font-bold  hover:bg-[#ff9c1c] mr-5"}>{page}
                                 </button>)
                             }
                             <button className="ml-5 btn-circle items-center flex justify-center hover:bg-[#000] text-gray-400 hover:text-white" onClick={handleNext}><FaArrowRight></FaArrowRight></button>

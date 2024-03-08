@@ -41,7 +41,7 @@ const Navbar = () => {
         <li><NavLink to="/destination" className="navAfter relative font-bold text-white mx-2">Destination</NavLink></li>
         <li><NavLink to="/allplace" className="navAfter relative font-bold text-white mx-2">All place</NavLink></li>
         <li><NavLink to="/hotel" className="navAfter relative font-bold text-white mx-2">All hotel</NavLink></li>
-        {user ? Admin ? <li><Link to="/dashbord/adminhome" className="navAfter relative font-bold text-white ml-3 mr-5" >Dashbord</Link></li> : <li><Link to="/dashbord/userhome" className="navAfter relative font-bold text-white ml-2 mr-5" >Dashbord</Link></li> : ''}
+        {user ? Admin ? <li><Link to="/Dashboard/adminhome" className="navAfter relative font-bold text-white ml-3 mr-5" >Dashboard</Link></li> : <li><Link to="/Dashboard/userhome" className="navAfter relative font-bold text-white ml-2 mr-5" >Dashboard</Link></li> : ''}
     </>
 
     return (
@@ -68,6 +68,7 @@ const Navbar = () => {
                         <FaSearch className=" text-black mr-2"></FaSearch>
                         <input className=" text-black bg-none" placeholder="Search your destination....." type="text" name="" id="" />
                     </div> */}
+                    {/* User profile part */}
                     <div>
                         {user ?
                             <li>
@@ -77,12 +78,13 @@ const Navbar = () => {
                                             <img src={user?.photoURL} alt="" />
                                         </div>
                                     </label>
-                                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] px-2 py-5 shadow bg-gray-600 rounded-box w-52">
+                                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] px-2 py-5 shadow bg-[#000] rounded-box w-52">
                                         <li>
                                             <a>
                                                 <h2 className=" text-xl text-white font-bold uppercase">{user.displayName}</h2>
                                             </a>
                                         </li>
+                                        <li className="my-1"><Link>Dashboard</Link></li>
                                         <li><Link onClick={handlelogout}>Logout</Link></li>
                                     </ul>
                                 </div>

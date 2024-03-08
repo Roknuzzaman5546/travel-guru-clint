@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { Authcontext } from "../Components/Authprovider/Authprovider";
 
 
-const Dashbord = () => {
+const Dashboard = () => {
     const { user } = useContext(Authcontext)
     const isAdmin = false;
     return (
@@ -31,37 +31,37 @@ const Dashbord = () => {
                                             {
                                                 isAdmin ?
                                                     <>
-                                                        <li><NavLink to="/dashbord/adminhome">
+                                                        <li><NavLink to="/Dashboard/adminhome">
                                                             <FaHouse></FaHouse>
                                                             Admin home</NavLink></li>
-                                                        <li><NavLink to="/dashbord/addplace">
+                                                        <li><NavLink to="/Dashboard/addplace">
                                                             <FaLocationDot></FaLocationDot>
                                                             Add  place</NavLink></li>
-                                                        <li><NavLink to="/dashbord/addhotel">
+                                                        <li><NavLink to="/Dashboard/addhotel">
                                                             <FaHotel></FaHotel>
                                                             Add  hotel</NavLink></li>
-                                                        <li><NavLink to="/dashbord/manageplace">
+                                                        <li><NavLink to="/Dashboard/manageplace">
                                                             <FaList></FaList>
                                                             ManagePlace</NavLink></li>
-                                                        <li><NavLink to="/dashbord/managehotel">
+                                                        <li><NavLink to="/Dashboard/managehotel">
                                                             <FaEdit></FaEdit>
                                                             ManageHotel</NavLink></li>
-                                                        <li><NavLink to="/dashbord/users">
+                                                        <li><NavLink to="/Dashboard/users">
                                                             <FaUsers></FaUsers>
                                                             All Users</NavLink></li>
                                                     </>
                                                     :
                                                     <>
-                                                        <li><NavLink to="/dashbord/userhome">
+                                                        <li><NavLink to="/Dashboard/userhome">
                                                             <FaHouseMedical></FaHouseMedical>
                                                             User home</NavLink></li>
-                                                        <li><NavLink to="/dashbord/choicelist">
+                                                        <li><NavLink to="/Dashboard/choicelist">
                                                             <FaList></FaList>
                                                             My Choice List</NavLink></li>
-                                                        <li><NavLink to="/dashbord/payhistory">
+                                                        <li><NavLink to="/Dashboard/payhistory">
                                                             <MdPayment></MdPayment>
                                                             Payment History</NavLink></li>
-                                                        <li><NavLink to="/dashbord/addreview">
+                                                        <li><NavLink to="/Dashboard/addreview">
                                                             <MdReviews></MdReviews>
                                                             Add Reviews</NavLink></li>
                                                     </>
@@ -108,43 +108,44 @@ const Dashbord = () => {
                     <div className=" w-64 h-screen shadow-md bg-[#ff9c1c] text-black font-mono font-bold text-xl flex flex-col items-center rounded-md border-2">
                         <div className=' flex flex-col items-center mb-2 mt-5'>
                             <img className=' w-28 h-28 rounded-full' src={user?.photoURL} alt="" />
-                            <h2 className=' text-2xl font-bold font-alfa text-orange-400'>{user?.displayName}</h2>
+                            <h2 className=' text-2xl mt-2 text-white font-bold font-alfa'>{user?.displayName}</h2>
+                            <p className=" text-xs text-white">{user?.email}</p>
                         </div>
                         <ul className="menu">
                             {
                                 isAdmin ?
                                     <>
-                                        <li><NavLink to="/dashbord/adminhome">
+                                        <li><NavLink to="/Dashboard/adminhome">
                                             <FaHouse></FaHouse>
                                             Admin home</NavLink></li>
-                                        <li><NavLink to="/dashbord/addplace">
+                                        <li><NavLink to="/Dashboard/addplace">
                                             <FaLocationDot></FaLocationDot>
                                             Add  place</NavLink></li>
-                                        <li><NavLink to="/dashbord/addhotel">
+                                        <li><NavLink to="/Dashboard/addhotel">
                                             <FaHotel></FaHotel>
                                             Add  hotel</NavLink></li>
-                                        <li><NavLink to="/dashbord/manageplace">
+                                        <li><NavLink to="/Dashboard/manageplace">
                                             <FaList></FaList>
                                             ManagePlace</NavLink></li>
-                                        <li><NavLink to="/dashbord/managehotel">
+                                        <li><NavLink to="/Dashboard/managehotel">
                                             <FaEdit></FaEdit>
                                             ManageHotel</NavLink></li>
-                                        <li><NavLink to="/dashbord/users">
+                                        <li><NavLink to="/Dashboard/users">
                                             <FaUsers></FaUsers>
                                             All Users</NavLink></li>
                                     </>
                                     :
                                     <>
-                                        <li><NavLink to="/dashbord/userhome">
+                                        <li><NavLink to="/Dashboard/userhome">
                                             <FaHouseMedical></FaHouseMedical>
                                             User home</NavLink></li>
-                                        <li><NavLink to="/dashbord/choicelist">
+                                        <li><NavLink to="/Dashboard/choicelist">
                                             <FaList></FaList>
                                             My Choice List</NavLink></li>
-                                        <li><NavLink to="/dashbord/payhistory">
+                                        <li><NavLink to="/Dashboard/payhistory">
                                             <MdPayment></MdPayment>
                                             Payment History</NavLink></li>
-                                        <li><NavLink to="/dashbord/addreview">
+                                        <li><NavLink to="/Dashboard/addreview">
                                             <MdReviews></MdReviews>
                                             Add Reviews</NavLink></li>
                                     </>
@@ -173,4 +174,4 @@ const Dashbord = () => {
     );
 };
 
-export default Dashbord;
+export default Dashboard;

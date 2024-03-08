@@ -11,7 +11,7 @@ const Choicelist = () => {
             <h2 className=" text-center text-violet-600 text-5xl font-bold font-mono mb-2 mt-5">Your all add coices is here</h2>
             <div className=" flex justify-between items-center mt-10 mb-3">
                 <h2 className=" text-3xl font-bold font-mono text-[#ff9c1c]">Place, Hotel & Destination</h2>
-                <Link to={`/dashbord/payment`}>
+                <Link to={`/Dashboard/payment`}>
                     <button className=" bg-[#000] hover:bg-[#ff9c1c] text-white px-6 py-4 rounded-md text-xl font-bold font-mono transition">Pay for Booking</button>
                 </Link>
             </div>
@@ -37,7 +37,7 @@ const Choicelist = () => {
                 }
             </div>
             {/* <div className=" items-center flex flex-col mb-8 mt-3">
-                <Link to={`/dashbord/payment`}>
+                <Link to={`/Dashboard/payment`}>
                     <button className=" bg-[#ff9c1c] hover:bg-[#000] text-white px-6 py-4 rounded-md text-xl font-bold font-mono transition">Pay for Booking</button>
                 </Link>
             </div> */}

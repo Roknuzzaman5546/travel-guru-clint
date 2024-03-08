@@ -84,7 +84,7 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: "/dashbord",
+    path: "/dashboard",
     element: <Clintprivet><Dashbord></Dashbord></Clintprivet>,
     children: [
       {

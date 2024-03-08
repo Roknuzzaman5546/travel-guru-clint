@@ -50,11 +50,11 @@ const Allplace = () => {
         <div>
             <div className="placebgimg">
                 <div className=" bg-[#000000B2]">
-                    <div className=" max-w-screen-2xl mx-auto py-24">
+                    <div className=" w-[20%] mx-auto py-24 text-center">
                         <h2 className="text-6xl font-bold text-yellow-600 font-serif">All Place</h2>
                         <div className="mt-2">
                             <NavLink to='/' className='navAfter relative font-medium text-base text-white mx-3'>Home</NavLink>
-                            <NavLink to='/hotel' className='navAfter relative font-medium text-base text-white mx-3 '>All hotel</NavLink>
+                            <NavLink to='/hotel' className='navAfter relative font-medium text-base text-[#ff9c1c] mx-3 '>All hotel</NavLink>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@ const Allplace = () => {
                                     pages.map(page => <button
                                         key={page}
                                         onClick={() => handlechangepage(page)}
-                                        className={currentpage == page ? " h-12 w-12 text-white rounded-full bg-[#ff9c1c] hover:bg-[#000] mr-5" : "h-12 w-12 rounded-full hover:text-white bg-[#000000]  hover:bg-[#ff9c1c] mr-5"}>{page}
+                                        className={currentpage == page ? " h-12 w-12 text-white rounded-full font-bold bg-[#ff9c1c] hover:bg-[#000] mr-5" : "h-12 w-12 rounded-full bg-gray-200 hover:text-white font-bold  hover:bg-[#ff9c1c] mr-5"}>{page}
                                     </button>)
                                 }
                                 <button className="ml-5 btn-circle items-center flex justify-center hover:bg-[#000] text-gray-400 hover:text-white" onClick={handleNext}><FaArrowRight></FaArrowRight></button>

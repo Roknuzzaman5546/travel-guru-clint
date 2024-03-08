@@ -112,8 +112,8 @@ const Adminhome = () => {
                     </div>
                 </div>
             </div>
-            <div className=" flex mt-10 justify-around items-center">
-                <div className=" w-full">
+            <div className=" flex justify-around items-center mb-10">
+                <div className=" w-full h-[200px]">
                     <BarChart
                         width={500}
                         height={300}
