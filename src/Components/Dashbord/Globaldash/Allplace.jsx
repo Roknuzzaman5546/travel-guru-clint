@@ -9,10 +9,12 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Allplace = () => {
     const [place] = usePlace();
+    const [updatePlace, setUpdatePlace] = useState([]);
+    console.log(updatePlace);
 
     const [currentpage, Setcurrentpage] = useState(0);
     // DO: blogs data pagination on page 
-    const count = place?.length;
+    const count = updatePlace?.length > 0 ? updatePlace.length : place?.length;
     // now this time itemper page static.after when we will do backed in then we will do it's daynamic
     const itemsperPage = 6;
     const numberofPages = Math.ceil(count / itemsperPage)
@@ -28,7 +30,9 @@ const Allplace = () => {
     const startIndex = (currentpage) * itemsperPage;
     const endIndex = startIndex + itemsperPage;
     // Slice the data to get the items for the current page
-    const currentItems = place.slice(startIndex, endIndex);
+    const currentItems = updatePlace?.length > 0 ?
+        updatePlace.slice(startIndex, endIndex) :
+        place.slice(startIndex, endIndex);
 
 
     const handlechangepage = (page) => {
@@ -47,6 +51,34 @@ const Allplace = () => {
         }
     }
 
+    const sortByPriceLowToHigh = () => {
+        const sorted = [...place].sort(
+            (a, b) => a.cost - b.cost);
+        setUpdatePlace(sorted);
+    };
+
+    const sortByPriceHighToLow = () => {
+        console.log("sortByPriceHighToLow");
+        const sorted = [...place].sort(
+            (a, b) => b.cost - a.cost);
+        setUpdatePlace(sorted);
+    };
+    // sorting functions starts ends here
+
+    // this handleSearch function added by [sojib] for onchange functionality
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const searchValue = e.target.value;
+        console.log(searchValue);
+        // filter title by search value
+        const filteredPlace = place.filter((data) => {
+            const titleMatches = data.name.toLowerCase().includes(searchValue.toLowerCase());
+            return titleMatches;
+        });
+        setUpdatePlace(filteredPlace);
+    };
+
+
     return (
         <div>
             <div className="placebgimg">
@@ -55,7 +87,7 @@ const Allplace = () => {
                         <h2 className="text-6xl font-bold text-[#ff9c1c] font-serif">All Place</h2>
                         <div className="mt-2">
                             <NavLink to='/' className='navAfter relative font-medium text-base text-white mx-3'>Home</NavLink>
-                            <NavLink to='/hotel' className='navAfter relative font-medium text-base text-[#ff9c1c] mx-3 '>All Place</NavLink>
+                            <NavLink to='/place' className='navAfter relative font-medium text-base text-[#ff9c1c] mx-3 '>All Place</NavLink>
                         </div>
                     </div>
                 </div>
@@ -92,6 +124,7 @@ const Allplace = () => {
                                     type="text"
                                     id="default-search"
                                     name="searchbar"
+                                    onChange={handleSearch}
                                     placeholder="Search by name"
                                     className="block w-full p-4 ps-10 text-sm font-bold text-black  rounded-lg bg-[#ff9c1c]"
                                     required
@@ -114,12 +147,12 @@ const Allplace = () => {
                             </summary>
                             <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                                 <li>
-                                    <a className="font-bold">
+                                    <a className="font-bold" onClick={sortByPriceHighToLow}>
                                         High to Low
                                     </a>
                                 </li>
                                 <li>
-                                    <a className="font-bold">
+                                    <a className="font-bold" onClick={sortByPriceLowToHigh}>
                                         Low to High
                                     </a>
                                 </li>

@@ -10,10 +10,11 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 const Allhotel = () => {
     const [hotel] = useHotel();
     const [updateHotel, setUpdateHotel] = useState([]);
+    // console.log(updateHotel);
 
     const [currentpage, Setcurrentpage] = useState(0);
     // DO: blogs data pagination on page 
-    const count = hotel?.length;
+    const count = updateHotel?.length > 0 ? updateHotel.length : hotel?.length;
     // now this time itemper page static.after when we will do backed in then we will do it's daynamic
     const itemsperPage = 6;
     const numberofPages = Math.ceil(count / itemsperPage)
@@ -28,7 +29,7 @@ const Allhotel = () => {
     const startIndex = (currentpage) * itemsperPage;
     const endIndex = startIndex + itemsperPage;
     // Slice the data to get the items for the current page
-    const currentItems = hotel.slice(startIndex, endIndex);
+    const currentItems = updateHotel?.length > 0 ? updateHotel.slice(startIndex, endIndex) : hotel.slice(startIndex, endIndex);
 
 
     const handlechangepage = (page) => {
@@ -55,6 +56,7 @@ const Allhotel = () => {
     };
 
     const sortByPriceHighToLow = () => {
+        console.log("sortByPriceHighToLow");
         const sorted = [...hotel].sort(
             (a, b) => b.bookingCost - a.bookingCost);
         setUpdateHotel(sorted);
@@ -141,13 +143,13 @@ const Allhotel = () => {
                                 <MdKeyboardArrowDown className="text-xl"></MdKeyboardArrowDown>
                             </summary>
                             <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                                <li onClick={sortByPriceLowToHigh}>
-                                    <a className="font-bold">
+                                <li>
+                                    <a className="font-bold" onClick={sortByPriceHighToLow}>
                                         High to Low
                                     </a>
                                 </li>
-                                <li onClick={sortByPriceHighToLow}>
-                                    <a className="font-bold">
+                                <li>
+                                    <a className="font-bold" onClick={sortByPriceLowToHigh}>
                                         Low to High
                                     </a>
                                 </li>
@@ -159,10 +161,7 @@ const Allhotel = () => {
             <div className="lg:max-w-screen-2xl w-11/12  mx-auto">
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
                     {
-                        hotel > 0 ?
-                            hotel.map((item =>
-                                <Hoteldetails key={item._id} item={item}></Hoteldetails>)) :
-                            currentItems.map((item => <Hoteldetails key={item._id} item={item}></Hoteldetails>))
+                        currentItems.map((item => <Hoteldetails key={item._id} item={item}></Hoteldetails>))
                     }
                 </div>
                 <div className="flex flex-col justify-center items-center my-10">
