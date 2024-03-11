@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useHotel from "../../Hooks/useHotel";
 import Hoteldetails from "./Hoteldetails";
 import './Allhotel.css'
@@ -9,6 +9,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Allhotel = () => {
     const [hotel] = useHotel();
+    const [updateHotel, setUpdateHotel] = useState([]);
 
     const [currentpage, Setcurrentpage] = useState(0);
     // DO: blogs data pagination on page 
@@ -46,15 +47,42 @@ const Allhotel = () => {
         }
     }
 
+    // sorting functions starts here
+    const sortByPriceLowToHigh = () => {
+        const sorted = [...hotel].sort(
+            (a, b) => a.bookingCost - b.bookingCost);
+        setUpdateHotel(sorted);
+    };
+
+    const sortByPriceHighToLow = () => {
+        const sorted = [...hotel].sort(
+            (a, b) => b.bookingCost - a.bookingCost);
+        setUpdateHotel(sorted);
+    };
+    // sorting functions starts ends here
+
+    // this handleSearch function added by [sojib] for onchange functionality
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const searchValue = e.target.value;
+        console.log(searchValue);
+        // filter title by search value
+        const filteredHotel = hotel.filter((data) => {
+            const titleMatches = data.hotelName.toLowerCase().includes(searchValue.toLowerCase());
+            return titleMatches;
+        });
+        setUpdateHotel(filteredHotel);
+    };
+
     return (
         <div>
             <div className="hotelbgimg">
                 <div className=" bg-[#000000B2]">
                     <div className=" w-[20%] mx-auto py-24 text-center">
-                        <h2 className="text-6xl font-bold text-yellow-600 font-serif">All Hotel</h2>
+                        <h2 className="text-6xl font-bold text-[#ff9c1c] font-serif">All Hotel</h2>
                         <div className="mt-2">
                             <NavLink to='/' className='navAfter relative font-medium text-base text-white mx-3'>Home</NavLink>
-                            <NavLink to='/hotel' className=' text-red-600 font-medium text-base mx-3 '>All hotel</NavLink>
+                            <Link to="/hotel" className=" text-[#ff9c1c]">Hotel</Link>
                         </div>
                     </div>
                 </div>
@@ -91,7 +119,9 @@ const Allhotel = () => {
                                     type="text"
                                     id="default-search"
                                     name="searchbar"
-                                    className="block w-full p-4 ps-10 text-sm font-bold text-black border rounded-lg bg-[#ff9c1c]"
+                                    onChange={handleSearch}
+                                    placeholder="Search by name"
+                                    className="block w-full p-4 ps-10 text-sm font-bold text-black  rounded-lg bg-[#ff9c1c]"
                                     required
                                 />
                                 <button
@@ -111,12 +141,12 @@ const Allhotel = () => {
                                 <MdKeyboardArrowDown className="text-xl"></MdKeyboardArrowDown>
                             </summary>
                             <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                                <li>
+                                <li onClick={sortByPriceLowToHigh}>
                                     <a className="font-bold">
                                         High to Low
                                     </a>
                                 </li>
-                                <li>
+                                <li onClick={sortByPriceHighToLow}>
                                     <a className="font-bold">
                                         Low to High
                                     </a>
@@ -129,7 +159,10 @@ const Allhotel = () => {
             <div className="lg:max-w-screen-2xl w-11/12  mx-auto">
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
                     {
-                        currentItems.map(item => <Hoteldetails key={item._id} item={item}></Hoteldetails>)
+                        hotel > 0 ?
+                            hotel.map((item =>
+                                <Hoteldetails key={item._id} item={item}></Hoteldetails>)) :
+                            currentItems.map((item => <Hoteldetails key={item._id} item={item}></Hoteldetails>))
                     }
                 </div>
                 <div className="flex flex-col justify-center items-center my-10">

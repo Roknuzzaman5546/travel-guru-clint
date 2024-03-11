@@ -41,7 +41,7 @@ const Login = () => {
                                 </label>
                             </div>
                             <label className="label">
-                                <a href="#" className="label-text-alt link text-yellow-600 link-hover">Forgot password?</a>
+                                <a href="#" className="label-text-alt link text-[#ff9c1c] link-hover">Forgot password?</a>
                             </label>
                         </div>
                         <br />

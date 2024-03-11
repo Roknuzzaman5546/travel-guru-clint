@@ -5,6 +5,7 @@ import './Allplace.css'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useState } from "react";
 import Footer from "../../Home/Footer";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Allplace = () => {
     const [place] = usePlace();
@@ -51,15 +52,82 @@ const Allplace = () => {
             <div className="placebgimg">
                 <div className=" bg-[#000000B2]">
                     <div className=" w-[20%] mx-auto py-24 text-center">
-                        <h2 className="text-6xl font-bold text-yellow-600 font-serif">All Place</h2>
+                        <h2 className="text-6xl font-bold text-[#ff9c1c] font-serif">All Place</h2>
                         <div className="mt-2">
                             <NavLink to='/' className='navAfter relative font-medium text-base text-white mx-3'>Home</NavLink>
-                            <NavLink to='/hotel' className='navAfter relative font-medium text-base text-[#ff9c1c] mx-3 '>All hotel</NavLink>
+                            <NavLink to='/hotel' className='navAfter relative font-medium text-base text-[#ff9c1c] mx-3 '>All Place</NavLink>
                         </div>
                     </div>
                 </div>
             </div>
-            <h2 className=" text-5xl font-bold font-mono text-center mt-5 mb-12">All Tour place</h2>
+            <div className=" bg-[#000] h-20 w-full mb-10">
+                <div className=" w-[88%] mx-auto flex justify-around items-center pt-3">
+                    <div className=" md:w-[50%] w-full md:ml-3 mx-auto">
+                        <form>
+                            <label
+                                htmlFor="default-search"
+                                className="mb-2 text-sm font-medium text-[#ff9c1c] sr-only dark:text-white"
+                            >
+                                Search
+                            </label>
+                            <div className="relative">
+                                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                    <svg
+                                        className="w-4 h-4 text-[#000]"
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            stroke="currentColor"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                                        />
+                                    </svg>
+                                </div>
+                                <input
+                                    type="text"
+                                    id="default-search"
+                                    name="searchbar"
+                                    placeholder="Search by name"
+                                    className="block w-full p-4 ps-10 text-sm font-bold text-black  rounded-lg bg-[#ff9c1c]"
+                                    required
+                                />
+                                <button
+                                    type="submit"
+                                    className="text-white absolute end-2.5 bottom-2.5 bg-[#000] hover:bg-white hover:text-black focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-4 py-2 "
+                                >
+                                    Search
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    {/* sort  */}
+                    <div className=" flex justify-center mx-auto md:mr-3">
+                        <details className="dropdown">
+                            <summary className="m-1 btn bg-[#ff9c1c] text-white hover:bg-white hover:text-black">
+                                Sort By Price{" "}
+                                <MdKeyboardArrowDown className="text-xl"></MdKeyboardArrowDown>
+                            </summary>
+                            <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                                <li>
+                                    <a className="font-bold">
+                                        High to Low
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className="font-bold">
+                                        Low to High
+                                    </a>
+                                </li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
             <div>
                 <div className="md:max-w-screen-2xl w-11/12 mx-auto">
                     <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
