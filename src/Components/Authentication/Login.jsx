@@ -1,13 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import facebook from '../../assets/images/icons/fb.png'
 import google from '../../assets/images/icons/google.png'
 import { useContext } from "react";
 import { Authcontext } from "../Authprovider/Authprovider";
 import Swal from "sweetalert2";
+import UseAxiospublic from "../Hooks/useaxiospublic";
 
 
 const Login = () => {
-    const { userLogin } = useContext(Authcontext)
+    const { userLogin, usergoogleLogin } = useContext(Authcontext)
+    const axiospublic = UseAxiospublic();
+    const currentLocation = useLocation();
+    const destinedLocation = useNavigate();
     const handlelogin = (e) => {
         e.preventDefault();
         const from = e.target;
@@ -15,9 +19,45 @@ const Login = () => {
         const password = from.password.value;
         console.log(email, password)
         userLogin(email, password)
-            .then(result => {
-                console.log(result.user)
-                Swal('User log in succesfully')
+            .then((res) => {
+                console.log(res.user);
+                destinedLocation(currentLocation?.state ? currentLocation.state : "/");
+                Swal.fire({
+                    title: "Login successful!!!",
+                    timer: 2000,
+                    color: "#002172",
+                    showConfirmButton: false,
+                    icon: "success",
+                });
+            })
+            .catch((err) => {
+                console.log(err.message);
+                Swal.fire({
+                    title: err.code,
+                    timer: 2000,
+                    color: "#002172",
+                    showConfirmButton: false,
+                    icon: "error",
+                });
+            });
+    }
+
+    const handleGoogleLogin = () => {
+        usergoogleLogin()
+            .then((response) => {
+                const userInfo = {
+                    name: response.user.displayName,
+                    image: response.user.photoURL,
+                    email: response.user.email,
+                    role: "user"
+                }
+                console.log(userInfo);
+                destinedLocation(currentLocation?.state ? currentLocation.state : "/");
+                axiospublic.post('/users', userInfo)
+                    .then(res => {
+                        console.log(res.data)
+                        Swal.fire("User succesfully creat and update profile!");
+                    })
             })
             .catch(error => {
                 console.log(error.message)
@@ -53,11 +93,11 @@ const Login = () => {
             <div className=" w-1/3 mx-auto my-10">
                 <div className="divider divider-neutral">OR</div>
             </div>
-            <div className="flex items-center justify-evenly w-1/4 mx-auto border-2 rounded-full mt-5 py-2">
+            {/* <div className="flex items-center justify-evenly w-1/4 mx-auto border-2 rounded-full mt-5 py-2">
                 <img className="w-8 h-8" src={facebook} alt="" />
                 <h2 className="font-bold">Log in with facebook</h2>
-            </div>
-            <div className="flex items-center justify-evenly w-1/4 mx-auto border-2 rounded-full my-4 py-2">
+            </div> */}
+            <div className="flex items-center justify-evenly w-1/4 mx-auto border-2 rounded-full my-4 py-2 cursor-pointer" onClick={handleGoogleLogin}>
                 <img className="w-8 h-8" src={google} alt="" />
                 <h2 className="font-bold">Log in with Google</h2>
             </div>

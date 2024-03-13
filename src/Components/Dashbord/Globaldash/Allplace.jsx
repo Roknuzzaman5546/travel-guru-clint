@@ -81,6 +81,7 @@ const Allplace = () => {
 
     return (
         <div>
+            {/* background section */}
             <div className="placebgimg">
                 <div className=" bg-[#000000B2]">
                     <div className=" w-[20%] mx-auto py-24 text-center">
@@ -169,6 +170,7 @@ const Allplace = () => {
                             </Topplacedetails>)
                         }
                     </div>
+                    {/* pagination section */}
                     <div className="flex flex-col justify-center items-center my-10">
                         <div className="join">
                             <div className=" flex items-center">
@@ -186,6 +188,7 @@ const Allplace = () => {
                     </div>
                 </div>
             </div>
+            {/* footer */}
             <div className=" mt-20">
                 <Footer></Footer>
             </div>

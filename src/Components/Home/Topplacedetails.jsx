@@ -10,7 +10,7 @@ const Topplacedetails = ({ item }) => {
             <div className="card card-compact bg-base-100 shadow-xl">
                 <figure><img className="md:h-72 h-60 w-full background-image" src={img} alt="Shoes" /></figure>
                 <div className="card-body">
-                    <h2 className=" text-3xl font-bold font-mono">{name}</h2>
+                    <h2 className=" text-3xl font-bold font-mono line-clamp-1">{name}</h2>
                     <p className=" text-xl font-bold font-mono">Cost: {cost} $</p>
                     <div className="flex justify-between items-center">
                         <h2 className=" text-xs">

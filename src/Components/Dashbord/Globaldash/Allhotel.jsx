@@ -158,6 +158,7 @@ const Allhotel = () => {
                     </div>
                 </div>
             </div>
+            {/* card section */}
             <div className="lg:max-w-screen-2xl w-11/12  mx-auto">
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
                     {
@@ -180,6 +181,7 @@ const Allhotel = () => {
                     </div>
                 </div>
             </div>
+            {/* footer section */}
             <div className=" mt-20">
                 <Footer></Footer>
             </div>

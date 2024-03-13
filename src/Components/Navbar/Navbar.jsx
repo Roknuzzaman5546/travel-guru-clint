@@ -84,7 +84,11 @@ const Navbar = () => {
                                                 <h2 className=" text-xl text-white font-bold uppercase">{user.displayName}</h2>
                                             </a>
                                         </li>
-                                        <li className="my-1"><Link>Dashboard</Link></li>
+                                        <li className="my-1">{
+                                            Admin ?
+                                                <Link to="/Dashboard/adminhome" className="" >Dashboard</Link> :
+                                                <Link to="/Dashboard/userhome" className="" >Dashboard</Link>
+                                        }</li>
                                         <li><Link onClick={handlelogout}>Logout</Link></li>
                                     </ul>
                                 </div>
