@@ -16,10 +16,10 @@ const Home = () => {
             <Place></Place>
             <Hotel></Hotel>
             <Tourguru></Tourguru>
-            <ReviewHome></ReviewHome>
+            {/* <ReviewHome></ReviewHome> */}
             <Offer></Offer>
             <Contact></Contact>
-            <Footer> </Footer>
+            {/* <Footer> </Footer> */}
         </div>
     );
 };

@@ -162,7 +162,7 @@ const Allplace = () => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className=" mb-10">
                 <div className="md:max-w-screen-2xl w-11/12 mx-auto">
                     <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                         {
@@ -189,9 +189,9 @@ const Allplace = () => {
                 </div>
             </div>
             {/* footer */}
-            <div className=" mt-20">
+            {/* <div className=" mt-20">
                 <Footer></Footer>
-            </div>
+            </div> */}
         </div>
     );
 };

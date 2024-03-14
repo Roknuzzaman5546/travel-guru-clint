@@ -34,6 +34,8 @@ import Payment from './Components/Dashbord/Globaldash/Payment';
 import Review from './Components/Dashbord/Userdash/Review';
 import Alluser from './Components/Dashbord/Admindash/Alluser';
 import Paymenthistory from './Components/Dashbord/Userdash/Paymenthistory';
+import AboutUs from './Components/About/AboutUs';
+import Condition from './Components/Condition/Condition';
 const queryClient = new QueryClient()
 
 
@@ -70,16 +72,24 @@ const router = createBrowserRouter([
       {
         path: '/place/:id',
         element: <Placedtails></Placedtails>,
-        loader: () => fetch('https://travel-guru-server-five-gamma.vercel.app/place')
+        loader: () => fetch('http://localhost:5000/place')
       },
       {
         path: '/hotel/:id',
         element: <Singlehoteldetails></Singlehoteldetails>,
-        loader: () => fetch('https://travel-guru-server-five-gamma.vercel.app/hotel')
+        loader: () => fetch('http://localhost:5000/hotel')
       },
       {
         path: "/blog",
         element: <Clintprivet><Blog></Blog></Clintprivet>
+      },
+      {
+        path: "/About",
+        element: <AboutUs></AboutUs>
+      },
+      {
+        path: "/condition",
+        element: <Condition></Condition>
       }
     ]
   },

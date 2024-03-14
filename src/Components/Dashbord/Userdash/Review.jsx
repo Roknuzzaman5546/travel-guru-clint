@@ -35,12 +35,12 @@ const Review = () => {
     }
 
     return (
-        <div className="md:max-w-screen-2xl w-11/12 mx-auto">
+        <div className=" w-[98%] mx-auto">
             <div className=" text-center mt-4  mb-4">
                 <h2 className=" text-4xl font-bold font-mono text-pink-500">GIVE A REVIEW...</h2>
                 <p className=" text-yellow-500 text-xl font-mono font-bold mt-2">---Sharing is Caring!!!---</p>
             </div>
-            <div className="bg-[#eae8e8] py-16 px-5 mt-10 w-[80%] mx-auto rounded">
+            <div className="bg-[#eae8e8] md:py-16 md:px-5 py-5 px-1 mt-10 w-[90%] mx-auto rounded">
                 <div className=" flex flex-col justify-center items-center gap-3">
                     <h2 className=" text-2xl font-bold font-mono text-center">Rate us</h2>
                     <h2 className=" w-40 text-center">
@@ -72,7 +72,7 @@ const Review = () => {
                             </label>
                             <textarea name="details" className="textarea rounded-md text-xl font-bold font-mono h-40" placeholder="Please type 30 or less then word"></textarea>
                         </div>
-                        <input type="submit" value="Submit Review" className="bg-[#000] hover:bg-[#ff9c1c] text-white px-6 py-4 rounded-md text-xl font-bold font-mono mt-3" />
+                        <input type="submit" value="Submit Review" className="bg-[#000] hover:bg-[#ff9c1c] text-white px-6 py-4 rounded-md text-xl font-bold font-mono mt-5" />
                     </form>
                 </div>
             </div>

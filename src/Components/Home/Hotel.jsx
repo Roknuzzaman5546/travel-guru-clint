@@ -25,7 +25,7 @@ const Hotel = () => {
 
     return (
         <div className=' mt-5'>
-            <div className='homehotelbg bg-fixed my-20'>
+            <div className='homehotelbg my-20'>
                 <div className="py-24 bg-[#161616b2] gap-10">
                     <div className=' mb-20'>
                         <h2 className=" text-white font-bold text-center text-5xl font-mono">Our top Hotel booked <span className=' text-3xl font-bold font-mono text-pink-600'>/ <Link to={`/hotel`}>View all hotel</Link></span></h2>

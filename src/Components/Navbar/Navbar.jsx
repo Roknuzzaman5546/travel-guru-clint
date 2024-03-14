@@ -44,6 +44,24 @@ const Navbar = () => {
         {user ? Admin ? <li><Link to="/Dashboard/adminhome" className="navAfter relative font-bold text-white ml-3 mr-5" >Dashboard</Link></li> : <li><Link to="/Dashboard/userhome" className="navAfter relative font-bold text-white ml-2 mr-5" >Dashboard</Link></li> : ''}
     </>
 
+    const otherDropDownLinks = (
+        <>
+            <li><NavLink to="/blog" className="navAfter relative font-bold text-white mx-2">Blog</NavLink></li>
+            <li><NavLink to="/About" className="navAfter relative font-bold text-white mx-2">About us</NavLink></li>
+            <li><NavLink to="/Condition" className="navAfter relative font-bold text-white mx-2">Terms & Condition</NavLink></li>
+        </>
+    )
+    const dropNavLinks = (
+        <>
+            <div className="dropdown dropdown-hover relative h-[65px]">
+                <div tabIndex={0} role="button" className="relative font-medium text-base text-white mx-3 flex items-center h-full">Others</div>
+                <ul className="menu dropdown-content z-[1] bg-[#000] pl-5  w-[250px] border-white border-x-[2px] rounded-[5px] pt-0 pb-1 absolute top-14">
+                    {otherDropDownLinks}
+                </ul>
+            </div>
+        </>
+    )
+
     return (
         <div className={` sticky bg-[#000000] w-full top-0 left-0 z-[99999] ${isNavbarJumping ? 'animate-jump shadow-md' : ''}`} >
             <div className="navbar w-11/12 mx-auto text-white py-3 px-2 font-bold text-xl font-mono">
@@ -54,6 +72,14 @@ const Navbar = () => {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gray-800 rounded-box w-52 text-black py-7">
                             {link}
+                            <details className="dropdown w-full mt-3 text-white cursor-pointer">
+                                <summary className="w-full relative py-2 border-l-[2px] border-whiterounded-t-md ">
+                                    <span className="left-3 bottom-2 text-white">Others</span>
+                                </summary>
+                                <ul className="flex flex-col border-l-[2px] border-white py-2 pl-3 rounded-md rounded-t-none">
+                                    {otherDropDownLinks}
+                                </ul>
+                            </details>
                         </ul>
                     </div>
                     <img className=" w-28 h-10 lg:mx-0 mx-auto" src={logoImg} alt="" />
@@ -61,6 +87,7 @@ const Navbar = () => {
                 <div className="hidden lg:flex navbar-center">
                     <ul className="menu menu-horizontal items-center">
                         {link}
+                        {dropNavLinks}
                     </ul>
                 </div>
                 <div className=" navbar-end">
@@ -78,7 +105,7 @@ const Navbar = () => {
                                             <img src={user?.photoURL} alt="" />
                                         </div>
                                     </label>
-                                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] px-2 py-5 shadow bg-[#000] rounded-box w-52">
+                                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] px-2 py-5 shadow bg-[#000] rounded-box w-52 border-white border-x-[2px]">
                                         <li>
                                             <a>
                                                 <h2 className=" text-xl text-white font-bold uppercase">{user.displayName}</h2>

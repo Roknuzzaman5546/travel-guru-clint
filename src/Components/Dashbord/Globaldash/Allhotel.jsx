@@ -159,7 +159,7 @@ const Allhotel = () => {
                 </div>
             </div>
             {/* card section */}
-            <div className="lg:max-w-screen-2xl w-11/12  mx-auto">
+            <div className="lg:max-w-screen-2xl w-11/12  mx-auto mb-10">
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
                     {
                         currentItems.map((item => <Hoteldetails key={item._id} item={item}></Hoteldetails>))
@@ -182,9 +182,9 @@ const Allhotel = () => {
                 </div>
             </div>
             {/* footer section */}
-            <div className=" mt-20">
+            {/* <div className=" mt-20">
                 <Footer></Footer>
-            </div>
+            </div> */}
         </div>
     );
 };
