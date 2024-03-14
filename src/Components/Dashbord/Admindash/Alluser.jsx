@@ -6,6 +6,7 @@ import UseAxiospublic from "../../Hooks/useaxiospublic";
 const Alluser = () => {
     const [users, refetch] = useUser();
     const axiospublic = UseAxiospublic();
+    console.log(users);
 
 
     const handleMakeadmin = item => {
@@ -23,7 +24,8 @@ const Alluser = () => {
     }
 
 
-    const handleDelete = id => {
+    const handleDelete = (id) => {
+        console.log(id);
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -36,7 +38,6 @@ const Alluser = () => {
             if (result.isConfirmed) {
                 axiospublic.delete(`/users/${id}`)
                     .then(res => {
-                        refetch();
                         console.log(res.data)
                         if (res.data.deletedCount > 0) {
                             Swal.fire({
@@ -44,6 +45,7 @@ const Alluser = () => {
                                 text: "Your file has been deleted.",
                                 icon: "success"
                             });
+                            refetch();
                         }
                     })
             }
@@ -57,10 +59,10 @@ const Alluser = () => {
                 <h2 className=" text-3xl font-bold">Total users: {users.length}</h2>
             </div>
             <div>
-                <div className="overflow-x-auto">
-                    <table className="table">
+                <div className="mt-10 w-[96%] bg-white px-6 mx-auto mb-20 rounded-lg border">
+                    <table className="table table-zebra overflow-x-auto">
                         {/* head */}
-                        <thead>
+                        <thead className="font-semibold text-lg">
                             <tr>
                                 <th>#</th>
                                 <th>Photo</th>

@@ -10,7 +10,7 @@ import { Authcontext } from "../Components/Authprovider/Authprovider";
 
 const Dashboard = () => {
     const { user } = useContext(Authcontext)
-    const isAdmin = false;
+    const isAdmin = true;
     return (
         <div>
             <div>
@@ -26,6 +26,7 @@ const Dashboard = () => {
                                         <div className=' flex flex-col items-center my-2'>
                                             <img className=' w-40 h-36 rounded-full' src={user?.photoURL} alt="" />
                                             <h2 className=' text-2xl font-bold font-alfa text-orange-400'>{user?.displayName}</h2>
+                                            <p className=" text-xs ">{user?.email}</p>
                                         </div>
                                         <ul className="menu">
                                             {
@@ -108,8 +109,8 @@ const Dashboard = () => {
                     <div className=" w-64 h-screen shadow-md bg-[#ff9c1c] text-black font-mono font-bold text-xl flex flex-col items-center rounded-md border-2">
                         <div className=' flex flex-col items-center mb-2 mt-5'>
                             <img className=' w-28 h-28 rounded-full' src={user?.photoURL} alt="" />
-                            <h2 className=' text-2xl mt-2 text-white font-bold font-alfa'>{user?.displayName}</h2>
-                            <p className=" text-xs text-white">{user?.email}</p>
+                            <h2 className=' text-2xl mt-2 font-bold font-alfa'>{user?.displayName}</h2>
+                            <p className=" text-xs ">{user?.email}</p>
                         </div>
                         <ul className="menu">
                             {

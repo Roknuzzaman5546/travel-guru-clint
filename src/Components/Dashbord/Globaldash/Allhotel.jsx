@@ -16,7 +16,7 @@ const Allhotel = () => {
     // DO: blogs data pagination on page 
     const count = updateHotel?.length > 0 ? updateHotel.length : hotel?.length;
     // now this time itemper page static.after when we will do backed in then we will do it's daynamic
-    const itemsperPage = 6;
+    const itemsperPage = 9;
     const numberofPages = Math.ceil(count / itemsperPage)
 
     const pages = [];

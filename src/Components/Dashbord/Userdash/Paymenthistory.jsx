@@ -38,16 +38,16 @@ const Paymenthistory = () => {
 
     return (
         <div>
-            <div className=" md:max-w-screen-2xl w-11/12 mx-auto mt-10">
-                <div className=" flex justify-evenly mt-2 mb-10">
+            <div className="w-11/12 mx-auto mt-10">
+                <div className="flex justify-evenly items-center mt-2 mb-10">
                     <h2 className=" text-3xl font-bold">All payment History</h2>
                     <h2 className=" text-3xl font-bold">My history: {payments.length}</h2>
                 </div>
                 <div>
-                    <div className="overflow-x-auto">
-                        <table className="table">
+                    <div className="mt-10 w-[96%] bg-white px-6 mx-auto mb-20 border rounded-lg">
+                        <table className="table table-zebra overflow-x-auto">
                             {/* head */}
-                            <thead className=" bg-slate-300 p-7 rounded-lg font-bold text-xl">
+                            <thead className="font-semibold w-full text-lg text-black">
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
@@ -58,7 +58,7 @@ const Paymenthistory = () => {
                                     <th>Delete</th>
                                 </tr>
                             </thead>
-                            <tbody className=" w-full font-bold">
+                            <tbody className=" w-full">
                                 {
                                     payments.map((item, index) => <tr key={item._id}>
                                         <td>{index + 1}</td>

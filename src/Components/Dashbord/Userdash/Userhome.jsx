@@ -7,66 +7,93 @@ import { FaCcPaypal, FaHotel, FaShoppingCart } from "react-icons/fa";
 import { FaBook, FaStar } from "react-icons/fa6";
 import useChoicelist from "../../Hooks/useChoicelist";
 import { GiJourney } from "react-icons/gi";
+import useReview from "../../Hooks/useReview";
+import useAllPayments from "../../Hooks/useAllPayments";
+import usePayments from "../../Hooks/usePayments";
 
 
 const Userhome = () => {
     const { user } = useContext(Authcontext)
     const [place] = usePlace();
     const [hotel] = useHotel();
+    const [reviews] = useReview();
+    const [allPayments] = useAllPayments();
+    const [payment] = usePayments();
+    const [choice] = useChoicelist();
     const [destination] = useChoicelist();
+    console.log(allPayments);
 
     return (
         <div className=" w-11/12 mx-auto">
             <h2 className="ml-4 text-5xl font-mono font-bold mt-5 mb-8">Hi this is <span className=" text-pink-600">{user.displayName}</span> home</h2>
+            {/* upper part */}
             <div className=" flex lg:flex-row flex-col justify-evenly items-center gap-4">
-                <div className=" lg:w-5/12 w-[full] lg:h-[150px] h-[150px]  bg-gradient-to-r from-[#BB34F5] to-[#FCDBFF] py-2 rounded flex justify-center items-center gap-2">
-                    <MdOutlinePayment className=" text-white text-5xl font-bold"></MdOutlinePayment>
-                    <div className=" flex flex-col items-center">
-                        <h2 className=" text-2xl font-bold font-sans text-white">{place.length}</h2>
-                        <h2 className=" text-2xl font-bold font-sans text-white">Place</h2>
+                <div className=" lg:w-5/12 w-full lg:h-[150px] h-[150px] py-2 rounded border-b-[7px] border-black shadow-xl p-3">
+                    <h2 className=" text-2xl font-bold font-sans">Place</h2>
+                    <div className=" flex justify-between items-center gap-2">
+                        <div className=" flex items-center">
+                            <MdOutlinePayment className=" text-5xl font-bold"></MdOutlinePayment>
+                            <h2 className=" text-2xl font-bold font-sans ">{place.length}</h2>
+                        </div>
+                        <div>
+                            <div className="radial-progress text-primary" style={{ "--value": place.length }} role="progressbar">{place.length}</div>
+                        </div>
                     </div>
                 </div>
-                <div className=" lg:w-5/12 w-[full] lg:h-[150px] h-[150px]  bg-gradient-to-r from-[#D3A256] to-[#FDE8C0] py-2 rounded flex justify-center items-center gap-2">
-                    <FaHotel className=" text-white text-5xl font-bold"></FaHotel>
-                    <div className=" flex flex-col items-center">
-                        <h2 className=" text-2xl font-bold font-sans text-white">{hotel.length}</h2>
-                        <h2 className=" text-2xl font-bold font-sans text-white">Hotel</h2>
+                <div className=" lg:w-5/12 w-full lg:h-[150px] h-[150px] py-2 rounded border-b-[7px] border-black shadow-xl p-3">
+                    <h2 className=" text-2xl font-bold font-sans">Hotel</h2>
+                    <div className=" flex justify-between items-center">
+                        <div className=" flex items-center gap-2">
+                            <FaHotel className=" text-5xl font-bold"></FaHotel>
+                            <h2 className=" text-2xl font-bold font-sans ">{hotel.length}</h2>
+                        </div>
+                        <div>
+                            <div className="radial-progress text-primary" style={{ "--value": hotel.length }} role="progressbar">{hotel.length}</div>
+                        </div>
                     </div>
                 </div>
-                <div className=" lg:w-5/12 w-[full] lg:h-[150px] h-[150px]  bg-gradient-to-r from-[#FE4880] to-[#FECDE9] py-2 rounded flex justify-center items-center gap-2">
-                    <GiJourney className=" text-white text-5xl font-bold"></GiJourney>
-                    <div className=" flex flex-col items-center">
-                        <h2 className=" text-2xl font-bold font-sans text-white">{destination.length}</h2>
-                        <h2 className=" text-2xl font-bold font-sans text-white">Destination</h2>
+                <div className=" lg:w-5/12 w-full lg:h-[150px] h-[150px] py-2 rounded border-b-[7px] border-pink-600 shadow-xl p-3">
+                    <h2 className=" text-2xl font-bold font-sans">Destination</h2>
+                    <div className=" flex justify-between items-center">
+                        <div className=" flex items-center gap-2">
+                            <FaShoppingCart className=" text-5xl font-bold"></FaShoppingCart>
+                            <h2 className=" text-2xl font-bold font-sans ">{destination.length}</h2>
+                        </div>
+                        <div>
+                            <div className="radial-progress text-primary" style={{ "--value": destination.length }} role="progressbar">{hotel.length}</div>
+                        </div>
                     </div>
                 </div>
             </div>
+            {/* Down part */}
             <div className=" flex lg:flex-row flex-col justify-center items-center mb-5">
                 <div className=" lg:w-1/2 w-full lg:h-[469px] h-[300px] border-r-2 border-[#5b3d12] bg-[#ff9c1c] flex justify-center items-center mt-5">
                     <div className=" flex flex-col gap-2 items-center">
-                        <img className="w-60 h-60 rounded-full" src={user.photoURL} alt="" />
+                        <img className=" md:w-60 md:h-60 w-40 h-40 rounded-full" src={user.photoURL} alt="" />
                         <div className=" text-5xl text-black font-bold font-mono">{user.displayName}</div>
+                        <h2 className=" text-xl font-bold">{user?.email}</h2>
                     </div>
                 </div>
+                {/* Count part */}
                 <div className=" lg:w-1/2 lg:h-[469px] w-full h-[300px] bg-[#000] flex justify-center items-center mt-5">
                     <div>
                         <h2 className=" text-2xl font-bold font-mono mb-2 text-white">Your Activities</h2>
                         <div>
                             <div className=" flex items-center gap-1">
                                 <FaShoppingCart className="text-blue-500"></FaShoppingCart>
-                                <p className=" text-xl font-bold font-mono text-blue-500">Orders:</p>
+                                <p className=" text-xl font-bold font-mono text-blue-500">Orders: {allPayments?.length}</p>
                             </div>
                             <div className=" flex items-center gap-1">
                                 <FaStar className="text-[#00C4A1]"></FaStar>
-                                <p className=" text-[#00C4A1] text-xl font-bold font-mono ">Reviews:</p>
+                                <p className=" text-[#00C4A1] text-xl font-bold font-mono ">Reviews: {reviews?.length}</p>
                             </div>
                             <div className=" flex items-center gap-1">
                                 <FaBook className="text-[#FFBB28]"></FaBook>
-                                <p className=" text-[#FFBB28] text-xl font-bold font-mono ">Bookings:</p>
+                                <p className=" text-[#FFBB28] text-xl font-bold font-mono ">Bookings:{choice?.length}</p>
                             </div>
                             <div className=" flex items-center gap-1">
                                 <FaCcPaypal className="text-[#FF8042]"></FaCcPaypal>
-                                <p className=" text-[#FF8042] text-xl font-bold font-mono ">Payment:</p>
+                                <p className=" text-[#FF8042] text-xl font-bold font-mono ">Payment:{payment?.length}</p>
                             </div>
                         </div>
                     </div>
