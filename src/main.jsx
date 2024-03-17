@@ -71,12 +71,12 @@ const router = createBrowserRouter([
       },
       {
         path: '/place/:id',
-        element: <Placedtails></Placedtails>,
+        element: <Clintprivet><Placedtails></Placedtails></Clintprivet>,
         loader: () => fetch('http://localhost:5000/place')
       },
       {
         path: '/hotel/:id',
-        element: <Singlehoteldetails></Singlehoteldetails>,
+        element: <Clintprivet><Singlehoteldetails></Singlehoteldetails></Clintprivet>,
         loader: () => fetch('http://localhost:5000/hotel')
       },
       {

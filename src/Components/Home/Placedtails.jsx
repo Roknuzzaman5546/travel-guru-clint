@@ -42,10 +42,12 @@ const Placedtails = () => {
 
     return (
         <div className=" w-10/12 mx-auto">
-            <div data-aos="zoom-in" className=" mb-10 mt-5">
+            {/* Header section */}
+            <div data-aos="zoom-in" className=" mb-10 mt-10">
                 <h1 className="text-4xl border-2 border-b-slate-400 border-t-slate-400 py-5 w-1/2 mx-auto text-center font-Chinzel uppercase font-bold font-rancho">{place.name}</h1>
                 <h1 className=" text-center text-yellow-500 text-xl">---This place is details here---</h1>
             </div>
+            {/* Details section */}
             <div>
                 <img className=" w-9/12 mx-auto h-[480px] my-10" src={place.img} alt="" />
                 <div>
@@ -68,6 +70,7 @@ const Placedtails = () => {
                     </div>
                 </div>
             </div>
+            {/* Review section */}
         </div>
     );
 };

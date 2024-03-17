@@ -104,72 +104,70 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-            <div>
-                <div className=" lg:flex hidden">
-                    <div className=" w-64 h-screen shadow-md bg-[#ff9c1c] text-black font-mono font-bold text-xl flex flex-col items-center rounded-md border-2">
-                        <div className=' flex flex-col items-center mb-2 mt-5'>
-                            <img className=' w-28 h-28 rounded-full' src={user?.photoURL} alt="" />
-                            <h2 className=' text-2xl mt-2 font-bold font-alfa'>{user?.displayName}</h2>
-                            <p className=" text-xs ">{user?.email}</p>
-                        </div>
-                        <ul className="menu">
-                            {
-                                isAdmin ?
-                                    <>
-                                        <li><NavLink to="/Dashboard/adminhome">
-                                            <FaHouse></FaHouse>
-                                            Admin home</NavLink></li>
-                                        <li><NavLink to="/Dashboard/addplace">
-                                            <FaLocationDot></FaLocationDot>
-                                            Add  place</NavLink></li>
-                                        <li><NavLink to="/Dashboard/addhotel">
-                                            <FaHotel></FaHotel>
-                                            Add  hotel</NavLink></li>
-                                        <li><NavLink to="/Dashboard/manageplace">
-                                            <FaList></FaList>
-                                            ManagePlace</NavLink></li>
-                                        <li><NavLink to="/Dashboard/managehotel">
-                                            <FaEdit></FaEdit>
-                                            ManageHotel</NavLink></li>
-                                        <li><NavLink to="/Dashboard/users">
-                                            <FaUsers></FaUsers>
-                                            All Users</NavLink></li>
-                                    </>
-                                    :
-                                    <>
-                                        <li><NavLink to="/Dashboard/userhome">
-                                            <FaHouseMedical></FaHouseMedical>
-                                            User home</NavLink></li>
-                                        <li><NavLink to="/Dashboard/choicelist">
-                                            <FaList></FaList>
-                                            My Choice List</NavLink></li>
-                                        <li><NavLink to="/Dashboard/payhistory">
-                                            <MdPayment></MdPayment>
-                                            Payment History</NavLink></li>
-                                        <li><NavLink to="/Dashboard/addreview">
-                                            <MdReviews></MdReviews>
-                                            Add Reviews</NavLink></li>
-                                    </>
-                            }
-                            <div className="divider"></div>
-                            <li><NavLink to="/">
-                                <FaHouseMedical></FaHouseMedical>
-                                Home</NavLink></li>
-                            <li><NavLink to="/allplace">
-                                <FaLocationDot></FaLocationDot>
-                                All places</NavLink></li>
-                            <li><NavLink to="/hotel">
-                                <FaHotel></FaHotel>
-                                All Hotel</NavLink></li>
-                        </ul>
+            <div className=" lg:flex hidden">
+                <div className=" w-64 h-screen shadow-md bg-[#ff9c1c] text-black font-mono font-bold text-xl flex flex-col items-center rounded-md border-2">
+                    <div className=' flex flex-col items-center mb-2 mt-5'>
+                        <img className=' w-28 h-28 rounded-full' src={user?.photoURL} alt="" />
+                        <h2 className=' text-2xl mt-2 font-bold font-alfa'>{user?.displayName}</h2>
+                        <p className=" text-xs ">{user?.email}</p>
                     </div>
-                    <div className=" flex-1">
-                        <Outlet></Outlet>
-                    </div>
+                    <ul className="menu">
+                        {
+                            isAdmin ?
+                                <>
+                                    <li><NavLink to="/Dashboard/adminhome">
+                                        <FaHouse></FaHouse>
+                                        Admin home</NavLink></li>
+                                    <li><NavLink to="/Dashboard/addplace">
+                                        <FaLocationDot></FaLocationDot>
+                                        Add  place</NavLink></li>
+                                    <li><NavLink to="/Dashboard/addhotel">
+                                        <FaHotel></FaHotel>
+                                        Add  hotel</NavLink></li>
+                                    <li><NavLink to="/Dashboard/manageplace">
+                                        <FaList></FaList>
+                                        ManagePlace</NavLink></li>
+                                    <li><NavLink to="/Dashboard/managehotel">
+                                        <FaEdit></FaEdit>
+                                        ManageHotel</NavLink></li>
+                                    <li><NavLink to="/Dashboard/users">
+                                        <FaUsers></FaUsers>
+                                        All Users</NavLink></li>
+                                </>
+                                :
+                                <>
+                                    <li><NavLink to="/Dashboard/userhome">
+                                        <FaHouseMedical></FaHouseMedical>
+                                        User home</NavLink></li>
+                                    <li><NavLink to="/Dashboard/choicelist">
+                                        <FaList></FaList>
+                                        My Choice List</NavLink></li>
+                                    <li><NavLink to="/Dashboard/payhistory">
+                                        <MdPayment></MdPayment>
+                                        Payment History</NavLink></li>
+                                    <li><NavLink to="/Dashboard/addreview">
+                                        <MdReviews></MdReviews>
+                                        Add Reviews</NavLink></li>
+                                </>
+                        }
+                        <div className="divider"></div>
+                        <li><NavLink to="/">
+                            <FaHouseMedical></FaHouseMedical>
+                            Home</NavLink></li>
+                        <li><NavLink to="/allplace">
+                            <FaLocationDot></FaLocationDot>
+                            All places</NavLink></li>
+                        <li><NavLink to="/hotel">
+                            <FaHotel></FaHotel>
+                            All Hotel</NavLink></li>
+                    </ul>
                 </div>
-                <div className=" flex lg:hidden">
+                <div className=" flex-1">
                     <Outlet></Outlet>
                 </div>
+            </div>
+            <div className=" flex lg:hidden">
+                <Outlet></Outlet>
             </div>
         </div>
     );
