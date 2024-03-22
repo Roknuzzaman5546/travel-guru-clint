@@ -48,7 +48,7 @@ const Placedtails = () => {
                 <h1 className=" text-center text-yellow-500 text-xl">---This place is details here---</h1>
             </div>
             {/* Details section */}
-            <div>
+            <div className=" mb-20">
                 <img className=" w-9/12 mx-auto h-[480px] my-10" src={place.img} alt="" />
                 <div>
                     <div className=" flex justify-between items-center mt-4">

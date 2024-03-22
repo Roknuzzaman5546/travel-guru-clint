@@ -72,12 +72,12 @@ const router = createBrowserRouter([
       {
         path: '/place/:id',
         element: <Clintprivet><Placedtails></Placedtails></Clintprivet>,
-        loader: () => fetch('http://localhost:5000/place')
+        loader: () => fetch('https://travel-guru-server-five-gamma.vercel.app/place')
       },
       {
         path: '/hotel/:id',
         element: <Clintprivet><Singlehoteldetails></Singlehoteldetails></Clintprivet>,
-        loader: () => fetch('http://localhost:5000/hotel')
+        loader: () => fetch('https://travel-guru-server-five-gamma.vercel.app/hotel')
       },
       {
         path: "/blog",

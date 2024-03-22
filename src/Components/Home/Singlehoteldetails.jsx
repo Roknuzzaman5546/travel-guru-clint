@@ -46,7 +46,7 @@ const Singlehoteldetails = () => {
                 <h1 className="text-4xl border-2 border-b-slate-400 border-t-slate-400 py-5 w-1/2 mx-auto text-center font-Chinzel uppercase font-bold font-rancho">{hotel.hotelName}</h1>
                 <h1 className=" text-center text-yellow-500 text-xl">---This place is details here---</h1>
             </div>
-            <div>
+            <div className=" mb-20">
                 <img className=" w-9/12 mx-auto h-[480px] my-16" src={hotel.imageUrl} alt="" />
                 <div>
                     <div className=" flex justify-between items-center mt-4">

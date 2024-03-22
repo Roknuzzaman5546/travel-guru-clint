@@ -1,5 +1,6 @@
 import Topplacedetails from './topplacedetails';
 import usePlace from '../Hooks/Useplace';
+import { Link } from 'react-router-dom';
 
 const Place = () => {
     const [place] = usePlace();
@@ -14,7 +15,9 @@ const Place = () => {
                 }
             </div>
             <div className=' flex flex-col justify-center items-center mt-10'>
-                <button className='bg-[#000] hover:bg-[#ff9c1c] text-white px-6 py-4 rounded-md text-xl font-bold font-mono'>Show all</button>
+                <Link to="/allplace">
+                    <button className='bg-[#000] hover:bg-[#ff9c1c] text-white px-6 py-4 rounded-md text-xl font-bold font-mono'>Show all</button>
+                </Link>
             </div>
         </div>
     );

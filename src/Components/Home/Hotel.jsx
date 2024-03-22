@@ -74,7 +74,7 @@ const Hotel = () => {
                                                         />
                                                     </p>
                                                     <h2 className=" text-3xl font-bold mt-3">{item.hotelName}</h2>
-                                                    <Link to={`/${item._id}`}>
+                                                    <Link to={`/hotel/${item._id}`}>
                                                         <button className=" text-2xl font-blod text-red-500 pop-h2 flex items-center gap-2 navAfter mt-4">
                                                             <span>Read more</span>
                                                             <span><FaLongArrowAltRight></FaLongArrowAltRight></span>
