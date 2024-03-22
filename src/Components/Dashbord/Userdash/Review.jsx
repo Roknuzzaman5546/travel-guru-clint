@@ -1,16 +1,16 @@
 import { Rating } from "@smastrom/react-rating";
 import { useContext, useState } from "react";
-import { Authcontext } from "../../Authprovider/Authprovider";
-import UseAxiospublic from "../../Hooks/useaxiospublic";
+import { AuthContext } from "../../Authprovider/Authprovider";
 import Swal from "sweetalert2";
+import UseaxiosPublic from "../../Hooks/UseAxiospublic";
 
 
 const Review = () => {
-    const { user } = useContext(Authcontext)
+    const { user } = useContext(AuthContext)
     const [rating, setRating] = useState(0)
-    const axiospublic = UseAxiospublic();
+    const axiosPublic = UseaxiosPublic();
 
-    const handlereview = e => {
+    const handleReview = e => {
         e.preventDefault();
         const from = e.target;
         const services = from.services.value;
@@ -26,7 +26,7 @@ const Review = () => {
             email: user.email
         }
         console.log(review)
-        axiospublic.post('/review', review)
+        axiosPublic.post('/review', review)
             .then(res => {
                 console.log(res.data)
                 Swal.fire(`${user.displayName} your review succsesfullly added`)
@@ -36,11 +36,14 @@ const Review = () => {
 
     return (
         <div className=" w-[98%] mx-auto">
-            <div className=" text-center mt-4  mb-4">
+            {/* Review hading */}
+            <div className=" text-center mt-7  mb-4">
                 <h2 className=" text-4xl font-bold font-mono text-pink-500">GIVE A REVIEW...</h2>
                 <p className=" text-yellow-500 text-xl font-mono font-bold mt-2">---Sharing is Caring!!!---</p>
             </div>
-            <div className="bg-[#eae8e8] md:py-16 md:px-5 py-5 px-1 mt-10 w-[90%] mx-auto rounded">
+            {/* Review body */}
+            <div className="bg-[rgb(234,232,232)] md:py-16 md:px-5 py-5 px-1 my-10 w-[90%] mx-auto rounded">
+                {/* Rating */}
                 <div className=" flex flex-col justify-center items-center gap-3">
                     <h2 className=" text-2xl font-bold font-mono text-center">Rate us</h2>
                     <h2 className=" w-40 text-center">
@@ -52,8 +55,9 @@ const Review = () => {
                         </Rating>
                     </h2>
                 </div>
-                <div className=" w-[80%] mx-auto mb-5">
-                    <form onSubmit={handlereview}>
+                {/* body part */}
+                <div className=" w-[90%] mx-auto mb-5">
+                    <form onSubmit={handleReview}>
                         <div className="form-control">
                             <label className="label">
                                 <span className=" text-xl font-mono font-bold">Which Services you liked most?</span>
@@ -64,7 +68,7 @@ const Review = () => {
                             <label className="label">
                                 <span className=" text-xl font-mono font-bold">Do you have any suggestion for us?</span>
                             </label>
-                            <input type="text" name="suggestion" placeholder="Sugggestion" className="py-5 px-2 rounded-md text-xl font-bold font-mono" required />
+                            <input type="text" name="suggestion" placeholder="Suggestion" className="py-5 px-2 rounded-md text-xl font-bold font-mono" required />
                         </div>
                         <div className="form-control">
                             <label className="label">

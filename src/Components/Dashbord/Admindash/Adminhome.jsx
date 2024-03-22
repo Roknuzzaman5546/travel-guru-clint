@@ -1,16 +1,16 @@
 import { useContext } from "react";
-import { Authcontext } from "../../Authprovider/Authprovider";
+import { AuthContext } from "../../Authprovider/Authprovider";
 import { FaMoneyBill, FaSitemap, FaTrailer, FaUser } from "react-icons/fa6";
 import { useQuery } from "@tanstack/react-query";
-import UseAxiospublic from "../../Hooks/useaxiospublic";
 import usePlace from "../../Hooks/Useplace";
 import useHotel from "../../Hooks/useHotel";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, PieChart, Pie, Legend } from 'recharts';
 import useUser from "../../Hooks/useUser";
+import UseaxiosPublic from "../../Hooks/UseAxiospublic";
 
 const Adminhome = () => {
-    const { user } = useContext(Authcontext)
-    const axiospublic = UseAxiospublic();
+    const { user } = useContext(AuthContext)
+    const axiosPublic = UseaxiosPublic();
     const [place] = usePlace();
     const [hotel] = useHotel();
     const [users] = useUser();
@@ -29,7 +29,7 @@ const Adminhome = () => {
     const { data: stats } = useQuery({
         queryKey: ['admin-home'],
         queryFn: async () => {
-            const res = await axiospublic.get("/admin-stats")
+            const res = await axiosPublic.get("/admin-stats")
             return res.data
         }
     })

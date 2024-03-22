@@ -1,20 +1,20 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useContext, useEffect, useState } from "react";
-import UseAxiospublic from "../../Hooks/useaxiospublic";
 import useChoicelist from "../../Hooks/useChoicelist";
-import { Authcontext } from "../../Authprovider/Authprovider";
+import { AuthContext } from "../../Authprovider/Authprovider";
 import Swal from "sweetalert2";
+import UseaxiosPublic from "../../Hooks/UseAxiospublic";
 // import { useNavigate } from "react-router-dom";
 
 const Cheakoutfrom = () => {
     const [error, setError] = useState('');
     // const navigate = useNavigate();
-    const { user } = useContext(Authcontext);
+    const { user } = useContext(AuthContext);
     const [clientSecret, SetclientSecret] = useState();
     const [transictionid, setTransictionid] = useState();
     const stripe = useStripe();
     const elements = useElements();
-    const axiospublic = UseAxiospublic();
+    const axiosPublic = UseaxiosPublic();
     const [choice] = useChoicelist();
 
     const totalprice = choice.reduce((total, item) => total + item.cost, 0)
@@ -22,12 +22,12 @@ const Cheakoutfrom = () => {
     const total = parseInt(totalprice)
 
     useEffect(() => {
-        axiospublic.post('/create-payment-intent', { cost: total })
+        axiosPublic.post('/create-payment-intent', { cost: total })
             .then(res => {
                 // console.log(res.data.clientSecret)
                 SetclientSecret(res.data.clientSecret)
             })
-    }, [axiospublic, total])
+    }, [axiosPublic, total])
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -79,7 +79,7 @@ const Cheakoutfrom = () => {
                     choicelistIds: choice.map(item => item._id),
                     status: "pending"
                 }
-                const res = await axiospublic.post("/payment", payment)
+                const res = await axiosPublic.post("/payment", payment)
                 if (res) {
                     Swal.fire({
                         position: "top-end",

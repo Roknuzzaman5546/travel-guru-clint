@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import usePlace from "../../Hooks/Useplace";
-import { Authcontext } from "../../Authprovider/Authprovider";
-import UseAxiospublic from "../../Hooks/useaxiospublic";
+import { AuthContext } from "../../Authprovider/Authprovider";
 import Swal from "sweetalert2";
+import UseaxiosPublic from "../../Hooks/UseAxiospublic";
 
 const Manageplace = () => {
     const [place, refetch] = usePlace();
-    const { user } = useContext(Authcontext)
-    const axiospublic = UseAxiospublic();
+    const { user } = useContext(AuthContext)
+    const axiosPublic = UseaxiosPublic();
 
 
     const handlePlaceDelete = (id) => {
@@ -21,7 +21,7 @@ const Manageplace = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axiospublic.delete(`/place/${id}`)
+                axiosPublic.delete(`/place/${id}`)
                     .then((res) => {
                         refetch();
                         console.log(res.data)

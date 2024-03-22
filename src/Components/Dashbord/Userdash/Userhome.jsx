@@ -1,19 +1,18 @@
 import { useContext } from "react";
-import { Authcontext } from "../../Authprovider/Authprovider";
+import { AuthContext } from "../../Authprovider/Authprovider";
 import { MdOutlinePayment } from "react-icons/md";
 import usePlace from "../../Hooks/Useplace";
 import useHotel from "../../Hooks/useHotel";
 import { FaCcPaypal, FaHotel, FaShoppingCart } from "react-icons/fa";
 import { FaBook, FaStar } from "react-icons/fa6";
 import useChoicelist from "../../Hooks/useChoicelist";
-import { GiJourney } from "react-icons/gi";
 import useReview from "../../Hooks/useReview";
 import useAllPayments from "../../Hooks/useAllPayments";
 import usePayments from "../../Hooks/usePayments";
 
 
 const Userhome = () => {
-    const { user } = useContext(Authcontext)
+    const { user } = useContext(AuthContext)
     const [place] = usePlace();
     const [hotel] = useHotel();
     const [reviews] = useReview();
@@ -28,19 +27,8 @@ const Userhome = () => {
             <h2 className="ml-4 text-5xl font-mono font-bold mt-5 mb-8">Hi this is <span className=" text-pink-600">{user.displayName}</span> home</h2>
             {/* upper part */}
             <div className=" flex lg:flex-row flex-col justify-evenly items-center gap-4">
-                <div className=" lg:w-5/12 w-full lg:h-[150px] h-[150px] py-2 rounded border-b-[7px] border-black shadow-xl p-3">
-                    <h2 className=" text-2xl font-bold font-sans">Place</h2>
-                    <div className=" flex justify-between items-center gap-2">
-                        <div className=" flex items-center">
-                            <MdOutlinePayment className=" text-5xl font-bold"></MdOutlinePayment>
-                            <h2 className=" text-2xl font-bold font-sans ">{place.length}</h2>
-                        </div>
-                        <div>
-                            <div className="radial-progress text-primary" style={{ "--value": place.length }} role="progressbar">{place.length}</div>
-                        </div>
-                    </div>
-                </div>
-                <div className=" lg:w-5/12 w-full lg:h-[150px] h-[150px] py-2 rounded border-b-[7px] border-black shadow-xl p-3">
+                {/* Stat 1 */}
+                <div className=" lg:w-5/12 w-full lg:h-[150px] h-[150px] py-2 rounded border-b-[7px] border border-[#FF8042] shadow-xl p-3">
                     <h2 className=" text-2xl font-bold font-sans">Hotel</h2>
                     <div className=" flex justify-between items-center">
                         <div className=" flex items-center gap-2">
@@ -52,7 +40,21 @@ const Userhome = () => {
                         </div>
                     </div>
                 </div>
-                <div className=" lg:w-5/12 w-full lg:h-[150px] h-[150px] py-2 rounded border-b-[7px] border-pink-600 shadow-xl p-3">
+                {/* Stat 2 */}
+                <div className=" lg:w-5/12 w-full lg:h-[150px] h-[150px] py-2 rounded border-b-[7px] border border-black shadow-xl p-3">
+                    <h2 className=" text-2xl font-bold font-sans">Place</h2>
+                    <div className=" flex justify-between items-center gap-2">
+                        <div className=" flex items-center">
+                            <MdOutlinePayment className=" text-5xl font-bold"></MdOutlinePayment>
+                            <h2 className=" text-2xl font-bold font-sans ">{place.length}</h2>
+                        </div>
+                        <div>
+                            <div className="radial-progress text-primary" style={{ "--value": place.length }} role="progressbar">{place.length}</div>
+                        </div>
+                    </div>
+                </div>
+                {/* Stat 3 */}
+                <div className=" lg:w-5/12 w-full lg:h-[150px] h-[150px] py-2 rounded border-b-[7px] border border-pink-600 shadow-xl p-3">
                     <h2 className=" text-2xl font-bold font-sans">Destination</h2>
                     <div className=" flex justify-between items-center">
                         <div className=" flex items-center gap-2">

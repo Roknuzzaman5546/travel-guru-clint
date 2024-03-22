@@ -1,15 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
-import UseAxiospublic from "./useaxiospublic";
+import UseaxiosPublic from "./UseaxiosPublic";
 import { useContext } from "react";
-import { Authcontext } from "../Authprovider/Authprovider";
+import { AuthContext } from "../Authprovider/Authprovider";
 
 const useChoicelist = () => {
-    const axiospublic = UseAxiospublic()
-    const { user } = useContext(Authcontext)
+    const axiosPublic = UseaxiosPublic()
+    const { user } = useContext(AuthContext)
     const { data: choice = [], refetch } = useQuery({
         queryKey: ['choice'],
         queryFn: async () => {
-            const res = await axiospublic.get(`/choicelist?email=${user.email}`)
+            const res = await axiosPublic.get(`/choicelist?email=${user.email}`)
             console.log(res.data)
             return res.data;
         }

@@ -1,15 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
-import UseAxiospublic from "./useaxiospublic";
+import UseaxiosPublic from "./UseaxiosPublic";
 import { useContext } from "react";
-import { Authcontext } from "../Authprovider/Authprovider";
+import { AuthContext } from "../Authprovider/Authprovider";
 
 const usePayments = () => {
-    const axiospublic = UseAxiospublic()
-    const { user } = useContext(Authcontext)
+    const axiosPublic = UseaxiosPublic()
+    const { user } = useContext(AuthContext)
     const { data: payments = [], refetch } = useQuery({
         queryKey: ['payments'],
         queryFn: async () => {
-            const res = await axiospublic.get(`/payment?email=${user?.email}`)
+            const res = await axiosPublic.get(`/payment?email=${user?.email}`)
             console.log(res.data)
             return res.data;
         }

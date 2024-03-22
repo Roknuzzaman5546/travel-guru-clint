@@ -1,15 +1,15 @@
 import { useForm } from "react-hook-form";
 import { FaHotel, } from "react-icons/fa";
-import UseAxiospublic from "../../Hooks/useaxiospublic";
 import Swal from "sweetalert2";
+import UseaxiosPublic from "../../Hooks/UseAxiospublic";
 
 const Addhotel = () => {
-    const axiospublic = UseAxiospublic();
+    const axiosPublic = UseaxiosPublic();
 
     const { register, handleSubmit, reset } = useForm()
     const onSubmit = (data) => {
         console.log(data)
-        axiospublic.post('/hotel', data)
+        axiosPublic.post('/hotel', data)
             .then(res => {
                 console.log(res.data)
                 if (res.data) {

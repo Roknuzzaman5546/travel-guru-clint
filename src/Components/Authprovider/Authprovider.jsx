@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { auth } from "../Firebase/Firebase.config";
-export const Authcontext = createContext();
+export const AuthContext = createContext();
 
 const Authprovider = ({ children }) => {
     const githubprovider = new GithubAuthProvider();
@@ -59,9 +59,9 @@ const Authprovider = ({ children }) => {
     }
 
     return (
-        <Authcontext.Provider value={authInfo}>
+        <AuthContext.Provider value={authInfo}>
             {children}
-        </Authcontext.Provider>
+        </AuthContext.Provider>
     );
 };
 

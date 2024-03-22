@@ -1,11 +1,11 @@
 import { FaTrash } from "react-icons/fa6";
 import usePayments from "../../Hooks/usePayments";
-import UseAxiospublic from "../../Hooks/useaxiospublic";
 import Swal from "sweetalert2";
+import UseaxiosPublic from "../../Hooks/UseAxiospublic";
 
 const Paymenthistory = () => {
     const [payments, refetch] = usePayments();
-    const axiospublic = UseAxiospublic();
+    const axiosPublic = UseaxiosPublic();
     console.log(payments)
 
 
@@ -20,7 +20,7 @@ const Paymenthistory = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axiospublic.delete(`/users/${id}`)
+                axiosPublic.delete(`/users/${id}`)
                     .then(res => {
                         refetch();
                         console.log(res.data)

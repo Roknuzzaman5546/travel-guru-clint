@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import './booking.css'
 import useChoicelist from "../../Hooks/useChoicelist";
 import Swal from "sweetalert2";
-import UseAxiospublic from "../../Hooks/useaxiospublic";
+import UseaxiosPublic from "../../Hooks/UseAxiospublic";
 
 
 const Choicelist = () => {
     const [choice, refetch] = useChoicelist();
-    const axiospublic = UseAxiospublic()
+    const axiosPublic = UseaxiosPublic()
 
     const handleDelete = (id) => {
         Swal.fire({
@@ -20,7 +20,7 @@ const Choicelist = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axiospublic.delete(`/choice/${id}`)
+                axiosPublic.delete(`/choice/${id}`)
                     .then((res) => {
                         refetch();
                         console.log(res.data)

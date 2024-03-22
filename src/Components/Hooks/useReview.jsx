@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import UseAxiospublic from "./useaxiospublic";
+import UseaxiosPublic from "./UseaxiosPublic";
 
 const useReview = () => {
-    const axiospublic = UseAxiospublic()
+    const axiosPublic = UseaxiosPublic()
     const { data: reviews = [], refetch } = useQuery({
         queryKey: ['review'],
         queryFn: async () => {
-            const res = await axiospublic.get(`/review`)
+            const res = await axiosPublic.get(`/review`)
             return res.data;
         }
     })

@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { Authcontext } from "../Authprovider/Authprovider";
+import { AuthContext } from "../Authprovider/Authprovider";
 import Swal from "sweetalert2";
-import UseAxiospublic from "../Hooks/useaxiospublic";
+import UseaxiosPublic from "../Hooks/UseaxiosPublic";
 
 
 const Destination = () => {
-    const { user } = useContext(Authcontext)
-    const axiospublic = UseAxiospublic();
+    const { user } = useContext(AuthContext)
+    const axiosPublic = UseaxiosPublic();
 
     const handledestination = e => {
         e.preventDefault();
@@ -24,7 +24,7 @@ const Destination = () => {
             userphoto: user.photoURL
         }
         console.log(Destination)
-        axiospublic.post('/choicelist', Destination)
+        axiosPublic.post('/choicelist', Destination)
             .then(res => {
                 console.log(res.data)
                 Swal.fire("Destination has added to Choicelist")

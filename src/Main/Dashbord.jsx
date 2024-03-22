@@ -2,15 +2,15 @@ import { FaHouseMedical, FaHouse, FaList, FaUsers, FaLocationDot, FaCartPlus, } 
 import { MdPayment, MdReviews } from "react-icons/md";
 import { IoNotifications } from "react-icons/io5";
 import { NavLink, Outlet } from "react-router-dom";
-import { FaEdit, FaHotel, FaSearch } from "react-icons/fa";
-import logimg from '../assets/logo.png'
+import { FaEdit, FaHotel } from "react-icons/fa";
+import logImg from '../assets/logo.png'
 import { useContext } from "react";
-import { Authcontext } from "../Components/Authprovider/Authprovider";
+import { AuthContext } from "../Components/Authprovider/Authprovider";
 
 
 const Dashboard = () => {
-    const { user } = useContext(Authcontext)
-    const isAdmin = true;
+    const { user } = useContext(AuthContext)
+    const isAdmin = false;
     return (
         <div>
             <div>
@@ -22,7 +22,7 @@ const Dashboard = () => {
                             </div>
                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                 <div className="flex lg:hidden">
-                                    <div className=" w-64 h-screen shadow-md lg:bg-[#ff9c1c] bg-[#ff9c1c] text-black font-mono font-bold text-xlflex flex-col items-center">
+                                    <div className=" w-64 min-h-screen shadow-md bg-[#ff9c1c] text-black font-mono font-bold text-xlflex flex-col items-center pb-5">
                                         <div className=' flex flex-col items-center my-2'>
                                             <img className=' w-40 h-36 rounded-full' src={user?.photoURL} alt="" />
                                             <h2 className=' text-2xl font-bold font-alfa text-orange-400'>{user?.displayName}</h2>
@@ -82,7 +82,7 @@ const Dashboard = () => {
                                 </div>
                             </ul>
                         </div>
-                        <img className=" w-28 h-10 lg:flex hidden" src={logimg} alt="" />
+                        <img className=" w-28 h-10 lg:flex hidden" src={logImg} alt="" />
                     </div>
                     <div className="navbar-end">
                         <div className=" lg:flex hidden">
@@ -104,8 +104,8 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-            <div className=" lg:flex hidden">
-                <div className=" w-64 h-screen shadow-md bg-[#ff9c1c] text-black font-mono font-bold text-xl flex flex-col items-center rounded-md border-2">
+            <div className=" lg:flex hidden"> 
+                <div className=" w-64 min-h-screen shadow-md bg-[#ff9c1c] text-black font-mono font-bold text-xl flex flex-col items-center rounded-md border-2 pb-5">
                     <div className=' flex flex-col items-center mb-2 mt-5'>
                         <img className=' w-28 h-28 rounded-full' src={user?.photoURL} alt="" />
                         <h2 className=' text-2xl mt-2 font-bold font-alfa'>{user?.displayName}</h2>

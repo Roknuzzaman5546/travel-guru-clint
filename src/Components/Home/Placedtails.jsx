@@ -4,13 +4,13 @@ import 'aos/dist/aos.css';
 import Aos from 'aos';
 import { Rating } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
-import { Authcontext } from "../Authprovider/Authprovider";
-import UseAxiospublic from "../Hooks/useaxiospublic";
+import { AuthContext } from "../Authprovider/Authprovider";
+import UseaxiosPublic from "../Hooks/UseaxiosPublic";
 import Swal from "sweetalert2";
 
 const Placedtails = () => {
-    const { user } = useContext(Authcontext)
-    const axiospublic = UseAxiospublic();
+    const { user } = useContext(AuthContext)
+    const axiosPublic = UseaxiosPublic();
     useEffect(() => {
         Aos.init({
             duration: 700,
@@ -33,7 +33,7 @@ const Placedtails = () => {
             userName: user.displayName,
             userphoto: user.photoURL
         }
-        axiospublic.post('/choicelist', placebook)
+        axiosPublic.post('/choicelist', placebook)
             .then(res => {
                 console.log(res.data)
                 Swal.fire(`${place.name} is Choiced succesfully`)

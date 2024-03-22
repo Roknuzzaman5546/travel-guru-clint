@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import UseAxiospublic from "../Hooks/useaxiospublic";
+import UseaxiosPublic from "../Hooks/UseaxiosPublic";
 
 const Blog = () => {
-    const axiopublic = UseAxiospublic();
+    const axiopublic = UseaxiosPublic();
     const { data: place = [] } = useQuery({
         queryKey: ['place'],
         queryFn: async () => {

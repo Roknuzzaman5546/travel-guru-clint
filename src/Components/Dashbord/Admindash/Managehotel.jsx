@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import useHotel from "../../Hooks/useHotel";
-import { Authcontext } from "../../Authprovider/Authprovider";
-import UseAxiospublic from "../../Hooks/useaxiospublic";
+import { AuthContext } from "../../Authprovider/Authprovider";
 import Swal from "sweetalert2";
+import UseaxiosPublic from "../../Hooks/UseAxiospublic";
 
 const Managehotel = () => {
     const [hotel, refetch] = useHotel();
-    const { user } = useContext(Authcontext)
-    const axiospublic = UseAxiospublic();
+    const { user } = useContext(AuthContext)
+    const axiosPublic = UseaxiosPublic();
 
     const handleHotelDelete = (id) => {
         Swal.fire({
@@ -20,7 +20,7 @@ const Managehotel = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axiospublic.delete(`/hotel/${id}`)
+                axiosPublic.delete(`/hotel/${id}`)
                     .then((res) => {
                         refetch();
                         console.log(res.data)

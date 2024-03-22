@@ -1,13 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
-import UseAxiospublic from "./useaxiospublic";
+import UseaxiosPublic from "./UseaxiosPublic";
 
 
 const useUser = () => {
-    const axiospublic = UseAxiospublic()
+    const axiosPublic = UseaxiosPublic()
     const { data: users = [], refetch } = useQuery({
         queryKey: ['user'],
         queryFn: async () => {
-            const res = await axiospublic.get(`/users`)
+            const res = await axiosPublic.get(`/users`)
             return res.data;
         }
     })

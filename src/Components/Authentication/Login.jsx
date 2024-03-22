@@ -1,15 +1,14 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import facebook from '../../assets/images/icons/fb.png'
 import google from '../../assets/images/icons/google.png'
 import { useContext } from "react";
-import { Authcontext } from "../Authprovider/Authprovider";
+import { AuthContext } from "../Authprovider/Authprovider";
 import Swal from "sweetalert2";
-import UseAxiospublic from "../Hooks/useaxiospublic";
+import UseaxiosPublic from "../Hooks/UseAxiospublic";
 
 
 const Login = () => {
-    const { userLogin, usergoogleLogin } = useContext(Authcontext)
-    const axiospublic = UseAxiospublic();
+    const { userLogin, usergoogleLogin } = useContext(AuthContext)
+    const axiosPublic = UseaxiosPublic();
     const currentLocation = useLocation();
     const destinedLocation = useNavigate();
     const handlelogin = (e) => {
@@ -53,7 +52,7 @@ const Login = () => {
                 }
                 console.log(userInfo);
                 destinedLocation(currentLocation?.state ? currentLocation.state : "/");
-                axiospublic.post('/users', userInfo)
+                axiosPublic.post('/users', userInfo)
                     .then(res => {
                         console.log(res.data)
                         Swal.fire("User succesfully creat and update profile!");

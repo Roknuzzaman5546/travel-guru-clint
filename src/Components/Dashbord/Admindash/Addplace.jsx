@@ -1,14 +1,14 @@
 import { useForm } from "react-hook-form";
 import { FaLocationArrow } from "react-icons/fa";
-import UseAxiospublic from "../../Hooks/useaxiospublic";
 import Swal from "sweetalert2";
+import UseaxiosPublic from "../../Hooks/UseAxiospublic";
 
 const Addplace = () => {
-    const axiospublic = UseAxiospublic();
+    const axiosPublic = UseaxiosPublic();
     const { register, handleSubmit, reset } = useForm()
     const onSubmit = (data) => {
         console.log(data)
-        axiospublic.post('/place', data)
+        axiosPublic.post('/place', data)
             .then(res => {
                 console.log(res.data)
                 if (res.data) {

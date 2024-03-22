@@ -4,13 +4,13 @@ import 'aos/dist/aos.css';
 import Aos from 'aos';
 import { Rating } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
-import { Authcontext } from "../Authprovider/Authprovider";
-import UseAxiospublic from "../Hooks/useaxiospublic";
+import { AuthContext } from "../Authprovider/Authprovider";
+import UseaxiosPublic from "../Hooks/UseaxiosPublic";
 import Swal from "sweetalert2";
 
 const Singlehoteldetails = () => {
-    const { user } = useContext(Authcontext)
-    const axiospublic = UseAxiospublic();
+    const { user } = useContext(AuthContext)
+    const axiosPublic = UseaxiosPublic();
     useEffect(() => {
         Aos.init({
             duration: 700,
@@ -33,7 +33,7 @@ const Singlehoteldetails = () => {
             userphoto: user.photoURL
         }
         // console.log(hotelbook)
-        axiospublic.post('/choicelist', hotelbook)
+        axiosPublic.post('/choicelist', hotelbook)
             .then(res => {
                 console.log(res.data)
                 Swal.fire(`${hotel.hotelName} is choiced succesfully`)

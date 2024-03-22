@@ -1,16 +1,15 @@
 import { Link, NavLink } from "react-router-dom";
-import { FaSearch } from "react-icons/fa";
 import logoImg from '../../assets/logo.png'
 import { useContext, useEffect, useState } from "react";
-import { Authcontext } from "../Authprovider/Authprovider";
+import { AuthContext } from "../Authprovider/Authprovider";
 import Swal from "sweetalert2";
 import './Navbar.css'
 
 const Navbar = () => {
     const [isNavbarJumping, setIsNavbarJumping] = useState(false);
 
-    let Admin = true;
-    const { user, userLogout } = useContext(Authcontext)
+    let Admin = false;
+    const { user, userLogout } = useContext(AuthContext)
 
     const handlelogout = () => {
         userLogout()

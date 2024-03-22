@@ -1,11 +1,11 @@
 import { FaTrash, FaUsers } from "react-icons/fa";
 import useUser from "../../Hooks/useUser";
 import Swal from "sweetalert2";
-import UseAxiospublic from "../../Hooks/useaxiospublic";
+import UseaxiosPublic from "../../Hooks/UseAxiospublic";
 
 const Alluser = () => {
     const [users, refetch] = useUser();
-    const axiospublic = UseAxiospublic();
+    const axiosPublic = UseaxiosPublic();
     console.log(users);
 
 
@@ -36,7 +36,7 @@ const Alluser = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axiospublic.delete(`/users/${id}`)
+                axiosPublic.delete(`/users/${id}`)
                     .then(res => {
                         console.log(res.data)
                         if (res.data.deletedCount > 0) {
