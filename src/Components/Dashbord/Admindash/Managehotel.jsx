@@ -2,7 +2,7 @@ import { useContext } from "react";
 import useHotel from "../../Hooks/useHotel";
 import { AuthContext } from "../../Authprovider/Authprovider";
 import Swal from "sweetalert2";
-import UseaxiosPublic from "../../Hooks/UseAxiospublic";
+import UseaxiosPublic from "../../Hooks/UseaxiosPublic";
 
 const Managehotel = () => {
     const [hotel, refetch] = useHotel();
@@ -45,13 +45,13 @@ const Managehotel = () => {
             <div className=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4">
                 {
                     hotel.map(item => <div key={item._id}>
-                        <div className="flex justify-center gap-2 bg-base-100 shadow-xl rounded-xl mb-5">
-                            <img className=" rounded-lg w-2/3 h-60" src={item.imageUrl} alt="Album" />
+                        <div className="h-60 flex justify-center gap-2 bg-base-100 shadow-xl rounded-xl mb-5">
+                            <img className=" rounded-lg md:w-[43%] w-[50%] h-60" src={item.imageUrl} alt="Album" />
                             <div className=" w-full flex flex-col justify-center gap-2">
-                                <h2 className=" text-2xl font-bold font-sans">{item.hotelName}</h2>
-                                <p className=" text-xl font-bold font-mono">{item.title}</p>
+                                <h2 className=" text-xl font-bold font-sans col-span-1">{item.hotelName}</h2>
+                                <p className=" font-bold font-mono">{item.title}</p>
                                 <p className=" text-xl font-bold font-mono">Cost:{item.bookingCost}</p>
-                                <div className="card-actions justify-end">
+                                <div className="card-actions justify-end items-end">
                                     <button className="btn btn-warning btn-outline mb-2" onClick={() => handleHotelDelete(item._id)}>Delete</button>
                                     <button className="btn btn-warning btn-outline mb-2 mr-2" onClick={() => handleHotelUpdate(item._id)}>Update</button>
                                 </div>

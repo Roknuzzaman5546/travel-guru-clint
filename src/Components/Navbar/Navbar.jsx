@@ -63,7 +63,7 @@ const Navbar = () => {
         <>
             <li><NavLink to="/blog" className="navAfter relative font-bold text-white mx-2">Blog</NavLink></li>
             <li><NavLink to="/About" className="navAfter relative font-bold text-white mx-2">About us</NavLink></li>
-            <li><NavLink to="/Condition" className="navAfter relative font-bold text-white mx-2">Terms & Condition</NavLink></li>
+            <li><NavLink to="/condition" className="navAfter relative font-bold text-white mx-2">Terms & Condition</NavLink></li>
         </>
     )
     // // dropdown link defined

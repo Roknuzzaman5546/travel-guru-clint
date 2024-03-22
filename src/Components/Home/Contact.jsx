@@ -49,7 +49,7 @@ const Contact = () => {
                         <textarea {...register("message", { required: true })} className="textarea textarea-bordered h-40 w-full mt-3 mb-4" placeholder="Your messages"></textarea>
                         <div className=" my-3 flex justify-start items-center gap-3">
                             <input type="checkbox" className="checkbox" />
-                            <p className=" text-xl">I agree to the <Link to="/conditions"><span className=" text-orange-600">terms & conditions</span></Link> and <Link to="privacy"><span className="text-orange-600">privacy policy</span></Link></p>
+                            <p className=" text-xl">I agree to the <Link to="/condition"><span className=" text-orange-600">terms & conditions</span></Link> and <Link to="condition"><span className="text-orange-600">privacy policy</span></Link></p>
                         </div>
                         <input type="submit" value="Send Message" className=" rounded px-8 py-4 mt-3 bg-[#ff9c1c] hover:bg-[#000] text-white" />
                     </form>
