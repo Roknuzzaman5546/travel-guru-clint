@@ -6,10 +6,10 @@ const About = () => {
     return (
         <div className=' md:max-w-screen-2xl w-11/12 mx-auto my-24'>
             <h2 className=' text-5xl font-bold font-mono text-center text-black mb-10'>See about</h2>
-            <div className='max-w-[1296px] mx-auto flex flex-col lg:flex-row lg:justify-center xl:justify-between md:gap-[100px] gap-3 md:items-center'>
+            <div className=' mx-auto flex flex-col lg:flex-row lg:justify-center xl:justify-between md:gap-[100px] gap-3 md:items-center'>
                 <div className=' lg:w-2/5 w-full relative'>
-                    <img className=' lg:max-w-[400px] md:min-w-[600px] lg:min-w-[324px] xl:min-w-[604px] md:min-h-[430px] xl:min-h-[504px] rounded-[5px] z-10' src={aboutimg} alt="" />
-                    <div className='absolute top-[250px] md:left-[0px] md:top-[50px] lg:left-[250px] lg:top-[250px] xl:left-[400px]  xl:top-[305px] min-w-[160px] lg:min-w-[200px] xl:min-w-[300px] min-h-[250px] hidden lg:flex'>
+                    <img className='max-w-[1296px] lg:max-w-[400px] md:min-w-[600px] lg:min-w-[450px] xl:min-w-[604px] md:min-h-[430px] xl:min-h-[504px] rounded-[5px] z-10' src={aboutimg} alt="" />
+                    <div className='absolute top-[250px] md:left-[0px] md:top-[50px] lg:left-[300px] lg:top-[250px] xl:left-[400px]  xl:top-[305px] min-w-[160px] lg:min-w-[200px] xl:min-w-[300px] min-h-[250px] hidden lg:flex'>
                         <img className='min-w-full min-h-full rounded-[5px]' src={about2img} alt="" />
                     </div>
                 </div>

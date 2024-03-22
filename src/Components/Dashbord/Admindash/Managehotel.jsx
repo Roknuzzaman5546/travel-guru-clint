@@ -2,7 +2,7 @@ import { useContext } from "react";
 import useHotel from "../../Hooks/useHotel";
 import { AuthContext } from "../../Authprovider/Authprovider";
 import Swal from "sweetalert2";
-import UseaxiosPublic from "../../Hooks/UseaxiosPublic";
+import UseaxiosPublic from "../../Hooks/UseAxiospublic";
 
 const Managehotel = () => {
     const [hotel, refetch] = useHotel();

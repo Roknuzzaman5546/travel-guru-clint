@@ -9,18 +9,31 @@ const Alluser = () => {
     console.log(users);
 
 
-    const handleMakeadmin = item => {
-        console.log('admin related', item)
-            .patch(`/users/admin/${item._id}`)
-            .then(res => {
-                console.log(res.data)
-                refetch();
-                Swal.fire({
-                    title: "Updated!",
-                    text: `${item._id} is Admin updated`,
-                    icon: "success"
-                });
-            })
+    const handleMakeadmin = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Admin it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosPublic.patch(`/users/${id}`)
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data > 0) {
+                            Swal.fire({
+                                title: "Admin!",
+                                text: "Your User has been Admin now.",
+                                icon: "success"
+                            });
+                            refetch();
+                        }
+                    })
+            }
+        });
     }
 
 
@@ -82,7 +95,7 @@ const Alluser = () => {
                                     <td>{item.name}</td>
                                     <td>{item.email}</td>
                                     <td>
-                                        {item.role === 'admin' ? "Admin" : <button onClick={() => handleMakeadmin(item)} className="btn btn-square text-red-500 text-xl">
+                                        {item.role === 'admin' ? "Admin" : <button onClick={() => handleMakeadmin(item._id)} className="btn btn-square text-red-500 text-xl">
                                             <FaUsers></FaUsers>
                                         </button>}
                                     </td>

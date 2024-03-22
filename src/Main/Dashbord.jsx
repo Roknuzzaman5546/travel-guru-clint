@@ -1,7 +1,7 @@
 import { FaHouseMedical, FaHouse, FaList, FaUsers, FaLocationDot, FaCartPlus, } from "react-icons/fa6";
 import { MdPayment, MdReviews } from "react-icons/md";
 import { IoNotifications } from "react-icons/io5";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { FaEdit, FaHotel } from "react-icons/fa";
 import logImg from '../assets/logo.png'
 import { useContext, useEffect, useState } from "react";
@@ -98,7 +98,7 @@ const Dashboard = () => {
                                 </div>
                             </ul>
                         </div>
-                        <img className=" w-28 h-10 lg:flex hidden" src={logImg} alt="" />
+                        <Link to={'/'}><img className=" w-28 h-10 md:ml-5 ml-10" src={logImg} alt="" /></Link>
                     </div>
                     <div className="navbar-end">
                         <div className=" lg:flex hidden">
@@ -108,9 +108,6 @@ const Dashboard = () => {
                                 <li><NavLink to="/condition">Condition</NavLink></li>
                                 <li><button className="btn btn-ghost btn-circle">
                                     <FaCartPlus className=" text-2xl font-bold"></FaCartPlus>
-                                </button></li>
-                                <li><button className="btn btn-ghost btn-circle">
-                                    <FaHotel className="text-2xl font-bold"></FaHotel>
                                 </button></li>
                                 <li><button className="btn btn-ghost btn-circle">
                                     <IoNotifications className=" text-2xl font-bold"></IoNotifications>
