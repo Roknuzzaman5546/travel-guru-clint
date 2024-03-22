@@ -6,7 +6,7 @@ import UseaxiosPublic from "../../Hooks/UseAxiospublic";
 const Alluser = () => {
     const [users, refetch] = useUser();
     const axiosPublic = UseaxiosPublic();
-    console.log(users);
+    // console.log(users);
 
 
     const handleMakeadmin = (id) => {
@@ -23,7 +23,7 @@ const Alluser = () => {
                 axiosPublic.patch(`/users/${id}`)
                     .then(res => {
                         console.log(res.data)
-                        if (res.data > 0) {
+                        if (res.data.modifiedCount > 0) {
                             Swal.fire({
                                 title: "Admin!",
                                 text: "Your User has been Admin now.",

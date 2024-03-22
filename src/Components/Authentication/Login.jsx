@@ -50,7 +50,7 @@ const Login = () => {
                     email: response.user.email,
                     role: "user"
                 }
-                console.log(userInfo);
+                // console.log(userInfo);
                 destinedLocation(currentLocation?.state ? currentLocation.state : "/");
                 axiosPublic.post('/users', userInfo)
                     .then(res => {
@@ -64,7 +64,7 @@ const Login = () => {
     }
 
     return (
-        <div className="pt-36">
+        <div className="pt-24">
             <div className="w-1/3 mx-auto border-2 py-8 px-5 rounded-md">
                 <div className=" w-10/12 mx-auto">
                     <h2 className=" text-2xl font-bold my-4">Login</h2>
@@ -96,7 +96,7 @@ const Login = () => {
                 <img className="w-8 h-8" src={facebook} alt="" />
                 <h2 className="font-bold">Log in with facebook</h2>
             </div> */}
-            <div className="flex items-center justify-evenly w-1/4 mx-auto border-2 rounded-full my-4 py-2 cursor-pointer" onClick={handleGoogleLogin}>
+            <div className="flex items-center justify-evenly w-1/4 mx-auto border-2 rounded-full my-4 py-2 cursor-pointer mb-28" onClick={handleGoogleLogin}>
                 <img className="w-8 h-8" src={google} alt="" />
                 <h2 className="font-bold">Log in with Google</h2>
             </div>

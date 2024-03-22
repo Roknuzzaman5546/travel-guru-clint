@@ -4,7 +4,6 @@ import Hoteldetails from "./Hoteldetails";
 import './Allhotel.css'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useState } from "react";
-import Footer from "../../Home/Footer";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Allhotel = () => {
@@ -159,7 +158,7 @@ const Allhotel = () => {
                 </div>
             </div>
             {/* card section */}
-            <div className="lg:max-w-screen-2xl w-11/12  mx-auto mb-10">
+            <div className="lg:max-w-screen-2xl w-11/12  mx-auto mb-20">
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
                     {
                         currentItems.map((item => <Hoteldetails key={item._id} item={item}></Hoteldetails>))
@@ -181,10 +180,6 @@ const Allhotel = () => {
                     </div>
                 </div>
             </div>
-            {/* footer section */}
-            {/* <div className=" mt-20">
-                <Footer></Footer>
-            </div> */}
         </div>
     );
 };

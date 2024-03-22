@@ -4,7 +4,6 @@ import usePlace from "../../Hooks/Useplace";
 import './Allplace.css'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useState } from "react";
-import Footer from "../../Home/Footer";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Allplace = () => {
@@ -18,7 +17,7 @@ const Allplace = () => {
     // now this time itemper page static.after when we will do backed in then we will do it's daynamic
     const itemsperPage = 9;
     const numberofPages = Math.ceil(count / itemsperPage)
-    console.log(numberofPages)
+    // console.log(numberofPages)
 
     const pages = [];
     for (let i = 0; i < numberofPages; i++) {
@@ -162,7 +161,7 @@ const Allplace = () => {
                     </div>
                 </div>
             </div>
-            <div className=" mb-10">
+            <div className=" mb-20">
                 <div className="md:max-w-screen-2xl w-11/12 mx-auto">
                     <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                         {

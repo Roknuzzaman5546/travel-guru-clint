@@ -8,7 +8,6 @@ import {
 import Main from './Main/Main';
 import Home from './Components/Home/Home';
 import Destination from './Components/Destination/Destination';
-import Regoser from './Components/Authentication/Regoser';
 import Login from './Components/Authentication/Login';
 import Errorepage from './Components/Errorepage/Errorepage';
 import Authprovider from './Components/Authprovider/Authprovider';
@@ -36,6 +35,7 @@ import Alluser from './Components/Dashbord/Admindash/Alluser';
 import Paymenthistory from './Components/Dashbord/Userdash/Paymenthistory';
 import AboutUs from './Components/About/AboutUs';
 import Condition from './Components/Condition/Condition';
+import Register from './Components/Authentication/Register';
 const queryClient = new QueryClient()
 
 
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/register",
-        element: <Regoser></Regoser>
+        element: <Register></Register>
       },
       {
         path: "/login",

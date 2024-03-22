@@ -5,13 +5,13 @@ import { AuthContext } from "../Authprovider/Authprovider";
 import Swal from "sweetalert2";
 import UseaxiosPublic from "../Hooks/UseAxiospublic";
 
-const Regoser = () => {
+const Register = () => {
     const { userRegister, profile, usergoogleLogin } = useContext(AuthContext)
     const axiosPublic = UseaxiosPublic();
     const currentLocation = useLocation();
     const destinedLocation = useNavigate();
 
-    const handlregister = (e) => {
+    const handleRegister = (e) => {
         e.preventDefault();
         const from = e.target;
         const name = from.name.value;
@@ -58,7 +58,7 @@ const Regoser = () => {
                     .then(res => {
                         console.log(res.data)
                         Swal.fire("User succesfully creat and update profile!");
-                        navigate('/')
+                        destinedLocation(currentLocation?.state ? currentLocation.state : "/");
                     })
             })
             .catch(error => {
@@ -67,11 +67,11 @@ const Regoser = () => {
     }
 
     return (
-        <div className="pt-36">
+        <div className="pt-24">
             <div className="w-1/3 mx-auto border-2 py-8 px-5 rounded-md">
                 <div className=" w-10/12 mx-auto">
                     <h2 className=" text-2xl font-bold my-4">Create an account</h2>
-                    <form onSubmit={handlregister}>
+                    <form onSubmit={handleRegister}>
                         <input placeholder="Your name" className=" w-80 rounded p-2 border-b-2 " type="text" name="name" id="" />
                         <br />
                         <input placeholder="Photo url" className=" w-80 rounded p-2 border-b-2 mt-3 " type="text" name="photo" id="" />
@@ -94,7 +94,7 @@ const Regoser = () => {
                 <h2 className="font-bold">Log in with facebook</h2>
             </div> */}
 
-            <div className="flex items-center justify-evenly w-1/4 mx-auto border-2 rounded-full my-4 py-2 cursor-pointer" onClick={handleGoogleLogin}>
+            <div className="flex items-center justify-evenly w-1/4 mx-auto border-2 rounded-full my-4 py-2 cursor-pointer mb-28" onClick={handleGoogleLogin}>
                 <img className="w-8 h-8" src={google} alt="" />
                 <h2 className="font-bold">Log in with Google</h2>
             </div>
@@ -102,4 +102,4 @@ const Regoser = () => {
     );
 };
 
-export default Regoser;
+export default Register;
