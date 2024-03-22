@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import UseaxiosPublic from "./UseaxiosPublic";
+import UseaxiosPublic from "./UseAxiospublic";
 
 const useHotel = () => {
     const axiosPublic = UseaxiosPublic()

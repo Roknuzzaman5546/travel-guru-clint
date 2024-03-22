@@ -20,7 +20,7 @@ const Userhome = () => {
     const [payment] = usePayments();
     const [choice] = useChoicelist();
     const [destination] = useChoicelist();
-    console.log(allPayments);
+    // console.log(allPayments);
 
     return (
         <div className=" w-11/12 mx-auto">
@@ -72,8 +72,8 @@ const Userhome = () => {
                 <div className=" lg:w-1/2 w-full lg:h-[469px] h-[300px] border-r-2 border-[#5b3d12] bg-[#ff9c1c] flex justify-center items-center mt-5">
                     <div className=" flex flex-col gap-2 items-center">
                         <img className=" md:w-60 md:h-60 w-40 h-40 rounded-full" src={user.photoURL} alt="" />
-                        <div className=" text-5xl text-black font-bold font-mono">{user.displayName}</div>
-                        <h2 className=" text-xl font-bold">{user?.email}</h2>
+                        <div className=" text-4xl text-black font-bold font-mono text-center">{user.displayName}</div>
+                        <h2 className=" text-xl text-black font-bold">{user?.email}</h2>
                     </div>
                 </div>
                 {/* Count part */}

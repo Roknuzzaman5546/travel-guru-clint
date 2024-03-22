@@ -5,8 +5,8 @@ import Aos from 'aos';
 import { Rating } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
 import { AuthContext } from "../Authprovider/Authprovider";
-import UseaxiosPublic from "../Hooks/UseaxiosPublic";
 import Swal from "sweetalert2";
+import UseaxiosPublic from "../Hooks/UseAxiospublic";
 
 const Placedtails = () => {
     const { user } = useContext(AuthContext)

@@ -4,16 +4,32 @@ import { IoNotifications } from "react-icons/io5";
 import { NavLink, Outlet } from "react-router-dom";
 import { FaEdit, FaHotel } from "react-icons/fa";
 import logImg from '../assets/logo.png'
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Components/Authprovider/Authprovider";
+import useGetRole from "../Components/Hooks/useGetRole";
 
 
 const Dashboard = () => {
     const { user } = useContext(AuthContext)
-    const isAdmin = false;
+    const [isAdmin, setIsAdmin] = useState(false)
+    const [userRole] = useGetRole()
+    // console.log(userRole);
+    const role = userRole.role;
+    // admin check condition useEffect
+    useEffect(() => {
+        if (role == "admin") {
+            setIsAdmin(true)
+        }
+        else {
+            setIsAdmin(false)
+        }
+        // console.log(isAdmin);
+    }, [isAdmin, role]);
+
     return (
         <div>
             <div>
+                {/* navbar for small device */}
                 <div className="navbar text-white font-bold py-2 font-sans bg-[#000000]">
                     <div className="navbar-start w-11/12 mx-auto">
                         <div className="dropdown">
@@ -104,7 +120,8 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-            <div className=" lg:flex hidden"> 
+            {/* navbar for lg device */}
+            <div className=" lg:flex hidden">
                 <div className=" w-64 min-h-screen shadow-md bg-[#ff9c1c] text-black font-mono font-bold text-xl flex flex-col items-center rounded-md border-2 pb-5">
                     <div className=' flex flex-col items-center mb-2 mt-5'>
                         <img className=' w-28 h-28 rounded-full' src={user?.photoURL} alt="" />
@@ -162,10 +179,12 @@ const Dashboard = () => {
                             All Hotel</NavLink></li>
                     </ul>
                 </div>
+                {/* outlet for lg device */}
                 <div className=" flex-1">
                     <Outlet></Outlet>
                 </div>
             </div>
+            {/* outlet part for small device */}
             <div className=" flex lg:hidden">
                 <Outlet></Outlet>
             </div>
