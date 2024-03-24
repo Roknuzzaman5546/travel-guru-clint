@@ -44,8 +44,8 @@ const Paymenthistory = () => {
                     <h2 className=" text-3xl font-bold">My history: {payments.length}</h2>
                 </div>
                 <div>
-                    <div className="mt-10 w-[96%] bg-white px-6 mx-auto mb-20 border rounded-lg">
-                        <table className="table table-zebra overflow-x-auto">
+                    <div className="mt-10 w-[96%] bg-white mx-auto mb-20">
+                        <table className="table table-zebra overflow-x-auto w-full px-6  border rounded-lg">
                             {/* head */}
                             <thead className="font-semibold w-full text-lg text-black">
                                 <tr>

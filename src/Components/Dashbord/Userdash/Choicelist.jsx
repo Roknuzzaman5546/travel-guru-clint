@@ -54,7 +54,7 @@ const Choicelist = () => {
                                 <p className="font-bold font-mono col-span-1">Email:{item.email}</p>
                                 <p className="font-bold font-mono">Cost:{item.cost} $</p>
                                 <div className="flex flex-col md:flex-row justify-start items-center gap-0 md:gap-2 mr-4 mt-2">
-                                    <Link to={`/Dashboard/payment?cost=${item.cost}`}><button className=" bg-[#ff9c1c] mb-4 hover:bg-[#000] text-white px-5 py-2.5 rounded-md  font-bold font-mono transition">Pay now</button></Link>
+                                    <Link to={`/Dashboard/payment?cost=${item.cost}&name=${item?.name}&img=${item?.img}&choiceId=${item._id}`}><button className=" bg-[#ff9c1c] mb-4 hover:bg-[#000] text-white px-5 py-2.5 rounded-md  font-bold font-mono transition">Pay now</button></Link>
                                     <button className=" bg-[#ff9c1c] mb-4 hover:bg-[#000] text-white px-5 py-2.5 rounded-md  font-bold font-mono transition" onClick={() => handleDelete(item._id)} >Canchel</button>
                                 </div>
                             </div>

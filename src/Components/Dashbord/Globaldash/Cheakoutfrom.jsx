@@ -1,26 +1,24 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useContext, useEffect, useState } from "react";
-import useChoicelist from "../../Hooks/useChoicelist";
 import { AuthContext } from "../../Authprovider/Authprovider";
 import Swal from "sweetalert2";
 import UseaxiosPublic from "../../Hooks/UseAxiospublic";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Cheakoutfrom = () => {
+const Cheakoutfrom = ({ queryParams }) => {
     const [error, setError] = useState('');
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const [clientSecret, SetclientSecret] = useState();
     const [transictionid, setTransictionid] = useState();
     const stripe = useStripe();
     const elements = useElements();
     const axiosPublic = UseaxiosPublic();
-    const [choice] = useChoicelist();
 
-    const totalprice = choice.reduce((total, item) => total + item.cost, 0)
     // console.log(totalprice)
-    const total = parseInt(totalprice)
     // console.log(total);
+    const { cost, choiceId } = queryParams;
+    const total = parseInt(cost)
 
     useEffect(() => {
         axiosPublic.post('/create-payment-intent', { cost: total })
@@ -29,6 +27,8 @@ const Cheakoutfrom = () => {
                 SetclientSecret(res.data.clientSecret)
             })
     }, [axiosPublic, total])
+
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -75,11 +75,12 @@ const Cheakoutfrom = () => {
                     name: user?.displayName,
                     email: user?.email,
                     transictionid: paymentIntent.id,
-                    price: totalprice,
+                    price: cost,
                     date: new Date().toLocaleDateString("en-GB"),
-                    choicelistIds: choice.map(item => item._id),
+                    choicelistId: choiceId,
                     status: "pending"
                 }
+                console.log(payment);
                 const res = await axiosPublic.post("/payment", payment)
                 if (res) {
                     Swal.fire({
@@ -89,7 +90,7 @@ const Cheakoutfrom = () => {
                         showConfirmButton: false,
                         timer: 1500,
                     });
-                    //   navigate("/")
+                    navigate("/Dashboard/choicelist")
                 }
             }
         }
