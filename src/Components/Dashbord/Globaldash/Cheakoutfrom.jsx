@@ -20,6 +20,7 @@ const Cheakoutfrom = () => {
     const totalprice = choice.reduce((total, item) => total + item.cost, 0)
     // console.log(totalprice)
     const total = parseInt(totalprice)
+    // console.log(total);
 
     useEffect(() => {
         axiosPublic.post('/create-payment-intent', { cost: total })

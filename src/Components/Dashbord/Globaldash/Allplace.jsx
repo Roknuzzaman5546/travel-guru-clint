@@ -83,17 +83,17 @@ const Allplace = () => {
             {/* background section */}
             <div className="placebgimg">
                 <div className=" bg-[#000000B2]">
-                    <div className=" w-[20%] mx-auto py-24 text-center">
+                    <div className=" w-[35%] mx-auto py-24 text-center">
                         <h2 className="text-6xl font-bold text-[#ff9c1c] font-serif">All Place</h2>
                         <div className="mt-2">
                             <NavLink to='/' className='navAfter relative font-medium text-base text-white mx-3'>Home</NavLink>
-                            <NavLink to='/place' className='navAfter relative font-medium text-base text-[#ff9c1c] mx-3 '>All Place</NavLink>
+                            <NavLink to='/allplace' className=' text-[#ff9c1c] '>All Place</NavLink>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className=" bg-[#000] h-20 w-full mb-10">
-                <div className=" w-[88%] mx-auto flex justify-around items-center pt-3">
+            <div className=" bg-[#000] h-40 md:h-20 w-full mb-10">
+                <div className=" w-[88%] mx-auto flex flex-col-reverse md:flex-row gap-2 justify-around items-center pt-3">
                     <div className=" md:w-[50%] w-full md:ml-3 mx-auto">
                         <form>
                             <label
