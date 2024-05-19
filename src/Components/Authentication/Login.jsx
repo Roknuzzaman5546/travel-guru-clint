@@ -3,7 +3,7 @@ import google from '../../assets/images/icons/google.png'
 import { useContext } from "react";
 import { AuthContext } from "../Authprovider/Authprovider";
 import Swal from "sweetalert2";
-import UseaxiosPublic from "../Hooks/UseAxiospublic";
+import UseaxiosPublic from "../Hooks/UseaxiosPublic";
 
 
 const Login = () => {

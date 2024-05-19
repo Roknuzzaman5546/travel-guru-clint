@@ -1,31 +1,23 @@
-import { Rating } from "@smastrom/react-rating";
+/* eslint-disable react/no-unknown-property */
 import { Link } from "react-router-dom";
-import Btnyellow from "../Shared/Btnyellow";
 import '../Dashbord/Globaldash/hotel.css'
 
 const Topplacedetails = ({ item }) => {
-    const { img, name, cost, _id, rating } = item;
+    const { img, name, cost, _id } = item;
     return (
         <div>
-            <div className="card card-compact bg-base-100 shadow-xl">
-                <figure><img className="md:h-72 h-60 w-full background-image" src={img} alt="Shoes" /></figure>
-                <div className="card-body">
-                    <h2 className=" text-3xl font-bold font-mono line-clamp-1">{name}</h2>
-                    <p className=" text-xl font-bold font-mono">Cost: {cost} $</p>
-                    <div className="flex justify-between items-center">
-                        <h2 className=" text-xs">
-                            <Rating
-                                style={{ maxWidth: 180 }}
-                                value={rating}
-                                readOnly
-                            />
-                        </h2>
-                        <Link to={`/place/${_id}`}>
-                            <Btnyellow
-                            titleRed={'Details'}
-                            ></Btnyellow>
-                        </Link>
-                    </div>
+            <div className="placeCard overflow-hidden">
+                <div className="icon">
+                    <img className="md:h-64 h-60 w-full" src={img} alt="" />
+                </div>
+                <p className="title">{name}</p>
+                <div className="text flex items-center justify-between">
+                    <p className=" text-xl font-bold font-mono">Cost:{cost}$ </p>
+                    <Link to={`/place/${_id}`}>
+                        <button className=" rounded px-6 py-2 bg-[#ff9c1c] hover:bg-[#000] text-white">
+                            Details
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

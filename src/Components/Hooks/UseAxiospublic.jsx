@@ -2,7 +2,7 @@ import axios from "axios";
 
 const UseaxiosPublic = () => {
     const axiosPublic = axios.create({
-        baseURL: 'http://localhost:5000'
+        baseURL: 'https://travel-guru-server-five-gamma.vercel.app'
     })
     return axiosPublic;
 };
