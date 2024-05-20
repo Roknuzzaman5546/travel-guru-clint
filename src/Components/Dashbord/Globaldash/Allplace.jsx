@@ -163,9 +163,9 @@ const Allplace = () => {
             </div>
             <div className=" mb-20">
                 <div className="md:max-w-screen-2xl w-11/12 mx-auto">
-                    <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
+                    <div className=' grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                         {
-                            currentItems.map(item => <Topplacedetails key={item.id} item={item}>
+                            currentItems.map(item => <Topplacedetails key={item?.id} item={item}>
                             </Topplacedetails>)
                         }
                     </div>

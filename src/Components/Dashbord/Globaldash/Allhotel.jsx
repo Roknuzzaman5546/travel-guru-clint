@@ -159,7 +159,7 @@ const Allhotel = () => {
             </div>
             {/* card section */}
             <div className="lg:max-w-screen-2xl w-11/12  mx-auto mb-20">
-                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+                <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
                     {
                         currentItems.map((item => <Hoteldetails key={item._id} item={item}></Hoteldetails>))
                     }

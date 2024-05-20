@@ -1,16 +1,14 @@
-import { Rating } from "@smastrom/react-rating";
 import { Link } from "react-router-dom";
-import Btnyellow from "../../Shared/Btnyellow";
 import './hotel.css'
 
 
 const Hoteldetails = ({ item }) => {
 
-    const { imageUrl, hotelName, bookingCost, _id, rating } = item;
+    const { imageUrl, hotelName, bookingCost, _id } = item;
 
     return (
         <div>
-            <div className="card  card-compact bg-base-100 shadow-xl">
+            {/* <div className="card  card-compact bg-base-100 shadow-xl">
                 <figure><img className="md:h-72 h-60 w-full background-image" src={imageUrl} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className=" text-3xl font-bold font-mono line-clamp-1">{hotelName}</h2>
@@ -27,6 +25,20 @@ const Hoteldetails = ({ item }) => {
                         titleRed={"Details"}
                         ></Btnyellow></Link>
                     </div>
+                </div>
+            </div> */}
+            <div className="placeCard overflow-hidden">
+                <div className="icon">
+                    <img className="md:h-64 h-60 w-full" src={imageUrl} alt="" />
+                </div>
+                <p className="title">{hotelName}</p>
+                <div className="text flex items-center justify-between">
+                    <p className=" text-xl font-bold font-mono">Cost:{bookingCost}$ </p>
+                    <Link to={`/place/${_id}`}>
+                        <button className=" rounded px-6 py-2 bg-[#ff9c1c] hover:bg-[#000] text-white">
+                            Details
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

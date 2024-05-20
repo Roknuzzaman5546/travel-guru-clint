@@ -1,7 +1,7 @@
 import { FaTrash, FaUsers } from "react-icons/fa";
 import useUser from "../../Hooks/useUser";
 import Swal from "sweetalert2";
-import UseaxiosPublic from "../../Hooks/UseAxiospublic";
+import UseaxiosPublic from "../../Hooks/UseaxiosPublic";
 
 const Alluser = () => {
     const [users, refetch] = useUser();
