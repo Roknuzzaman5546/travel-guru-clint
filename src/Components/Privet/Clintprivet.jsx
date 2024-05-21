@@ -3,7 +3,7 @@ import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../Authprovider/Authprovider";
 
 
-const Clintprivet = ({ children }) => {
+const ClintPrivet = ({ children }) => {
     const { user, loading } = useContext(AuthContext)
     const location = useLocation();
     if (loading) {
@@ -25,4 +25,4 @@ const Clintprivet = ({ children }) => {
     return <Navigate to='/login' state={{ from: location }} replace></Navigate>
 };
 
-export default Clintprivet;
+export default ClintPrivet;

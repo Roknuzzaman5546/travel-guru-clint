@@ -12,7 +12,7 @@ import { FaSearch } from "react-icons/fa";
 import useReviews from "../Hooks/useReviews";
 import UseaxiosPublic from "../Hooks/UseaxiosPublic";
 
-const Singlehoteldetails = () => {
+const SingleHotelDetails = () => {
     const { user } = useContext(AuthContext)
     const axiosPublic = UseaxiosPublic();
     useEffect(() => {
@@ -136,4 +136,4 @@ const Singlehoteldetails = () => {
     );
 };
 
-export default Singlehoteldetails;
+export default SingleHotelDetails;

@@ -16,12 +16,11 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
-import Clintprivet from './Components/Privet/Clintprivet';
+import ClintPrivet from './Components/Privet/ClintPrivet';
 import Dashbord from './Main/Dashbord';
 import Allplace from './Components/Dashbord/Globaldash/Allplace';
 import Allhotel from './Components/Dashbord/Globaldash/Allhotel';
-import Placedtails from './Components/Home/Placedtails';
-import Singlehoteldetails from './Components/Home/Singlehoteldetails';
+import SingleHotelDetails from './Components/Home/SingleHotelDetails';
 import Userhome from './Components/Dashbord/Userdash/Userhome';
 import Choicelist from './Components/Dashbord/Userdash/Choicelist';
 import Adminhome from './Components/Dashbord/Admindash/Adminhome';
@@ -36,6 +35,7 @@ import Paymenthistory from './Components/Dashbord/Userdash/Paymenthistory';
 import AboutUs from './Components/About/AboutUs';
 import Condition from './Components/Condition/Condition';
 import Register from './Components/Authentication/Register';
+import PlaceDetails from './Components/Home/PlaceDetails';
 const queryClient = new QueryClient()
 
 
@@ -71,17 +71,17 @@ const router = createBrowserRouter([
       },
       {
         path: '/place/:id',
-        element: <Clintprivet><Placedtails></Placedtails></Clintprivet>,
+        element: <ClintPrivet><PlaceDetails></PlaceDetails></ClintPrivet>,
         loader: () => fetch('https://travel-guru-server-five-gamma.vercel.app/place')
       },
       {
         path: '/hotel/:id',
-        element: <Clintprivet><Singlehoteldetails></Singlehoteldetails></Clintprivet>,
+        element: <ClintPrivet><SingleHotelDetails></SingleHotelDetails></ClintPrivet>,
         loader: () => fetch('https://travel-guru-server-five-gamma.vercel.app/hotel')
       },
       {
         path: "/blog",
-        element: <Clintprivet><Blog></Blog></Clintprivet>
+        element: <ClintPrivet><Blog></Blog></ClintPrivet>
       },
       {
         path: "/About",
@@ -95,7 +95,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Clintprivet><Dashbord></Dashbord></Clintprivet>,
+    element: <ClintPrivet><Dashbord></Dashbord></ClintPrivet>,
     children: [
       {
         path: 'userhome',

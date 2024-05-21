@@ -12,7 +12,7 @@ import UseaxiosPublic from "../Hooks/UseaxiosPublic";
 import Reviews from "./ReviewHotelPlace/Reviews";
 import useReviews from "../Hooks/useReviews";
 
-const Placedtails = () => {
+const PlaceDetails = () => {
     const { user } = useContext(AuthContext)
     const axiosPublic = UseaxiosPublic();
     useEffect(() => {
@@ -138,4 +138,4 @@ const Placedtails = () => {
     );
 };
 
-export default Placedtails;
+export default PlaceDetails;
