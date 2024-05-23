@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import UseaxiosPublic from "../Hooks/UseaxiosPublic";
+import BlogCard from "./BlogCard";
 
 const Blog = () => {
     const axiopublic = UseaxiosPublic();
@@ -7,19 +8,17 @@ const Blog = () => {
         queryKey: ['place'],
         queryFn: async () => {
             const res = await axiopublic.get('/place')
-            console.log(res.data)
+            // console.log(res.data)
             return res.data;
         }
     })
 
     return (
         <div className=" mt-36 mb-44 text-center" >
-            {/* ToDO: this page */}
-            <h2 className=" text-3xl font-bold text-[]">Blog page</h2>
-            <h2 className=" text-xl font-bold">Blog:{place.length}</h2>
             <div>
-                <span className="loading loading-dots w-24"></span>
-                <h2 className=" text-2xl font-bold">This page is working now</h2>
+                {
+                    place.map(item => <BlogCard key={item._id} item={item} ></BlogCard>)
+                }
             </div>
         </div >
     );
