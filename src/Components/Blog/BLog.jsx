@@ -1,23 +1,22 @@
-import { useQuery } from "@tanstack/react-query";
-import UseaxiosPublic from "../Hooks/UseaxiosPublic";
+import { useEffect, useState } from "react";
 import BlogCard from "./BlogCard";
 
 const Blog = () => {
-    const axiopublic = UseaxiosPublic();
-    const { data: place = [] } = useQuery({
-        queryKey: ['place'],
-        queryFn: async () => {
-            const res = await axiopublic.get('/place')
-            // console.log(res.data)
-            return res.data;
-        }
-    })
+    const [blogs, setBlogs] = useState([])
+
+    useEffect(() => {
+        fetch('/blogs.json')
+            .then(res => res.json())
+            .then(data => setBlogs(data))
+    }, [])
+
 
     return (
         <div className=" mt-36 mb-44 text-center" >
-            <div>
+            <h2>{blogs.length}</h2>
+            <div className=" grid md:grid-cols-2 grid-cols-1 gap-10">
                 {
-                    place.map(item => <BlogCard key={item._id} item={item} ></BlogCard>)
+                    blogs.map(item => <BlogCard key={item._id} item={item} ></BlogCard>)
                 }
             </div>
         </div >

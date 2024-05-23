@@ -1,0 +1,86 @@
+[
+    {
+        "_id": "1",
+        "img": "https://i.ibb.co/wJ6NXDS/Blog2.jpg",
+        "title": "Luxury & Modern Apartment",
+        "date": "06/03/2024",
+        "details": "The most well-known dummy text is the Lorem Ipsum, which is said to have originated in the 16th century. Lorem Ipsum is composed in a pseudo-Latin language which more or less corresponds to proper Latin. It contains a series of real Latin words. This ancient dummy text is also incomprehensible, but it imitates the rhythm of most European languages in Latin script.\n\nThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable.\n\nThe advantage of its Latin origin and the relative meaninglessness of Lorum Ipsum is that the text does not attract attention to itself or distract the viewers attention from the layout.",
+        "bloggerInfo": {
+            "bloggerName": "Tanbir Haque",
+            "bloggerEmail": "testemail@gmail.com",
+            "bloggerImg": "https://i.ibb.co/p0FbjJV/profile.jpg"
+        }
+    },
+    {
+        "_id": "2",
+        "img": "https://i.ibb.co/YTjW3vF/Blog3.jpg",
+        "title": "Urban Living Redefined",
+        "date": "07/03/2024",
+        "details": "Exploring the future of urban living with cutting-edge architecture and sustainable design. The movement towards modernity in urban areas is transforming cities into hubs of innovation and style. With green spaces and smart homes, the urban landscape is constantly evolving.",
+        "bloggerInfo": {
+            "bloggerName": "Alex Johnson",
+            "bloggerEmail": "alex.j@gmail.com",
+            "bloggerImg": "https://i.ibb.co/vvdxGvz/profile1.jpg"
+        }
+    },
+    {
+        "_id": "3",
+        "img": "https://i.ibb.co/kG6jYz8/Blog4.jpg",
+        "title": "Eco-Friendly Homes",
+        "date": "08/03/2024",
+        "details": "The rise of eco-friendly homes is not just a trend but a necessity. These homes focus on reducing carbon footprints, utilizing renewable energy sources, and incorporating sustainable materials. This shift is crucial for the future of our planet.",
+        "bloggerInfo": {
+            "bloggerName": "Samantha Green",
+            "bloggerEmail": "s.green@gmail.com",
+            "bloggerImg": "https://i.ibb.co/yp2T1HY/profile2.jpg"
+        }
+    },
+    {
+        "_id": "4",
+        "img": "https://i.ibb.co/FzQw9N5/Blog5.jpg",
+        "title": "Smart Home Technologies",
+        "date": "09/03/2024",
+        "details": "Smart home technologies are revolutionizing the way we live. From voice-activated assistants to automated lighting and security systems, these advancements make our lives more convenient and secure. Learn about the latest trends in home automation.",
+        "bloggerInfo": {
+            "bloggerName": "Michael Lee",
+            "bloggerEmail": "m.lee@gmail.com",
+            "bloggerImg": "https://i.ibb.co/FWV4cM7/profile3.jpg"
+        }
+    },
+    {
+        "_id": "5",
+        "img": "https://i.ibb.co/6RsVQjL/Blog6.jpg",
+        "title": "Tiny House Movement",
+        "date": "10/03/2024",
+        "details": "The tiny house movement is gaining popularity as people look to downsize and simplify their lives. These compact, efficient homes offer an affordable and sustainable living option, promoting a minimalist lifestyle.",
+        "bloggerInfo": {
+            "bloggerName": "Emily Clark",
+            "bloggerEmail": "e.clark@gmail.com",
+            "bloggerImg": "https://i.ibb.co/Y7b1qJZ/profile4.jpg"
+        }
+    },
+    {
+        "_id": "6",
+        "img": "https://i.ibb.co/XbYwD8T/Blog7.jpg",
+        "title": "Sustainable Architecture",
+        "date": "11/03/2024",
+        "details": "Sustainable architecture focuses on designing buildings that are environmentally responsible and resource-efficient. This includes the use of renewable energy sources, sustainable materials, and innovative building techniques to reduce environmental impact.",
+        "bloggerInfo": {
+            "bloggerName": "David Brown",
+            "bloggerEmail": "d.brown@gmail.com",
+            "bloggerImg": "https://i.ibb.co/2Zzqfrb/profile5.jpg"
+        }
+    },
+    {
+        "_id": "7",
+        "img": "https://i.ibb.co/Y7tN3y5/Blog8.jpg",
+        "title": "Innovative Building Materials",
+        "date": "12/03/2024",
+        "details": "Discover the latest innovative building materials that are changing the construction industry. From self-healing concrete to energy-efficient insulation, these materials not only enhance the durability of structures but also contribute to sustainability.",
+        "bloggerInfo": {
+            "bloggerName": "Laura White",
+            "bloggerEmail": "l.white@gmail.com",
+            "bloggerImg": "https://i.ibb.co/93T3smg/profile6.jpg"
+        }
+    }
+]
