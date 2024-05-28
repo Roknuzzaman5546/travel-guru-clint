@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import BlogCard from "./BlogCard";
 import { Link, NavLink } from "react-router-dom";
+import './Blog.css'
 
 const Blog = () => {
     const [blogs, setBlogs] = useState([])

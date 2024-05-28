@@ -5,3 +5,52 @@
     background-size: cover;
 }
 
+/* Ensure child <ul> is hidden by default */
+.child-ul {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+/* Define keyframes for the show animation */
+@keyframes showChildUl {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Define keyframes for the hide animation */
+@keyframes hideChildUl {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Display child <ul> and animate when hovering over the parent <li> */
+.mainLi:hover .child-ul {
+    display: flex;
+    animation: showChildUl 0.3s forwards;
+    pointer-events: auto; /* Allow interactions when visible */
+}
+
+.mainLi .child-ul {
+    animation: hideChildUl 0.3s forwards;
+}
+
+/* To prevent flickering issue when hover state ends */
+.mainLi:hover .child-ul {
+    animation: showChildUl 0.3s forwards;
+}
+
+

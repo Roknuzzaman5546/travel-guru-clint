@@ -1,9 +1,10 @@
 import { CiClock2 } from "react-icons/ci";
 import { AiOutlineUser } from "react-icons/ai";
 import { FaComment, FaFacebook, FaInstagram, FaLinkedin, FaShareAlt } from "react-icons/fa";
+import './Blog.css'
 
 const BlogCard = ({ item }) => {
-    const {  img, date, bloggerInfo } = item || {};
+    const { img, date, bloggerInfo } = item || {};
     const { bloggerName } = bloggerInfo || {};
 
     return (
@@ -27,9 +28,9 @@ const BlogCard = ({ item }) => {
                                     <li className=" text-[#ff9c1c]"><FaComment /></li>
                                     <p>3</p>
                                 </li>
-                                <li className=" relative">
-                                    <li className=" text-[#ff9c1c] font-bold"><FaShareAlt /></li>
-                                    <ul className=" absolute right-10 bg-[#ff9c1c] flex justify-center gap-3 items-center rounded shadow-custom-red p-[10px] text-xl">
+                                <li className="relative mainLi flex flex-row-reverse items-center">
+                                    <li className="text-[#ff9c1c] font-bold"><FaShareAlt /></li>
+                                    <ul className="child-ul mainLi absolute mr-4 bg-[#ff9c1c] flex justify-center gap-3 items-center rounded shadow-custom-red p-[10px] text-xl">
                                         <li><a href=""><FaInstagram></FaInstagram></a></li>
                                         <li><a href=""><FaFacebook></FaFacebook></a></li>
                                         <li><a href=""><FaLinkedin></FaLinkedin></a></li>
