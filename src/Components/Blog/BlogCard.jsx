@@ -4,25 +4,26 @@ import { FaComment, FaFacebook, FaInstagram, FaLinkedin, FaShareAlt } from "reac
 import './Blog.css'
 
 const BlogCard = ({ item }) => {
-    const { img, date, bloggerInfo } = item || {};
+    const { img, date, bloggerInfo, details, title } = item || {};
     const { bloggerName } = bloggerInfo || {};
 
     return (
         <div className="">
             <div className=" shadow-custom-blue rounded-lg overflow-hidden">
                 <div className=" p-[30px] relative">
-                    <div className=" border-b border-[#e1e1f0] pb-[15px] mb-[15px]">
+                    <div className=" border-b border-[#e1e1f0] pb-[10px]">
                         <div className=" flex justify-between -ml-[12px] -mr-[12px]">
                             <ul className=" flex items-center">
                                 <li className=" flex items-center font-medium pl-3 pr-3 gap-1">
                                     <i className=" text-[#ff9c1c]"><CiClock2 /></i>
                                     <p>{date}</p>
                                 </li>
-                                <li className=" flex items-center font-medium pl-3 pr-3 gap-1">
+                                <li className=" flex items-center font-medium pl-3 pr-3 gap-1 cursor-pointer">
                                     <i className=" text-[#ff9c1c]"><AiOutlineUser /></i>
                                     <p>{bloggerName}</p>
                                 </li>
                             </ul>
+                            {/* Share option */}
                             <ul className=" flex items-center">
                                 <li className=" flex items-center font-medium pl-3 pr-3 gap-1 ml-24">
                                     <li className=" text-[#ff9c1c]"><FaComment /></li>
@@ -39,11 +40,14 @@ const BlogCard = ({ item }) => {
                             </ul>
                         </div>
                     </div>
-                    <div></div>
+                    <div>
+                        <h1 className=" text-2xl font-bold mb-3 cursor-pointer hover:text-[#ff9c1c]">{title}</h1>
+                        <h1 className=" text-sm">{details.slice(0, 200)}</h1>
+                    </div>
                     <div></div>
                 </div>
                 <div>
-                    <img src={img} alt="" />
+                    <img className=" w-full h-[500px]" src={img} alt="" />
                 </div>
             </div>
         </div>
