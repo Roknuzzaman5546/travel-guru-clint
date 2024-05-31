@@ -47,7 +47,7 @@ const BlogCard = ({ item }) => {
                     <div></div>
                 </div>
                 <div>
-                    <img className=" w-full h-[500px]" src={img} alt="" />
+                    <img className=" w-full h-[500px] transition-all duration-200" src={img} alt="" />
                 </div>
             </div>
         </div>
