@@ -2,9 +2,10 @@ import { CiClock2 } from "react-icons/ci";
 import { AiOutlineUser } from "react-icons/ai";
 import { FaComment, FaFacebook, FaInstagram, FaLinkedin, FaShareAlt } from "react-icons/fa";
 import './Blog.css'
+import { Link } from "react-router-dom";
 
 const BlogCard = ({ item }) => {
-    const { img, date, bloggerInfo, details, title } = item || {};
+    const { img, date, bloggerInfo, details, title, _id } = item || {};
     const { bloggerName } = bloggerInfo || {};
 
     return (
@@ -24,7 +25,7 @@ const BlogCard = ({ item }) => {
                                 </li>
                             </ul>
                             {/* Share option */}
-                            <ul className=" flex items-center">
+                            <ul className=" flex items-center cursor-pointer">
                                 <li className=" flex items-center font-medium pl-3 pr-3 gap-1 ml-24">
                                     <li className=" text-[#ff9c1c]"><FaComment /></li>
                                     <p>3</p>
@@ -41,8 +42,8 @@ const BlogCard = ({ item }) => {
                         </div>
                     </div>
                     <div>
-                        <h1 className=" text-2xl font-bold mb-3 cursor-pointer hover:text-[#ff9c1c]">{title}</h1>
-                        <h1 className=" text-sm">{details.slice(0, 200)}</h1>
+                        <Link to={`/blog/${_id}`}><h1 className=" text-2xl font-bold mb-3 cursor-pointer hover:text-[#ff9c1c]">{title}</h1></Link>
+                        <h1 className=" text-sm">{details.slice(0, 290)}</h1>
                     </div>
                     <div></div>
                 </div>

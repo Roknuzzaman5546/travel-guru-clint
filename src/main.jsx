@@ -36,6 +36,7 @@ import AboutUs from './Components/About/AboutUs';
 import Condition from './Components/Condition/Condition';
 import Register from './Components/Authentication/Register';
 import PlaceDetails from './Components/Home/PlaceDetails';
+import BlogDetails from './Components/Blog/BlogDetails/BlogDetails';
 const queryClient = new QueryClient()
 
 
@@ -82,6 +83,11 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <ClintPrivet><Blog></Blog></ClintPrivet>
+      },
+      {
+        path: "/blog/:id",
+        element: <ClintPrivet><BlogDetails></BlogDetails></ClintPrivet>,
+        loader: () => fetch('/blogs.json')
       },
       {
         path: "/About",
