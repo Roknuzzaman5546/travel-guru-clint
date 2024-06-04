@@ -1,10 +1,21 @@
 import { Link, NavLink, useLoaderData, useParams } from "react-router-dom";
 import CommentForm from "./CommentForm";
+import { FaSearch } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../Authprovider/Authprovider";
+import './BlogDetails.css'
 
 const BlogDetails = () => {
-    const places = useLoaderData();
+    const { user } = useContext(AuthContext)
+    const blogs = useLoaderData();
+    // const [comments, refetch] = useBlogsComment();
+    // console.log(commentsReply);
     const { id } = useParams();
-    // console.log(places);
+    const blog = blogs.find((item) => item._id == id);
+    const recentBlog = blogs.filter((item) => item._id != id)
+    // const newComments = comments.filter((item) => item.blogId == blog._id);
+    console.log(recentBlog);
+    
     return (
         <div>
             {/* <Helmet>
@@ -15,8 +26,8 @@ const BlogDetails = () => {
                     <div className=" w-[35%] mx-auto py-24 text-center">
                         <h2 className="text-6xl font-bold text-[#ff9c1c] font-serif">All Hotel</h2>
                         <div className="mt-2">
-                            <NavLink to={`/blog/${id}`} className='navAfter relative font-medium text-base text-white mx-3'>Blog</NavLink>
-                            <Link to="/blog" className=" text-[#ff9c1c]">Blog details</Link>
+                            <NavLink to="/blog" className='navAfter relative font-medium text-base text-white mx-3'>Blog</NavLink>
+                            <Link to={`/blog/${id}`} className=" text-[#ff9c1c]">Blog details</Link>
                         </div>
                     </div>
                 </div>
@@ -39,56 +50,7 @@ const BlogDetails = () => {
                             </div>
                         </div>
                         {/* Comment section */}
-                        <div>
-                            <div className="border items-center gap-8 px-5 my-7">
-                                <h2 className=" text-3xl font-bold mt-2">
-                                    {newComments.length} comment
-                                </h2>
-                                {/* Comment */}
-                                {newComments.map((comment) => (
-                                    <div key={comment._id} className="border-b py-6 px-5 my-7">
-                                        <div>
-                                            {/* main comment part */}
-                                            <div className=" flex md:flex-row flex-col justify-start items-center gap-8 mb-2">
-                                                {/* main comment photo part */}
-                                                <img
-                                                    className="h-28 w-28 rounded-full"
-                                                    src={comment?.img}
-                                                    alt=""
-                                                />
-                                                {/* main comments name, date and message part */}
-                                                <div className=" w-full">
-                                                    <div className=" flex justify-between">
-                                                        <div>
-                                                            <h2 className=" text-3xl font-bold mb-1">
-                                                                {comment?.name}
-                                                            </h2>
-                                                            <p className=" text-gray-400 mb-3">{comment?.date}</p>
-                                                        </div>
-                                                        <div>
-                                                            {/* <button onClick={() => setShowReply(comment._id)}>
-                                                                <ButtonRed titleRed={`Reply`}></ButtonRed>
-                                                            </button> */}
-                                                        </div>
-                                                    </div>
-                                                    <p className=" leading-8 text-xl text-gray-400">
-                                                        {comment?.message}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                                {/* Form section */}
-                                <div>
-                                    <h2 className=" text-3xl font-bold my-3">Leave A Comment</h2>
-                                    {/* <p className=" text-xl text-gray-400">
-                                    Your email address will not be published. Required fields are  marked</p> */}
-                                    {/* comment form */}
-                                    <CommentForm blog={blog} refetch={refetch} />
-                                </div>
-                            </div>
-                        </div>
+                        {/*  */}
                     </div>
                     {/* Right site */}
                     <div className=" border shadow-xl p-5 rounded md:w-[35%] w-full">
@@ -107,7 +69,7 @@ const BlogDetails = () => {
                             <h2 className=" text-xl font-bold my-3">Recent post</h2>
                             <div>
                                 {
-                                    currentUserBlogs?.map((item) => (
+                                    recentBlog.slice(0, 5)?.map((item) => (
                                         <div key={item._id} className=" flex flex-col items-start lg:flex-row lg:items-center gap-2 my-5">
                                             <img className=" w-full h-full lg:w-24 lg:h-16 rounded-lg" src={item?.img} alt="" />
                                             <div>
