@@ -18,10 +18,10 @@ const Blog = () => {
             <div className="blogBgImg">
                 <div className=" bg-[#000000B2]">
                     <div className=" w-[35%] mx-auto py-24 text-center">
-                        <h2 className="text-6xl font-bold text-[#ff9c1c] font-serif">All Hotel</h2>
+                        <h2 className="text-6xl font-bold text-[#ff9c1c] font-serif">All Blog</h2>
                         <div className="mt-2">
-                            <NavLink to='/blog' className='navAfter relative font-medium text-base text-white mx-3'>Blog</NavLink>
-                            <Link to="/blog" className=" text-[#ff9c1c]">Blog details</Link>
+                            <NavLink to='/' className='navAfter relative font-medium text-base text-white mx-3'>Home</NavLink>
+                            <Link to="/blog" className=" text-[#ff9c1c]">Blog</Link>
                         </div>
                     </div>
                 </div>

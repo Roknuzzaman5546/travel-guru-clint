@@ -14,8 +14,8 @@ const BlogDetails = () => {
     const blog = blogs.find((item) => item._id == id);
     const recentBlog = blogs.filter((item) => item._id != id)
     // const newComments = comments.filter((item) => item.blogId == blog._id);
-    console.log(recentBlog);
-    
+    // console.log(recentBlog);
+
     return (
         <div>
             {/* <Helmet>
@@ -24,9 +24,9 @@ const BlogDetails = () => {
             <div className="blogDetailsBgImg">
                 <div className=" bg-[#000000B2]">
                     <div className=" w-[35%] mx-auto py-24 text-center">
-                        <h2 className="text-6xl font-bold text-[#ff9c1c] font-serif">All Hotel</h2>
+                        <h2 className="text-6xl font-bold text-[#ff9c1c] font-serif">Blog Details</h2>
                         <div className="mt-2">
-                            <NavLink to="/blog" className='navAfter relative font-medium text-base text-white mx-3'>Blog</NavLink>
+                            <Link to="/blog" className=' font-medium text-base text-white mx-3'>Blog</Link>
                             <Link to={`/blog/${id}`} className=" text-[#ff9c1c]">Blog details</Link>
                         </div>
                     </div>
