@@ -17,13 +17,13 @@ const CommentForm = ({ blog, refetch }) => {
                 img: user?.photoURL,
                 subject: data.subject,
                 message: data.message,
-                blogId: blog._id,
+                blogId: blog.id,
                 blogName: blog.title,
                 date: new Date().toLocaleDateString("en-GB"),
             };
-            console.log(newComment);
+            // console.log(newComment);
             axiosPublic.post("/comments", newComment).then((res) => {
-                console.log(res.data);
+                // console.log(res.data);
                 if (res.data) {
                     Swal.fire(
                         `Hey ${user?.displayName}! Your comment is successfully send`

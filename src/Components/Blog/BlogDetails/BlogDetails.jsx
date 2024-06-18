@@ -58,11 +58,11 @@ const BlogDetails = () => {
                         {/* Comment section */}
                         <div className="border items-center gap-8 px-5 my-7">
                             <h2 className=" text-3xl font-bold mt-2">
-                                {newComments.length} comment
+                                {newComments?.length} comment
                             </h2>
                             {/* Comment */}
-                            {newComments.map((comment) => (
-                                <div key={comment._id} className="border-b py-6 px-5 my-7">
+                            {newComments?.map((comment) => (
+                                <div key={comment.id} className="border-b py-6 px-5 my-7">
                                     <div>
                                         {/* main comment part */}
                                         <div className=" flex md:flex-row flex-col justify-start items-center gap-8 mb-2">
