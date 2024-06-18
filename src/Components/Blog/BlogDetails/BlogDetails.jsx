@@ -50,7 +50,49 @@ const BlogDetails = () => {
                             </div>
                         </div>
                         {/* Comment section */}
-                        {/*  */}
+                        <div className="border items-center gap-8 px-5 my-7">
+                            <h2 className=" text-3xl font-bold mt-2">
+                                {newComments.length} comment
+                            </h2>
+                            {/* Comment */}
+                            {newComments.map((comment) => (
+                                <div key={comment._id} className="border-b py-6 px-5 my-7">
+                                    <div>
+                                        {/* main comment part */}
+                                        <div className=" flex md:flex-row flex-col justify-start items-center gap-8 mb-2">
+                                            {/* main comment photo part */}
+                                            <img
+                                                className="h-28 w-28 rounded-full"
+                                                src={comment?.img}
+                                                alt=""
+                                            />
+                                            {/* main comments name, date and message part */}
+                                            <div className=" w-full">
+                                                <div className=" flex justify-between">
+                                                    <div>
+                                                        <h2 className=" text-3xl font-bold mb-1">
+                                                            {comment?.name}
+                                                        </h2>
+                                                        <p className=" text-gray-400 mb-3">{comment?.date}</p>
+                                                    </div>
+                                                </div>
+                                                <p className=" leading-8 text-xl text-gray-400">
+                                                    {comment?.message}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                            {/* Form section */}
+                            <div>
+                                <h2 className=" text-3xl font-bold my-3">Leave A Comment</h2>
+                                {/* <p className=" text-xl text-gray-400">
+                                    Your email address will not be published. Required fields are  marked</p> */}
+                                {/* comment form */}
+                                <CommentForm blog={blog} refetch={refetch} />
+                            </div>
+                        </div>
                     </div>
                     {/* Right site */}
                     <div className=" border shadow-xl p-5 rounded md:w-[35%] w-full">
