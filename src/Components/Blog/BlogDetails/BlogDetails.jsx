@@ -1,20 +1,26 @@
 import { Link, NavLink, useLoaderData, useParams } from "react-router-dom";
 import CommentForm from "./CommentForm";
 import { FaSearch } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Authprovider/Authprovider";
 import './BlogDetails.css'
 
 const BlogDetails = () => {
     const { user } = useContext(AuthContext)
-    const blogs = useLoaderData();
-    // const [comments, refetch] = useBlogsComment();
-    // console.log(commentsReply);
+    const blogs = useLoaderData()
+    const [comments, setComments] = useState([])
+    useEffect(() => {
+        fetch('/comments.json')
+            .then(res => res.json())
+            .then(data => setComments(data))
+    }, [])
+    // console.log(comments);
     const { id } = useParams();
     const blog = blogs.find((item) => item._id == id);
     const recentBlog = blogs.filter((item) => item._id != id)
-    // const newComments = comments.filter((item) => item.blogId == blog._id);
-    // console.log(recentBlog);
+    // console.log(blog._id);
+    const newComments = comments.filter((item) => item.blogId == blog._id);
+    // console.log(newComments);
 
     return (
         <div>
@@ -90,7 +96,7 @@ const BlogDetails = () => {
                                 {/* <p className=" text-xl text-gray-400">
                                     Your email address will not be published. Required fields are  marked</p> */}
                                 {/* comment form */}
-                                <CommentForm blog={blog} refetch={refetch} />
+                                <CommentForm blog={blog} />
                             </div>
                         </div>
                     </div>
