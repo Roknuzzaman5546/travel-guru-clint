@@ -1,19 +1,18 @@
-import { Link, NavLink, useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import CommentForm from "./CommentForm";
 import { FaSearch } from "react-icons/fa";
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../Authprovider/Authprovider";
 import './BlogDetails.css'
+import useComment from "../../Hooks/useComment";
 
 const BlogDetails = () => {
-    const { user } = useContext(AuthContext)
     const blogs = useLoaderData()
-    const [comments, setComments] = useState([])
-    useEffect(() => {
-        fetch('/comments.json')
-            .then(res => res.json())
-            .then(data => setComments(data))
-    }, [])
+    const [comments, refetch] = useComment()
+    // const [comments, setComments] = useState([])
+    // useEffect(() => {
+    //     fetch('/comments.json')
+    //         .then(res => res.json())
+    //         .then(data => setComments(data))
+    // }, [])
     // console.log(comments);
     const { id } = useParams();
     const blog = blogs.find((item) => item._id == id);
@@ -96,7 +95,7 @@ const BlogDetails = () => {
                                 {/* <p className=" text-xl text-gray-400">
                                     Your email address will not be published. Required fields are  marked</p> */}
                                 {/* comment form */}
-                                <CommentForm blog={blog} />
+                                <CommentForm blog={blog}  refetch={refetch}/>
                             </div>
                         </div>
                     </div>

@@ -1,17 +1,10 @@
-import { useEffect, useState } from "react";
 import BlogCard from "./BlogCard";
 import { Link, NavLink } from "react-router-dom";
 import './Blog.css'
+import useBlogs from "../Hooks/useBlogs";
 
 const Blog = () => {
-    const [blogs, setBlogs] = useState([])
-
-    useEffect(() => {
-        fetch('/blogs.json')
-            .then(res => res.json())
-            .then(data => setBlogs(data))
-    }, [])
-
+    const [blogs] = useBlogs()
 
     return (
         <div>

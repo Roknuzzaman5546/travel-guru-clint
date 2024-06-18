@@ -1,17 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
 import UseaxiosPublic from "./UseaxiosPublic";
 
-const useHotel = () => {
+const useComment = () => {
     const axiosPublic = UseaxiosPublic()
-    const { data: hotel = [], refetch } = useQuery({
-        queryKey: ['hotel'],
+    const { data: comments = [], refetch } = useQuery({
+        queryKey: ['comments'],
         queryFn: async () => {
-            const res = await axiosPublic.get(`/hotel`)
+            const res = await axiosPublic.get(`/comments`)
             console.log(res.data)
             return res.data;
         }
     })
-    return [hotel, refetch]
+    return [comments, refetch]
 };
 
-export default useHotel;
+export default useComment;
