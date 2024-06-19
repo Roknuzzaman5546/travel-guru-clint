@@ -85,13 +85,13 @@ const WriteBlogs = () => {
             headers: { "Content-Type": "multipart/form-data" },
         });
         const blogIMG = resBlog.data.data.url;
-        // console.log("imgbb", blogIMG)
+        console.log("imgbb", blogIMG)
         if (resBlog.data) {
             // console.log(res.data.data)
             setBlogImages(blogIMG)
         }
         const newBlog = {
-            img: blogImages,
+            img: blogIMG,
             title: data.title,
             date: new Date().toLocaleDateString("en-GB"),
             details: data.details,
@@ -104,7 +104,7 @@ const WriteBlogs = () => {
                 bloggerImg: user?.photoURL
             }
         }
-        // console.log(newBlog)
+        console.log(newBlog)
         axiosPublic.post("/blogs", newBlog)
             .then(res => {
                 console.log(res.data)

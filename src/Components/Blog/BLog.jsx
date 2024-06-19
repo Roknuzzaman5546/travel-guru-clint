@@ -8,6 +8,9 @@ const Blog = () => {
 
     return (
         <div>
+            {/* <Helmet>
+                <title>TravelGuru | Blog</title>
+            </Helmet> */}
             <div className="blogBgImg">
                 <div className=" bg-[#000000B2]">
                     <div className=" w-[35%] mx-auto py-24 text-center">

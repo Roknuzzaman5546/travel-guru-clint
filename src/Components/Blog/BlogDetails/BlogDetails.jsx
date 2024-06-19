@@ -3,6 +3,7 @@ import CommentForm from "./CommentForm";
 import { FaSearch } from "react-icons/fa";
 import './BlogDetails.css'
 import useComment from "../../Hooks/useComment";
+import { useState } from "react";
 
 const BlogDetails = () => {
     const blogs = useLoaderData()
@@ -10,14 +11,29 @@ const BlogDetails = () => {
     const { id } = useParams();
     const blog = blogs.find((item) => item._id == id);
     const recentBlog = blogs.filter((item) => item._id != id)
-    // console.log(blog._id);
+    // console.log(recentBlog);
     const newComments = comments.filter((item) => item.blogId == blog._id);
     // console.log(newComments);
+
+    // search functionality
+    const [updateBlog, setUpdateBlog] = useState([]);
+    // console.log(updateBlog);
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const searchValue = e.target.value;
+        // console.log(searchValue);
+        // filter title by search value
+        const filteredBlog = recentBlog.filter((data) => {
+            const titleMatches = data.title.toLowerCase().includes(searchValue.toLowerCase());
+            return titleMatches;
+        });
+        setUpdateBlog(filteredBlog);
+    };
 
     return (
         <div>
             {/* <Helmet>
-                <title>Rentify | Blogs Details</title>
+                <title>TravelGuru | Blogs Details</title>
             </Helmet> */}
             <div className="blogDetailsBgImg">
                 <div className=" bg-[#000000B2]">
@@ -88,7 +104,7 @@ const BlogDetails = () => {
                                 {/* <p className=" text-xl text-gray-400">
                                     Your email address will not be published. Required fields are  marked</p> */}
                                 {/* comment form */}
-                                <CommentForm blog={blog}  refetch={refetch}/>
+                                <CommentForm blog={blog} refetch={refetch} />
                             </div>
                         </div>
                     </div>
@@ -100,7 +116,7 @@ const BlogDetails = () => {
                             <form>
                                 <div className=" bg-white px-2 rounded-md flex items-center my-3 mr-3">
                                     <FaSearch className=" text-black absolute ml-2"></FaSearch>
-                                    <input className=" text-black bg-none pl-7 py-1 pr-2 rounded w-full border" placeholder="Search your destination....." type="text" name="" id="" />
+                                    <input onChange={handleSearch} className=" text-black bg-none pl-7 py-1 pr-2 rounded w-full border" placeholder="Search your blog tittle....." type="text" name="" id="" />
                                 </div>
                             </form>
                         </div>
@@ -109,7 +125,15 @@ const BlogDetails = () => {
                             <h2 className=" text-xl font-bold my-3">Recent post</h2>
                             <div>
                                 {
-                                    recentBlog.slice(0, 5)?.map((item) => (
+                                    updateBlog.length > 0 ? updateBlog.slice(0, 5).map((item) => (
+                                        <div key={item._id} className=" flex flex-col items-start lg:flex-row lg:items-center gap-2 my-5">
+                                            <img className=" w-full h-full lg:w-24 lg:h-16 rounded-lg" src={item?.img} alt="" />
+                                            <div>
+                                                <h2 className=" font-bold">{item?.title}</h2>
+                                                <h2 className=" text-slate-400">{item?.date}</h2>
+                                            </div>
+                                        </div>
+                                    )) : recentBlog.slice(0, 5).map((item) => (
                                         <div key={item._id} className=" flex flex-col items-start lg:flex-row lg:items-center gap-2 my-5">
                                             <img className=" w-full h-full lg:w-24 lg:h-16 rounded-lg" src={item?.img} alt="" />
                                             <div>
