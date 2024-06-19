@@ -10,9 +10,6 @@ import UseaxiosPublic from '../../Hooks/UseaxiosPublic';
 const WriteBlogs = () => {
     const axiosPublic = UseaxiosPublic()
     const { user } = useContext(AuthContext)
-
-
-
     const [blogImages, setBlogImages] = useState([])
     const [showBlogImages, setShowBlogImages] = useState([])
     const [isBlogDragging, setIsBlogDragging] = useState(false)
@@ -25,7 +22,7 @@ const WriteBlogs = () => {
         event.preventDefault();
         const files = event.target.files;
         setBlogImages(files[0])
-        console.log(files)
+        // console.log(files)
         if (files.length === 0) return;
         for (let i = 0; i < files.length; i++) {
             if (files[i].type.split('/')[0] !== 'image') continue;
@@ -110,6 +107,7 @@ const WriteBlogs = () => {
                 console.log(res.data)
                 Swal.fire(`Hey ${user.displayName} Your blog successfully added`)
                 reset();
+                setShowBlogImages([])
             })
     }
 

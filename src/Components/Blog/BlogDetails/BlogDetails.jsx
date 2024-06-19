@@ -10,7 +10,7 @@ const BlogDetails = () => {
     const { id } = useParams();
     const blog = blogs.find((item) => item._id == id);
     const recentBlog = blogs.filter((item) => item._id != id)
-    // console.log(blog._id);
+    console.log(blog._id);
     const newComments = comments.filter((item) => item.blogId == blog._id);
     // console.log(newComments);
 

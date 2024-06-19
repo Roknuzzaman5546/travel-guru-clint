@@ -88,7 +88,7 @@ const router = createBrowserRouter([
       {
         path: "/blog/:id",
         element: <ClintPrivet><BlogDetails></BlogDetails></ClintPrivet>,
-        loader: () => fetch('/blogs.json')
+        loader: () => fetch('http://localhost:5000/blogs')
       },
       {
         path: "/About",
