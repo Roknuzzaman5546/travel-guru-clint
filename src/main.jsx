@@ -149,7 +149,7 @@ const router = createBrowserRouter([
         element: <Paymenthistory></Paymenthistory>
       },
       {
-        path: "/writeBlog",
+        path: "writeBlog",
         element: <WriteBlogs></WriteBlogs>
       }
     ]

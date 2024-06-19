@@ -1,18 +1,17 @@
 // Blog writing page is created by Shajib and responsive design implementation by Tanbir
 import { useForm } from 'react-hook-form';
 import './Writeblogs.css'
-import useAuth from '../../../Hooks/useAuth';
-import useAxiosSecure from '../../../Hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
-import ButtonRed from '../../../MainLayout/Shared/buttons/Red/ButtonRed'
-import { useRef, useState } from 'react';
-import useAxiosPublic from '../../../Hooks/useAxiosPublic';
+import { useContext, useRef, useState } from 'react';
 import { FaPhotoVideo } from 'react-icons/fa';
+import { AuthContext } from '../../Authprovider/Authprovider';
+import UseaxiosPublic from '../../Hooks/UseaxiosPublic';
 
 const WriteBlogs = () => {
-    const axiosPublic = useAxiosPublic()
-    const { user } = useAuth();
-    const axiosSecure = useAxiosSecure();
+    const axiosPublic = UseaxiosPublic()
+    const { user } = useContext(AuthContext)
+
+
 
     const [blogImages, setBlogImages] = useState([])
     const [showBlogImages, setShowBlogImages] = useState([])
@@ -89,7 +88,7 @@ const WriteBlogs = () => {
             headers: { "Content-Type": "multipart/form-data" },
         });
         const blogIMG = resBlog.data.data.url;
-        console.log("imgbb",blogIMG)
+        console.log("imgbb", blogIMG)
         if (resBlog.data) {
             // console.log(res.data.data)
             setBlogImages(blogIMG)
@@ -106,7 +105,7 @@ const WriteBlogs = () => {
             }
         }
         console.log(newBlog)
-        axiosSecure.post("/blogs", newBlog)
+        axiosPublic.post("/blogs", newBlog)
             .then(res => {
                 console.log(res.data)
                 Swal.fire(`Hey ${user.displayName} Your blog successfully added`)
@@ -209,14 +208,7 @@ const WriteBlogs = () => {
                                 </div>
                             </div>
                             <div className=' flex justify-end  pb-5'>
-                                <button
-                                    type="submit"
-                                >
-                                    <ButtonRed
-                                        titleRed={`Submit blog`}
-                                        padY={"py-16"}
-                                    ></ButtonRed>
-                                </button>
+                                <button type="submit" className=" bg-[#ff9c1c] hover:bg-[#000] text-white px-6 py-4 rounded-md text-xl font-bold font-mono">Submit blog</button>
                             </div>
                         </form>
                     </div>
