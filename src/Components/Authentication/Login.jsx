@@ -16,11 +16,12 @@ const Login = () => {
         const from = e.target;
         const email = from.email.value;
         const password = from.password.value;
-        console.log(email, password)
+        // console.log(email, password)
         userLogin(email, password)
             .then((res) => {
                 console.log(res.user);
-                destinedLocation(currentLocation?.state ? currentLocation.state : "/");
+                destinedLocation(currentLocation?.state ? currentLocation.state.from.pathname : "/");
+                // console.log(currentLocation.state.from.pathname);
                 Swal.fire({
                     title: "Login successful!!!",
                     timer: 2000,
@@ -51,7 +52,7 @@ const Login = () => {
                     role: "user"
                 }
                 // console.log(userInfo);
-                destinedLocation(currentLocation?.state ? currentLocation.state : "/");
+                destinedLocation(currentLocation?.state ? currentLocation.state.from.pathname : "/");
                 axiosPublic.post('/users', userInfo)
                     .then(res => {
                         console.log(res.data)

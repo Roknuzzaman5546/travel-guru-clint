@@ -17,7 +17,7 @@ const CommentForm = ({ blog, refetch }) => {
                 img: user?.photoURL,
                 subject: data.subject,
                 message: data.message,
-                blogId: blog.id,
+                blogId: blog._id,
                 blogName: blog.title,
                 date: new Date().toLocaleDateString("en-GB"),
             };

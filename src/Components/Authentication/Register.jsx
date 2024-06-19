@@ -34,7 +34,7 @@ const Register = () => {
                             .then(res => {
                                 console.log(res.data)
                                 Swal.fire("User succesfully creat and update profile!");
-                                destinedLocation(currentLocation?.state ? currentLocation.state : "/");
+                                destinedLocation(currentLocation?.state ? currentLocation.state.from.pathname : "/");
                             })
                     })
             })
@@ -53,12 +53,12 @@ const Register = () => {
                     role: "user"
                 }
                 console.log(userInfo);
-                destinedLocation(currentLocation?.state ? currentLocation.state : "/");
+                destinedLocation(currentLocation?.state ? currentLocation.state.from.pathname : "/");
                 axiosPublic.post('/users', userInfo)
                     .then(res => {
                         console.log(res.data)
                         Swal.fire("User succesfully creat and update profile!");
-                        destinedLocation(currentLocation?.state ? currentLocation.state : "/");
+                        destinedLocation(currentLocation?.state ? currentLocation.state.from.pathname : "/");
                     })
             })
             .catch(error => {

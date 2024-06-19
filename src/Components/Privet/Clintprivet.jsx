@@ -6,6 +6,7 @@ import { AuthContext } from "../Authprovider/Authprovider";
 const ClintPrivet = ({ children }) => {
     const { user, loading } = useContext(AuthContext)
     const location = useLocation();
+    console.log(location);
     if (loading) {
         return <div className="flex flex-col gap-4 w-full">
             <div className="flex gap-4 items-center">

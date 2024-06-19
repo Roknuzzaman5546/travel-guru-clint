@@ -7,13 +7,6 @@ import useComment from "../../Hooks/useComment";
 const BlogDetails = () => {
     const blogs = useLoaderData()
     const [comments, refetch] = useComment()
-    // const [comments, setComments] = useState([])
-    // useEffect(() => {
-    //     fetch('/comments.json')
-    //         .then(res => res.json())
-    //         .then(data => setComments(data))
-    // }, [])
-    // console.log(comments);
     const { id } = useParams();
     const blog = blogs.find((item) => item._id == id);
     const recentBlog = blogs.filter((item) => item._id != id)
@@ -61,7 +54,7 @@ const BlogDetails = () => {
                             </h2>
                             {/* Comment */}
                             {newComments?.map((comment) => (
-                                <div key={comment.id} className="border-b py-6 px-5 my-7">
+                                <div key={comment._id} className="border-b py-6 px-5 my-7">
                                     <div>
                                         {/* main comment part */}
                                         <div className=" flex md:flex-row flex-col justify-start items-center gap-8 mb-2">
