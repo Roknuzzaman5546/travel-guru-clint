@@ -37,6 +37,7 @@ import Condition from './Components/Condition/Condition';
 import Register from './Components/Authentication/Register';
 import PlaceDetails from './Components/Home/PlaceDetails';
 import BlogDetails from './Components/Blog/BlogDetails/BlogDetails';
+import WriteBlogs from './Components/Dashbord/Userdash/WriteBlogs';
 const queryClient = new QueryClient()
 
 
@@ -146,6 +147,10 @@ const router = createBrowserRouter([
       {
         path: "payhistory",
         element: <Paymenthistory></Paymenthistory>
+      },
+      {
+        path: "/writeBlog",
+        element: <WriteBlogs></WriteBlogs>
       }
     ]
   }

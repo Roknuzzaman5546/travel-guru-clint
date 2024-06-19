@@ -27,7 +27,7 @@ const ReviewForm = ({ item }) => {
         event.preventDefault();
         const files = event.target.files;
         setImages(files[0])
-        console.log(files)
+        // console.log(files)
 
         if (files.length === 0) return;
         for (let i = 0; i < files.length; i++) {
@@ -66,7 +66,7 @@ const ReviewForm = ({ item }) => {
                 reviewRating: data.rating,
                 date: new Date().toLocaleDateString("en-GB"),
             };
-            console.log(review)
+            // console.log(review)
             axiosPublic.post("/reviews", review).then((response) => {
                 Swal.fire({
                     title: `Thanks for your valuable review`,
@@ -151,7 +151,7 @@ const ReviewForm = ({ item }) => {
                     <input
                         type="submit"
                         value="Submit Review"
-                        className=" rounded px-8 py-4 mt-3 bg-[#ff9c1c] hover:bg-[#000] text-white mb-4"
+                        className=" cursor-pointer rounded px-8 py-4 mt-3 bg-[#ff9c1c] hover:bg-[#000] text-white mb-4"
                     />
                 </form>
             </div>

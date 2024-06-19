@@ -1,4 +1,4 @@
-import { FaHouseMedical, FaHouse, FaList, FaUsers, FaLocationDot, FaCartPlus, } from "react-icons/fa6";
+import { FaHouseMedical, FaHouse, FaList, FaUsers, FaLocationDot, FaCartPlus, FaBlogger, } from "react-icons/fa6";
 import { MdPayment, MdReviews } from "react-icons/md";
 import { IoNotifications } from "react-icons/io5";
 import { Link, NavLink, Outlet } from "react-router-dom";
@@ -81,6 +81,9 @@ const Dashboard = () => {
                                                         <li><NavLink to="/Dashboard/addreview">
                                                             <MdReviews></MdReviews>
                                                             Add Reviews</NavLink></li>
+                                                        <li><NavLink to="/Dashboard/writeBlog">
+                                                            <FaBlogger></FaBlogger>
+                                                            Write Blog</NavLink></li>
                                                     </>
                                             }
                                             <div className="divider"></div>
@@ -162,6 +165,9 @@ const Dashboard = () => {
                                     <li><NavLink to="/Dashboard/addreview">
                                         <MdReviews></MdReviews>
                                         Add Reviews</NavLink></li>
+                                    <li><NavLink to="/Dashboard/writeBlog">
+                                        <FaBlogger></FaBlogger>
+                                        Write Blog</NavLink></li>
                                 </>
                         }
                         <div className="divider"></div>

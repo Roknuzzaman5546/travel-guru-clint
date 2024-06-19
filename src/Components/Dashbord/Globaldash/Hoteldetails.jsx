@@ -3,7 +3,6 @@ import './hotel.css'
 
 
 const Hoteldetails = ({ item }) => {
-
     const { imageUrl, hotelName, bookingCost, _id } = item;
 
     return (
