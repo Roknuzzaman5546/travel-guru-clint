@@ -3,10 +3,13 @@ import { AiOutlineUser } from "react-icons/ai";
 import { FaComment, FaFacebook, FaInstagram, FaLinkedin, FaShareAlt } from "react-icons/fa";
 import './Blog.css'
 import { Link } from "react-router-dom";
+import useComment from "../Hooks/useComment";
 
 const BlogCard = ({ item }) => {
-    const { img, date, bloggerInfo, details, title, _id } = item || {};
+    const { img, date, bloggerInfo, details, title, _id, facebookId, instagramId, linkedinID } = item || {};
     const { bloggerName } = bloggerInfo || {};
+    const [comments] = useComment()
+    const newComments = comments.filter((item) => item.blogId == _id);
 
     return (
         <div className="">
@@ -28,14 +31,14 @@ const BlogCard = ({ item }) => {
                             <ul className=" flex items-center cursor-pointer">
                                 <li className=" flex items-center font-medium pl-3 pr-3 gap-1 ml-24">
                                     <li className=" text-[#ff9c1c]"><FaComment /></li>
-                                    <p>3</p>
+                                    <p>{newComments.length}</p>
                                 </li>
                                 <li className="relative mainLi flex flex-row-reverse items-center">
                                     <li className="text-[#ff9c1c] font-bold"><FaShareAlt /></li>
                                     <ul className="child-ul mainLi absolute mr-4 bg-[#ff9c1c] flex justify-center gap-3 items-center rounded shadow-custom-red p-[10px] text-xl">
-                                        <li><a href=""><FaInstagram></FaInstagram></a></li>
-                                        <li><a href=""><FaFacebook></FaFacebook></a></li>
-                                        <li><a href=""><FaLinkedin></FaLinkedin></a></li>
+                                        <li><a target="blank" href={instagramId}><FaInstagram></FaInstagram></a></li>
+                                        <li><a target="blank" href={facebookId}><FaFacebook></FaFacebook></a></li>
+                                        <li><a target="blank" href={linkedinID}><FaLinkedin></FaLinkedin></a></li>
                                     </ul>
                                 </li>
                             </ul>

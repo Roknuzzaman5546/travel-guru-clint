@@ -63,7 +63,7 @@ const CommentForm = ({ blog, refetch }) => {
                 <input
                     type="submit"
                     value="Post a comment"
-                    className=" rounded px-8 py-4 mt-3 bg-[#EC3323] hover:bg-[#002172] text-white mb-4"
+                    className=" cursor-pointer rounded px-8 py-4 mt-3 bg-[#EC3323] hover:bg-[#002172] text-white mb-4"
                 />
             </form>
         </>

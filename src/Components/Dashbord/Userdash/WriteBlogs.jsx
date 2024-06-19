@@ -85,7 +85,7 @@ const WriteBlogs = () => {
             headers: { "Content-Type": "multipart/form-data" },
         });
         const blogIMG = resBlog.data.data.url;
-        console.log("imgbb", blogIMG)
+        // console.log("imgbb", blogIMG)
         if (resBlog.data) {
             // console.log(res.data.data)
             setBlogImages(blogIMG)
@@ -95,13 +95,16 @@ const WriteBlogs = () => {
             title: data.title,
             date: new Date().toLocaleDateString("en-GB"),
             details: data.details,
+            facebookId: data.facebook,
+            instagramId: data.instagram,
+            linkedinID: data.linkedin,
             bloggerInfo: {
                 bloggerName: user?.displayName,
                 bloggerEmail: user?.email,
                 bloggerImg: user?.photoURL
             }
         }
-        console.log(newBlog)
+        // console.log(newBlog)
         axiosPublic.post("/blogs", newBlog)
             .then(res => {
                 console.log(res.data)
@@ -142,6 +145,45 @@ const WriteBlogs = () => {
                                     <input
                                         {...register("title", { required: true })}
                                         placeholder="Blog title*"
+                                        className="input form-border input-bordered w-full"
+                                    />
+                                </div>
+                            </div>
+                            {/* socile media section */}
+                            <div className='flex flex-col lg:flex-row justify-between items-center gap-3'>
+                                <div className=' w-full'>
+                                    <label className="label ">
+                                        <span className="label-text text-lg font-semibold">
+                                            Facebook Id
+                                        </span>
+                                    </label>
+                                    <input
+                                        {...register("facebook", { required: true })}
+                                        placeholder="Facebook*"
+                                        className="input form-border input-bordered w-full"
+                                    />
+                                </div>
+                                <div className=' w-full'>
+                                    <label className="label">
+                                        <span className="label-text text-lg font-semibold">
+                                            Instagram Id
+                                        </span>
+                                    </label>
+                                    <input
+                                        {...register("instagram", { required: true })}
+                                        placeholder="Instagram*"
+                                        className="input form-border input-bordered w-full"
+                                    />
+                                </div>
+                                <div className=' w-full'>
+                                    <label className="label">
+                                        <span className="label-text text-lg font-semibold">
+                                            Linkedin Id
+                                        </span>
+                                    </label>
+                                    <input
+                                        {...register("linkedin", { required: true })}
+                                        placeholder="Linkedin*"
                                         className="input form-border input-bordered w-full"
                                     />
                                 </div>

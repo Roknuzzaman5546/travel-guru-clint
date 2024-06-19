@@ -7,7 +7,7 @@ const useComment = () => {
         queryKey: ['comments'],
         queryFn: async () => {
             const res = await axiosPublic.get(`/comments`)
-            console.log(res.data)
+            // console.log(res.data)
             return res.data;
         }
     })

@@ -7,7 +7,7 @@ const useBlogs = () => {
         queryKey: ['blogs'],
         queryFn: async () => {
             const res = await axiosPublic.get(`/blogs`)
-            console.log(res.data)
+            // console.log(res.data)
             return res.data;
         }
     })
