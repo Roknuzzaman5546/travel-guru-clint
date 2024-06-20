@@ -74,12 +74,12 @@ const router = createBrowserRouter([
       {
         path: '/place/:id',
         element: <ClintPrivet><PlaceDetails></PlaceDetails></ClintPrivet>,
-        loader: () => fetch('http://localhost:5000/place')
+        loader: () => fetch('https://travel-guru-server-five-gamma.vercel.app/place')
       },
       {
         path: '/hotel/:id',
         element: <ClintPrivet><SingleHotelDetails></SingleHotelDetails></ClintPrivet>,
-        loader: () => fetch('http://localhost:5000/hotel')
+        loader: () => fetch('https://travel-guru-server-five-gamma.vercel.app/hotel')
       },
       {
         path: "/blog",
@@ -88,7 +88,7 @@ const router = createBrowserRouter([
       {
         path: "/blog/:id",
         element: <ClintPrivet><BlogDetails></BlogDetails></ClintPrivet>,
-        loader: () => fetch('http://localhost:5000/blogs')
+        loader: () => fetch('https://travel-guru-server-five-gamma.vercel.app/blogs')
       },
       {
         path: "/About",

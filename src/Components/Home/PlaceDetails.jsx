@@ -101,7 +101,7 @@ const PlaceDetails = () => {
                                 {/* comment form */}
                                 <ReviewForm item={place} />
                             </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
                 {/* Right site */}
