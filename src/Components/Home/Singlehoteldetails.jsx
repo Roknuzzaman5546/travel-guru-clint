@@ -26,7 +26,9 @@ const SingleHotelDetails = () => {
     const hotel = hotels.find(item => item._id == id)
     const [reviews] = useReviews();
     //to filter reviews
+    const recentHotels = hotels.filter((item) => item._id != id)
     const sameName = reviews.filter((name) => name.itemId === hotel?._id);
+    // console.log(recentHotels);
 
     const handlehotelbook = (hotel) => {
         const hotelbook = {
@@ -116,19 +118,21 @@ const SingleHotelDetails = () => {
                     {/* Recent blogs part */}
                     <div>
                         <h2 className=" text-xl font-bold my-3">Recent hotel</h2>
-                        {/* <div>
+                        <div>
                             {
-                                currentUserBlogs?.map((item) => (
-                                    <div key={item._id} className=" flex items-center gap-2">
-                                        <img className=" w-24 h-16 rounded-lg" src={item?.img} alt="" />
+                                recentHotels?.slice(0, 5).map((item) => (
+                                    <div key={item._id} className="flex flex-col items-start lg:flex-row lg:items-center gap-2 my-5">
+                                        <img className=" w-24 h-16 rounded-lg" src={item?.imageUrl} alt="" />
                                         <div>
-                                            <h2 className=" font-bold">{item?.title}</h2>
-                                            <h2 className=" text-slate-400">{item?.date}</h2>
+                                            <Link to={`/hotel/${item._id}`}>
+                                                <h2 className=" font-bold">{item?.hotelName}</h2>
+                                            </Link>
+                                            <h2 className=" text-slate-400">{item?.bookingCost} $</h2>
                                         </div>
                                     </div>
                                 ))
                             }
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </div>

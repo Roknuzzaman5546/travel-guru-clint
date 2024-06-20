@@ -33,7 +33,7 @@ const Hoteldetails = ({ item }) => {
                 <p className="title">{hotelName}</p>
                 <div className="text flex items-center justify-between">
                     <p className=" text-xl font-bold font-mono">Cost:{bookingCost}$ </p>
-                    <Link to={`/place/${_id}`}>
+                    <Link to={`/hotel/${_id}`}>
                         <button className=" rounded px-6 py-2 bg-[#ff9c1c] hover:bg-[#000] text-white">
                             Details
                         </button>
