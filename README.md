@@ -1,7 +1,4 @@
 # Travel Guru
-
-Travel Guru is a tech website built with Tailwind Css React.js, Node.js, Express and MongoDB. It aims to provide the latest tech news, articles, and resources and products.
-
 ## Table of Contents
 
 - [Demo]  https://travel-guru-71001.web.app
@@ -12,8 +9,8 @@ Travel Guru is a tech website built with  Tailwind Css React.js, Node.js, Expres
 
 - [Demo](#demo)
 - [Features](#features)
-- [Installation](#installation)
 - [Usage](#usage)
+- [Installation](#installation)
 - [Technologies](#technologies)
 - [Contributing](#contributing)
 - [License](#license)
@@ -31,6 +28,51 @@ Check out the live website: [Travel guru](https://travel-guru-71001.web.app/)
 - RESTful API with Node.js and Express
 - MongoDB for data storage
 
+## Usage
+
+1. Visit the Home Page
+When a user first visits the site, they will be greeted with a beautiful and user-friendly home page.
+The user can see featured destinations, hotels, and places.
+2. View All Hotels
+Navigate to the "All Hotels" page from the home page.
+The user will see a list of all available hotels on the site.
+There is an option to sort hotels by price and search hotels by title on the page for better filtering.
+3. Search for Hotels
+Users can utilize the search bar to find hotels by entering the title of the hotel or place they want to search.
+Results will be filtered according to the search query.
+4. View Hotel or Place Details
+To view more information about a specific hotel or place, users must log in.
+After logging in, users can see the detailed description, including images, amenities, and other information about the selected hotel or place.
+5. Add to Choice List
+From the details page, the user has the option to add a hotel or place to their Choice List.
+This Choice List is a personal collection where users can keep their favorite hotels or places for future reference.
+6. Set Destination
+On the Destination page, users can set their desired travel destinations.
+The chosen destinations will also be added to the user's Choice List.
+7. Manage Choice List
+After adding hotels or places to the Choice List, users can go to their Dashboard and navigate to the Choice List route to view all added items.
+From the Choice List page, users can choose to:
+Cancel or remove items from the Choice List.
+Proceed to Booking by selecting the items they wish to book.
+8. Complete Payment
+After selecting items for booking, the user will be directed to the Payment Page.
+Users must fill in their payment details and confirm the booking.
+After successful payment, the selected items will be booked, and they will be automatically removed from the Choice List.
+9. Leave a Review
+Users can also leave reviews for hotels and places they have visited.
+To do so, they can navigate to the Add Review page and submit their feedback.
+10. Admin Features
+The site admin has special privileges:
+Admin can add new hotels or places.
+Admin can manage, update, or delete listings through the Manage Route.
+11. Blog Page
+There is also a Blog Page where users can read travel-related blogs.
+After logging in, users can comment on blogs.
+Admin credentials for testing:
+
+Admin Email: rokon@gmail.com
+Admin Password: 123456A#
+
 ## Installation
 
 To get a local copy up and running, follow these steps:
@@ -43,43 +85,9 @@ Make sure you have the following installed:
 - npm or yarn
 - MongoDB
 
-### Backend Setup
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/Roknuzzaman5546/travel-guru-clint
-)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Technologies](#technologies)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-
-## Demo
-
-Check out the live website: https://travel-guru-71001.web.app
-
-## Features
-
-- Latest tech news and articles
-- User authentication and profiles
-- Interactive UI with React
-- RESTful API with Node.js and Express
-- MongoDB for data storage
-
-## Installation
-
-To get a local copy up and running, follow these steps:
-
-### Prerequisites
-
-Make sure you have the following installed:
-
-- Node.js
-- npm or yarn
-- MongoDB
+## Technologies
+Tailwind Css, React.js, Node.js, Express and MongoDB.
+Tools: GitHub, Firebase vscode
 
 ### Backend Setup
 
@@ -88,16 +96,3 @@ Make sure you have the following installed:
    git clone this: 
    Client site:https://github.com/Roknuzzaman5546/travel-guru-clint
    Server site:https://github.com/Roknuzzaman5546/travel-guru-server
-
-
-
-                                        #Travel Guru(Details)
-Live link: 
-Client Side Code: https://github.com/Roknuzzaman5546/travel-guru-clint
-Server Side Code: 
-Technology: Tailwind, React, Nodejs, Expressjs, MongoDb, Axios, React Query,Stripe, Firebase, Vercel
-This is a Hotel and place booking E-commerce site.It is a MERN Stack project.It has a beautiful UI designed in it.When a user first enters our site, they will see our beautiful home page. If you go to all hotels, you will see all the hotels on our site and you can see all the hotels in all the places.Users can sort hotels by price and search by title from all pages and all hotel pages..After login, a user can view the details page of the plate and hotel booking. From the details page, they can add it to their choice list if they like the plate or hotel.And from the destination page, you can set the desired destination from where you want to go। All these will be saved in a user's choice list collection. If the user goes to his dashboard and then navigates to the choicelist route, he can see all the data added to his choice list.Then he can cancel his product from the choice list if he wants to remove any. Then he will keep all the bookings in the selection list and if he clicks on the payment button, he will be taken to the payment route. After filling up all the payment information, it will be confirmed successfully.And those products will be deleted from the choice list.Then a user can leave a review on our site by going to AddReview Routes.The admin of the site can control the entire site. He can add hotels and places.And you can manage and update them from the manage route।Our site page is blog page. After logging in to the blog page, a user will be able to view all the blogs and comment on that blog after the blog.
-
-
-Admin email: rokon@gmail.com
-Admin password: 123456A#
