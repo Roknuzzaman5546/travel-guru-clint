@@ -54,16 +54,16 @@ const ReviewHome = () => {
                             <div className=" flex flex-col items-center justify-center">
                                 <img className="h-48 w-48 rounded-full" src={item.img} alt="Shoes" />
                             </div>
-                            <div className="p-8 mt-10 bg-base-200 md:h-[250px] h-[260px] rounded">
+                            <div className="p-8 mt-10 bg-base-200 md:h-[250px] h-[260px] rounded overflow-scroll">
                                 <p className=" space-y-2 mt-2">{item.details}</p>
                                 <div className=" flex justify-between items-center mt-4">
-                                    <h2 className=" text-3xl font-bold">{item.name}</h2>
+                                    <h2 className=" text-xl font-bold">{item.name}</h2>
                                     <div className=" flex items-center gap-2 font-bold">
                                         <p><FaStar className=" text-yellow-400"></FaStar></p>
                                         <p className="text-black text-xl">{item.rating}</p>
                                     </div>
                                 </div>
-                                <h3 className=" text-3xl font-bold font-mono mt-3">Like: {item.services}</h3>
+                                <h3 className=" text-xl font-bold font-mono mt-3">Like: {item.services}</h3>
                             </div>
                         </div>
                     </div>)

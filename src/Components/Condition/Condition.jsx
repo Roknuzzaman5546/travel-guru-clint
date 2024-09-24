@@ -4,13 +4,13 @@ const Condition = () => {
     return (
         <div>
             {/* Header part */}
-            <div className=" mt-12 ml-10 mb-16">
+            <div className=" mt-12 mx-10 mb-16">
                 <h2 className=" text-3xl font-bold font-serif mb-3">Travel guru Terms & Condition</h2>
                 <p className=" text-xl font-thin">By accessing our website, you agree to adhere to our terms and conditions for responsible travel exploration with Travel Guru.</p>
             </div>
             {/* body */}
-            <div className=" w-11/12 mx-auto mb-20 mt-28">
-                <div className=" flex gap-10">
+            <div className=" md:max-w-screen-2xl w-11/12 mx-auto mb-20 mt-28">
+                <div className=" flex flex-col md:flex-row gap-10">
                     <div className=" md:w-[63%] w-full">
                         {/* payment part */}
                         <div>

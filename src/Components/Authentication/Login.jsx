@@ -70,9 +70,9 @@ const Login = () => {
                 <div className=" w-10/12 mx-auto">
                     <h2 className=" text-2xl font-bold my-4">Login</h2>
                     <form onSubmit={handlelogin}>
-                        <input placeholder="Username or email" className=" w-80 rounded p-2 border-b-2 mt-3 " type="email" name="email" id="" />
+                        <input placeholder="Username or email" className=" w-[90%] mx-auto rounded p-2 border-b-2 mt-3 " type="email" name="email" id="" />
                         <br />
-                        <input placeholder="Password" className=" w-80 rounded p-2 border-b-2 mt-3" type="password" name="password" id="" />
+                        <input placeholder="Password" className=" w-[90%] mx-auto rounded p-2 border-b-2 mt-3" type="password" name="password" id="" />
                         <div className=" flex justify-between items-center mt-2">
                             <div className="form-control">
                                 <label className=" flex items-center gap-2">

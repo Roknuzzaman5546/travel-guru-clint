@@ -2,8 +2,8 @@ import logoimg from '../../assets/logo.png'
 
 const Footer = () => {
     return (
-        <div>
-            <footer className="footer p-10 bg-black text-neutral-content">
+        <div className='bg-black'>
+            <footer className="footer p-10 text-neutral-content md:max-w-screen-2xl w-11/12 mx-auto">
                 <aside>
                     <img src={logoimg} alt="" />
                     <p>Travel guru Ltd.<br />Providing reliable tech since 1992</p>

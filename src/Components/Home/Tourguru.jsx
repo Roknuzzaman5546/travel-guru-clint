@@ -2,7 +2,7 @@ import './tourguru.css'
 
 const Tourguru = () => {
     return (
-        <div className=' w-11/12 mx-auto'>
+        <div className='md:max-w-screen-2xl w-11/12 mx-auto'>
             <div className=" mt-28 bgtour py-20 bg-fixed">
                 <div className=" bg-white rounded-md py-20 px-7 w-2/3 mx-auto text-center">
                     <h2 className=" text-3xl uppercase font-thin">Tour guru</h2>

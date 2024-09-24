@@ -22,7 +22,7 @@ const Blog = () => {
                     </div>
                 </div>
             </div>
-            <div className=" mt-36 mb-44 text-center lg:w-3/4 w-11/12  mx-auto">
+            <div className=" mt-36 mb-44 text-center md:max-w-screen-2xl w-11/12 mx-auto">
                 {/* <h2>{blogs.length}</h2> */}
                 <div className=" grid md:grid-cols-2 grid-cols-1 gap-10">
                     {
