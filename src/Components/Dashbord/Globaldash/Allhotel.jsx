@@ -89,7 +89,7 @@ const Allhotel = () => {
                 </div>
             </div>
             <div className=" bg-[#000] h-40 md:h-20 w-full mb-10">
-                <div className=" w-[88%] mx-auto flex flex-col-reverse md:flex-row gap-2 md:gap-0 justify-around items-center pt-3">
+                <div className=" md:max-w-screen-2xl w-11/12 mx-auto flex flex-col-reverse md:flex-row gap-2 md:gap-0 justify-around items-center pt-3">
                     <div className=" md:w-[50%] w-full md:ml-3 mx-auto">
                         <form>
                             <label
