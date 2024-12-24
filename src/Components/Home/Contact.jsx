@@ -51,7 +51,7 @@ const Contact = () => {
                             <input type="checkbox" className="checkbox" />
                             <p className=" text-xl">I agree to the <Link to="/condition"><span className=" text-orange-600">terms & conditions</span></Link> and <Link to="condition"><span className="text-orange-600">privacy policy</span></Link></p>
                         </div>
-                        <input type="submit" value="Send Message" className=" rounded px-8 py-4 mt-3 bg-[#ff9c1c] hover:bg-[#000] text-white" />
+                        <button className="text-xl mt-2 w-28 h-12 font-semibold bg-[#ff9c1c] text-black relative overflow-hidden group z-10 hover:text-[#ff9c1c] duration-1000"><span className="absolute bg-[#46433f] size-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span><span className="absolute bg-black size-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>Submit</button>
                     </form>
                 </div>
             </div>

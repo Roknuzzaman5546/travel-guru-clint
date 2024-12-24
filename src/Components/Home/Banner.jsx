@@ -3,12 +3,10 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import './styles.css'
 import { Autoplay } from 'swiper/modules';
-
 import swip1 from '../../assets/images/Sajek.png'
 import swip2 from '../../assets/images/Sreemongol.png'
 import swip3 from '../../assets/images/sundorbon.png'
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
 
 const Banner = () => {
 
