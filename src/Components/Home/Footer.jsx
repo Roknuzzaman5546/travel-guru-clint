@@ -5,7 +5,7 @@ const Footer = () => {
         <div className='bg-black'>
             <footer className="footer p-10 text-neutral-content md:max-w-screen-2xl w-11/12 mx-auto">
                 <aside>
-                    <img src={logoimg} alt="" />
+                    <img loading="lazy" src={logoimg} alt="" />
                     <p>Travel guru Ltd.<br />Providing reliable tech since 1992</p>
                 </aside>
                 <nav>

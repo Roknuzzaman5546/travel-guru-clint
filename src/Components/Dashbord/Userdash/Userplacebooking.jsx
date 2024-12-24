@@ -13,7 +13,7 @@ const Userplacebooking = () => {
                     placebook.map(item => <div key={item._id}>
                         <div className="flex justify-center gap-2 bg-base-100 shadow-xl rounded-xl mb-5">
                             <div className="rounded-lg overflows w-full">
-                                <img className=" rounded-lg w-full h-60 background-image" src={item.img} alt="Album" />
+                                <img loading="lazy" className=" rounded-lg w-full h-60 background-image" src={item.img} alt="Album" />
                             </div>
                             <div className=" w-full flex flex-col justify-between">
                                 <h2 className=" text-2xl font-bold font-sans mt">{item.name}</h2>

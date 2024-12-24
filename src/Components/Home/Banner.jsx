@@ -8,6 +8,7 @@ import swip1 from '../../assets/images/Sajek.png'
 import swip2 from '../../assets/images/Sreemongol.png'
 import swip3 from '../../assets/images/sundorbon.png'
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
 
@@ -24,7 +25,7 @@ const Banner = () => {
                 <div className=" md:w-1/2 w-full md:ml-20 ml-0">
                     <h2 className="text-6xl font-bold text-white font-serif">Coxs bazar</h2>
                     <p className=' my-3 text-white'>Coxs Bazar (/ˌkɒksɪz bəˈzɑː/; Bengali: কক্সবাজার, romanized: Kôksbajar; pronounced [kɔksbadʒaɾ]) is a city, fishing port, tourism centre, and district headquarters in Southeastern Bangladesh. The iconic Coxs Bazar Beach, one of the most popular tourist attractions in Bangladesh, is the longest uninterrupted beach in the world.[2] It is located 150 km (93 mi) south of the city of Chittagong. Coxs Bazar is also known by the name Panowa, which translates literally as yellow flower.</p>
-                    <button className=" btn btn-warning mt-5">Booking</button>
+                    <Link><button className="text-xl w-24 h-10 font-semibold bg-white text-black relative overflow-hidden group z-10 hover:text-white duration-1000"><span className="absolute bg-[#46433f] size-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span><span className="absolute bg-[#ff9c1c] size-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>Login</button></Link>
                 </div>
                 <div className=' md:w-1/2 w-[80%] md:mx-0 mx-auto'>
                     <Swiper
@@ -51,28 +52,28 @@ const Banner = () => {
                         className="mySwiper"
                     >
                         <SwiperSlide>
-                            <img src={swip1} alt="" />
+                            <img loading="lazy" src={swip1} alt="" />
                             <h2 className=' text-white text-center text-2xl uppercase font-bold -mt-10'>Sajek</h2>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={swip2} alt="" />
+                            <img loading="lazy" src={swip2} alt="" />
                             <h2 className=' text-white text-center text-2xl uppercase font-bold -mt-10'>Sremongal</h2>
                             <div className=' mt-10'></div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={swip3} alt="" />
+                            <img loading="lazy" src={swip3} alt="" />
                             <h2 className=' text-white text-center text-2xl uppercase font-bold -mt-10'>Sundarbon</h2>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={swip1} alt="" />
+                            <img loading="lazy" src={swip1} alt="" />
                             <h2 className=' text-white text-center text-2xl uppercase font-bold -mt-10'>Sajek</h2>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={swip2} alt="" />
+                            <img loading="lazy" src={swip2} alt="" />
                             <h2 className=' text-white text-center text-2xl uppercase font-bold -mt-10'>Sremongal</h2>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img src={swip3} alt="" />
+                            <img loading="lazy" src={swip3} alt="" />
                             <h2 className=' text-white text-center text-2xl uppercase font-bold -mt-10'>Sundarbon</h2>
                         </SwiperSlide>
                         <div className="autoplay-progress hidden" slot="container-end">

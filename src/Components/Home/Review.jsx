@@ -52,7 +52,7 @@ const ReviewHome = () => {
                     currentItems?.map((item, index) => <div key={index}>
                         <div className="">
                             <div className=" flex flex-col items-center justify-center">
-                                <img className="h-48 w-48 rounded-full" src={item.img} alt="Shoes" />
+                                <img loading="lazy" className="h-48 w-48 rounded-full" src={item.img} alt="Shoes" />
                             </div>
                             <div className="p-8 mt-10 bg-base-200 md:h-[250px] h-[260px] rounded overflow-scroll">
                                 <p className=" space-y-2 mt-2">{item.details}</p>

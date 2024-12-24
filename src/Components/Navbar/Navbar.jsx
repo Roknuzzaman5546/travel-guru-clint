@@ -101,7 +101,7 @@ const Navbar = () => {
                             </details>
                         </ul>
                     </div>
-                    <Link to={'/'}><img className=" w-28 h-10 lg:mx-0 mx-auto" src={logoImg} alt="" /></Link>
+                    <Link to={'/'}><img loading="lazy" className=" w-28 h-10 lg:mx-0 mx-auto" src={logoImg} alt="" /></Link>
                 </div>
                 {/* navbar for lg device */}
                 <div className="hidden lg:flex navbar-center">
@@ -119,7 +119,7 @@ const Navbar = () => {
                                 <div className="dropdown dropdown-end">
                                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                         <div className="w-12 rounded-full">
-                                            <img src={user?.photoURL} alt="" />
+                                            <img loading="lazy" src={user?.photoURL} alt="" />
                                         </div>
                                     </label>
                                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] px-2 py-5 shadow bg-[#000] rounded-box w-52 border-white border-x-[2px]">
@@ -139,7 +139,9 @@ const Navbar = () => {
                             </li>
                             :
                             <li>
-                                <Link to="/login"><button className="btn">Login</button></Link>
+                                <Link to="/login">
+                                    <button className="text-xl w-24 h-10 bg-white text-black relative overflow-hidden group z-10 hover:text-white duration-1000"><span className="absolute bg-[#46433f] size-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span><span className="absolute bg-[#ff9c1c] size-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>Login</button>
+                                </Link>
                             </li>
                         }
                     </div>

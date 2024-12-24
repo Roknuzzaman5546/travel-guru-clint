@@ -94,11 +94,11 @@ const Login = () => {
                 <div className="divider divider-neutral">OR</div>
             </div>
             {/* <div className="flex items-center justify-evenly w-1/4 mx-auto border-2 rounded-full mt-5 py-2">
-                <img className="w-8 h-8" src={facebook} alt="" />
+                <img loading="lazy" className="w-8 h-8" src={facebook} alt="" />
                 <h2 className="font-bold">Log in with facebook</h2>
             </div> */}
             <div className="flex items-center justify-evenly w-1/4 mx-auto border-2 rounded-full my-4 py-2 cursor-pointer mb-28" onClick={handleGoogleLogin}>
-                <img className="w-8 h-8" src={google} alt="" />
+                <img loading="lazy" className="w-8 h-8" src={google} alt="" />
                 <h2 className="font-bold">Log in with Google</h2>
             </div>
         </div>

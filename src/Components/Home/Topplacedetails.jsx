@@ -8,7 +8,7 @@ const Topplacedetails = ({ item }) => {
         <div>
             <div className="placeCard">
                 <div className="icon">
-                    <img className="md:h-64 h-60 w-full" src={img} alt="" />
+                    <img loading="lazy" className="md:h-64 h-60 w-full" src={img} alt="" />
                 </div>
                 <p className="title">{name}</p>
                 <div className="text flex items-center justify-between">

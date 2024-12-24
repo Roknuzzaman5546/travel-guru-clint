@@ -11,7 +11,7 @@ const AboutUs = () => {
                 <p className=" text-xl font-thin">Unwind the clock of modern life. Unlock the door to a wonder of the world.</p>
             </div>
             <div className=" ml-20">
-                <img className="h-[700px] w-full" src={aboutIMg} alt="" />
+                <img loading="lazy" className="h-[700px] w-full" src={aboutIMg} alt="" />
             </div>
             <div>
                 <About></About>

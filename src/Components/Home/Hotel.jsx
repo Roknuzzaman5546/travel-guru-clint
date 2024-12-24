@@ -62,7 +62,7 @@ const Hotel = () => {
                                         <SwiperSlide>
                                             <div className="cart bg-base-100 shadow-md md:w-[90%] w-11/12  h-[510px] md:mx-0 mx-auto rounded">
                                                 <div className="cart">
-                                                    <img className=" w-full h-72 background-image" src={item.imageUrl} alt="Shoes" />
+                                                    <img loading="lazy" className=" w-full h-72 background-image" src={item.imageUrl} alt="Shoes" />
                                                 </div>
                                                 <div className="pl-6 mt-5">
                                                     <p className=' text-xl font-bold font-mono'>Cast: {item.bookingCost} $</p>

@@ -48,7 +48,7 @@ const Manageplace = () => {
                 {
                     place.map(item => <div key={item._id}>
                         <div className="h-60 flex justify-center gap-2 bg-base-100 shadow-xl rounded-xl mb-5">
-                            <img className=" rounded-lg md:w-[43%] w-[50%] h-60" src={item.img} alt="Album" />
+                            <img loading="lazy" className=" rounded-lg md:w-[43%] w-[50%] h-60" src={item.img} alt="Album" />
                             <div className=" w-full flex flex-col justify-center gap-2">
                                 <h2 className=" text-2xl font-bold font-sans">{item.name}</h2>
                                 <p className=" text-xl font-bold font-mono">{item.title}</p>

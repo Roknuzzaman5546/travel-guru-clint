@@ -57,7 +57,7 @@ const PlaceDetails = () => {
             </div>
             {/* Details section */}
             <div className=" mb-20">
-                <img className=" w-full md:w-9/12 mx-auto h-[350px] md:h-[480px] my-10" src={place.img} alt="" />
+                <img loading="lazy" className=" w-full md:w-9/12 mx-auto h-[350px] md:h-[480px] my-10" src={place.img} alt="" />
                 <div>
                     <div className=" flex justify-between items-center mt-4">
                         <h2 className=" text-3xl font-bold font-serif">{place.name}</h2>
@@ -123,7 +123,7 @@ const PlaceDetails = () => {
                             {
                                 recentPlaces?.slice(0, 5).map((item) => (
                                     <div key={item._id} className="flex flex-col items-start lg:flex-row lg:items-center gap-2 my-5">
-                                        <img className=" w-24 h-16 rounded-lg" src={item?.img} alt="" />
+                                        <img loading="lazy" className=" w-24 h-16 rounded-lg" src={item?.img} alt="" />
                                         <div>
                                             <Link to={`/place/${item._id}`}>
                                                 <h2 className=" font-bold line-clamp-1">{item?.title}</h2>

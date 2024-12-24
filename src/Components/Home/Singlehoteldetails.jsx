@@ -56,7 +56,7 @@ const SingleHotelDetails = () => {
                 <h1 className=" text-center text-yellow-500 text-xl">---This place is details here---</h1>
             </div>
             <div className=" mb-20">
-                <img className=" w-full mx-auto h-[480px] my-16" src={hotel.imageUrl} alt="" />
+                <img loading="lazy" className=" w-full mx-auto h-[480px] my-16" src={hotel.imageUrl} alt="" />
                 <div>
                     <div className=" flex justify-between items-center mt-4">
                         <h2 className=" text-3xl font-bold font-serif">{hotel.hotelName}</h2>
@@ -122,7 +122,7 @@ const SingleHotelDetails = () => {
                             {
                                 recentHotels?.slice(0, 5).map((item) => (
                                     <div key={item._id} className="flex flex-col items-start lg:flex-row lg:items-center gap-2 my-5">
-                                        <img className=" w-24 h-16 rounded-lg" src={item?.imageUrl} alt="" />
+                                        <img loading="lazy" className=" w-24 h-16 rounded-lg" src={item?.imageUrl} alt="" />
                                         <div>
                                             <Link to={`/hotel/${item._id}`}>
                                                 <h2 className=" font-bold">{item?.hotelName}</h2>

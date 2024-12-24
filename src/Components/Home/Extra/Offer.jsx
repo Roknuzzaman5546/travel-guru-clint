@@ -11,7 +11,7 @@ const Offer = () => {
                         <h2 className=" text-white font-bold text-center text-5xl font-mono">Our spechal offer <span className=' text-3xl font-bold font-mono text-pink-600'>/ <Link to={`/hotel`}>View all offer</Link></span></h2>
                     </div>
                     <div className="flex md:flex-row flex-col justify-center items-center gap-10 ">
-                        <img className="md:w-1/2 w-[80%] rounded-md md:h-[470px] h-[400px]" src={offerimg} alt="" />
+                        <img loading="lazy" className="md:w-1/2 w-[80%] rounded-md md:h-[470px] h-[400px]" src={offerimg} alt="" />
                         <div className='md:w-1/2 w-[80%] space-y-4'>
                             <h2 className=' text-xl text-red-500'>March 20, 2023</h2>
                             <h2 className=" text-[#ff9c1c] text-5xl font-bold font-mono uppercase">WHERE CAN <br /> I GET SOME?</h2>
