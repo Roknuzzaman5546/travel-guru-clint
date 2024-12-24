@@ -34,7 +34,7 @@ const Destination = () => {
     return (
         <div className='bgimg bg-fixed'>
             <div className="bg-[#000000B2]">
-                <div className=" md:max-w-screen-2xl w-11/12 mx-auto flex lg:flex-row flex-col justify-between items-center lg:pt-40 pb-28">
+                <div className=" md:max-w-screen-2xl w-11/12 mx-auto flex lg:flex-row flex-col justify-between items-center lg:pt-28 pb-28 ">
                     <div className=" md:w-1/3 w-full mx-auto">
                         <h2 className="text-6xl font-bold text-white font-serif">Coxs bazar</h2>
                         <p className=" text-white mt-2 md:text-left text-center">Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.</p>

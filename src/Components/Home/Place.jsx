@@ -16,7 +16,7 @@ const Place = () => {
             </div>
             <div className=' flex flex-col justify-center items-center mt-10'>
                 <Link to="/allplace">
-                    <button className='bg-[#000] hover:bg-[#ff9c1c] text-white px-6 py-4 rounded-md text-xl font-bold font-mono'>Show all</button>
+                <button className="text-xl mt-2 w-32 h-12 font-semibold items-center bg-[#ff9c1c] text-black relative overflow-hidden group z-10 hover:text-black duration-1000"><span className="absolute bg-[#46433f] size-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span><span className="absolute bg-white size-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>Show more</button>
                 </Link>
             </div>
         </div>

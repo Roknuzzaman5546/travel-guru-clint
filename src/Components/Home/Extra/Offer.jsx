@@ -16,7 +16,7 @@ const Offer = () => {
                             <h2 className=' text-xl text-red-500'>March 20, 2023</h2>
                             <h2 className=" text-[#ff9c1c] text-5xl font-bold font-mono uppercase">WHERE CAN <br /> I GET SOME?</h2>
                             <p className=' text-xl text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error voluptate facere, deserunt dolores maiores quod nobis quas quasi. <br />Eaque repellat recusandae ad laudantium tempore consequatur consequuntur omnis ullam maxime tenetur.</p>
-                            <button className=" bg-[#ff9c1c] hover:bg-[#000] text-white px-6 py-4 rounded-md text-xl font-bold font-mono">Get more</button>
+                            <button className="text-xl mt-2 w-28 h-12 font-semibold bg-[#ff9c1c] text-black relative overflow-hidden group z-10 hover:text-black duration-1000"><span className="absolute bg-[#46433f] size-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span><span className="absolute bg-white size-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>Get more</button>
                         </div>
                     </div>
                 </div>
