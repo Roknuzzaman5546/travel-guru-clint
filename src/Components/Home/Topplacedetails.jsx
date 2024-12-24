@@ -6,7 +6,7 @@ const Topplacedetails = ({ item }) => {
     const { img, name, cost, _id } = item;
     return (
         <div>
-            <div className="placeCard overflow-hidden">
+            <div className="placeCard">
                 <div className="icon">
                     <img className="md:h-64 h-60 w-full" src={img} alt="" />
                 </div>
