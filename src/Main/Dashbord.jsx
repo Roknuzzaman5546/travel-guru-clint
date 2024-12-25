@@ -10,6 +10,7 @@ import useGetRole from "../Components/Hooks/useGetRole";
 
 
 const Dashboard = () => {
+    const [isNavbarJumping, setIsNavbarJumping] = useState(false);
     const { user } = useContext(AuthContext)
     const [isAdmin, setIsAdmin] = useState(false)
     const [userRole] = useGetRole()
@@ -26,11 +27,26 @@ const Dashboard = () => {
         // console.log(isAdmin);
     }, [isAdmin, role]);
 
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            const scrollThreshold = 100;
+            setIsNavbarJumping(scrollY > scrollThreshold);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <div>
             <div>
                 {/* navbar for small device */}
-                <div className="navbar text-white font-bold py-2 font-sans bg-[#000000]">
+                <div className={` sticky bg-[#000000] w-full top-0 left-0 z-[99999] ${isNavbarJumping ? 'animate-jump shadow-md' : ''}`}>
                     <div className="navbar-start w-11/12 mx-auto">
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
