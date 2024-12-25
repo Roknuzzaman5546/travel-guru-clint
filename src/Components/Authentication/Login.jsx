@@ -70,13 +70,13 @@ const Login = () => {
                 <div className=" w-10/12 mx-auto">
                     <h2 className=" text-2xl font-bold my-4">Login</h2>
                     <form onSubmit={handlelogin}>
-                        <input placeholder="Username or email" className=" w-[90%] mx-auto rounded p-2 border-b-2 mt-3 " type="email" name="email" id="" />
+                        <input placeholder="Username or email " className="focus:outline-none w-[90%] mx-auto rounded p-2 border-b-2 mt-3 " type="email" name="email" id="" />
                         <br />
-                        <input placeholder="Password" className=" w-[90%] mx-auto rounded p-2 border-b-2 mt-3" type="password" name="password" id="" />
+                        <input placeholder="Password" className="focus:outline-none w-[90%] mx-auto rounded p-2 border-b-2 mt-3" type="password" name="password" id="" />
                         <div className=" flex justify-between items-center mt-2">
                             <div className="form-control">
                                 <label className=" flex items-center gap-2">
-                                    <input type="checkbox" className="checkbox" />
+                                    <input type="checkbox" className="checkbox focus:outline-none" />
                                     <span className="label-text">Remember me</span>
                                 </label>
                             </div>
@@ -85,7 +85,7 @@ const Login = () => {
                             </label>
                         </div>
                         <br />
-                        <input className="btn btn-warning w-11/12 my-5 mx-auto" type="submit" value="Creat an account" />
+                        <input className="btn btn-warning w-11/12 my-5 mx-auto focus:outline-none" type="submit" value="Creat an account" />
                         <p className=" text-center">Already have an account? <span className=" text-yellow-500 font-bold"><Link to="/register">Register</Link></span></p>
                     </form>
                 </div>

@@ -72,15 +72,15 @@ const Register = () => {
                 <div className=" w-10/12 mx-auto">
                     <h2 className=" text-2xl font-bold my-4">Create an account</h2>
                     <form onSubmit={handleRegister}>
-                        <input placeholder="Your name" className=" w-[90%] mx-auto rounded p-2 border-b-2 " type="text" name="name" id="" />
+                        <input placeholder="Your name" className=" w-[90%] mx-auto rounded p-2 border-b-2 focus:outline-none" type="text" name="name" id="" />
                         <br />
-                        <input placeholder="Photo url" className=" w-[90%] mx-auto rounded p-2 border-b-2 mt-3 " type="text" name="photo" id="" />
+                        <input placeholder="Photo url" className=" w-[90%] mx-auto rounded p-2 border-b-2 mt-3 focus:outline-none" type="text" name="photo" id="" />
                         <br />
-                        <input placeholder="Username or email" className=" w-[90%] mx-auto rounded p-2 border-b-2 mt-3 " type="email" name="email" id="" />
+                        <input placeholder="Username or email" className=" w-[90%] mx-auto rounded p-2 border-b-2 mt-3 focus:outline-none" type="email" name="email" id="" />
                         <br />
-                        <input placeholder="Password" className=" w-[90%] mx-auto rounded p-2 border-b-2 mt-3" type="password" name="password" id="" />
+                        <input placeholder="Password" className=" w-[90%] mx-auto rounded p-2 border-b-2 mt-3 focus:outline-none" type="password" name="password" id="" />
                         <br />
-                        <input className="btn btn-warning w-11/12 my-4 mx-auto" type="submit" value="Creat an account" />
+                        <input className="btn btn-warning w-11/12 my-4 mx-auto focus:outline-none" type="submit" value="Creat an account" />
                         <p className=" text-center">Already have an account? <span className=" text-yellow-500 font-bold"><Link to="/login">Login</Link></span></p>
                     </form>
                 </div>

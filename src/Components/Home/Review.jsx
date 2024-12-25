@@ -54,7 +54,7 @@ const ReviewHome = () => {
                             <div className=" flex flex-col items-center justify-center">
                                 <img loading="lazy" className="h-48 w-48 rounded-full" src={item.img} alt="Shoes" />
                             </div>
-                            <div className="p-8 mt-10 bg-base-200 md:h-[250px] h-[260px] rounded overflow-scroll">
+                            <div className="p-8 mt-10 bg-base-200 md:h-[250px] h-[260px] rounded overflow-y-scroll chatScroll">
                                 <p className=" space-y-2 mt-2">{item.details}</p>
                                 <div className=" flex justify-between items-center mt-4">
                                     <h2 className=" text-xl font-bold">{item.name}</h2>
