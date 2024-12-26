@@ -25,40 +25,40 @@ const Addplace = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-control w-full">
                         <label className="label">
-                            <span className="text-xl font-mono font-bold">Place name?</span>
+                            <span className="text-xl font-mono">Place name?</span>
                         </label>
-                        <input type="text" placeholder="Type here" {...register("name", { required: true })} className="py-5 px-2 rounded-md text-xl font-bold font-mono w-full" />
+                        <input type="text" placeholder="Type here" {...register("name", { required: true })} className="py-2 px-2 rounded-md text-xl font-mono w-full" />
                     </div>
                     <div className=" flex items-center gap-6">
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="text-xl font-mono font-bold">Place image Url?</span>
+                                <span className="text-xl font-mono">Place image Url?</span>
                             </label>
-                            <input type="text" placeholder="Image url" {...register("img", { required: true })} className="py-5 px-2 rounded-md text-xl font-bold font-mono w-full" />
+                            <input type="text" placeholder="Image url" {...register("img", { required: true })} className="py-2 px-2 rounded-md text-xl font-mono w-full" />
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="text-xl font-mono font-bold">Booking cost*</span>
+                                <span className="text-xl font-mono">Booking cost*</span>
                             </label>
-                            <input type="text" {...register("cost", { required: true })} placeholder="Type here" className="py-5 px-2 rounded-md text-xl font-bold font-mono w-full max-w-xs" />
+                            <input type="text" {...register("cost", { required: true })} placeholder="Type here" className="py-2 px-2 rounded-md text-xl font-mono w-full max-w-xs" />
                         </div>
                     </div>
                     <label className="label mt-4">
-                        <span className="text-xl font-mono font-bold">Details*</span>
+                        <span className="text-xl font-mono">Details*</span>
                     </label>
-                    <textarea {...register("details")} className="py-5 px-2 rounded-md text-xl font-bold font-mono w-full" placeholder="Details"></textarea>
+                    <textarea {...register("details")} className="py-2 px-2 rounded-md text-xl font-mono w-full h-28" placeholder="Details"></textarea>
                     <div className=" flex flex-row-reverse items-center gap-6">
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="text-xl font-mono font-bold">Title?</span>
+                                <span className="text-xl font-mono">Title?</span>
                             </label>
-                            <input type="text" placeholder="Type title" {...register("title", { required: true })} className="py-5 px-2 rounded-md text-xl font-bold font-mono w-full" />
+                            <input type="text" placeholder="Type title" {...register("title", { required: true })} className="py-2 px-2 rounded-md text-xl font-mono w-full" />
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="text-xl font-mono font-bold">Rating*</span>
+                                <span className="text-xl font-mono">Rating*</span>
                             </label>
-                            <input type="text" {...register("rating", { required: true })} placeholder="Type here" className="py-5 px-2 rounded-md text-xl font-bold font-mono w-full max-w-xs" />
+                            <input type="text" {...register("rating", { required: true })} placeholder="Type here" className="py-2 px-2 rounded-md text-xl font-mono w-full max-w-xs" />
                         </div>
                     </div>
                     <button className="bg-[#000] hover:bg-[#ff9c1c] text-white px-6 py-4 rounded-md text-xl font-bold font-mono mt-3 flex justify-between gap-2 items-center">
