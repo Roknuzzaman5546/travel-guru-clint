@@ -38,6 +38,7 @@ import Register from './Components/Authentication/Register';
 import PlaceDetails from './Components/Home/PlaceDetails';
 import BlogDetails from './Components/Blog/BlogDetails/BlogDetails';
 import WriteBlogs from './Components/Dashbord/Userdash/WriteBlogs';
+import AddBus from './Components/Dashbord/Admindash/AddBus';
 const queryClient = new QueryClient()
 
 
@@ -123,6 +124,10 @@ const router = createBrowserRouter([
       {
         path: 'addhotel',
         element: <Addhotel></Addhotel>
+      },
+      {
+        path: 'addbus',
+        element: <AddBus></AddBus>
       },
       {
         path: 'manageplace',
