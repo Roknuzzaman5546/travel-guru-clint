@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import { Rating } from '@smastrom/react-rating';
 import { useRef } from 'react';
+import LazyLoad from 'react-lazyload';
 
 const Hotel = () => {
     const [hotel] = useHotel();
@@ -62,7 +63,9 @@ const Hotel = () => {
                                         <SwiperSlide>
                                             <div className="cart bg-base-100 shadow-md md:w-[90%] w-11/12  h-[510px] md:mx-0 mx-auto rounded">
                                                 <div className="cart">
-                                                    <img loading="lazy" className=" w-full h-72 background-image" src={item.imageUrl} alt="Shoes" />
+                                                    <LazyLoad>
+                                                    <img  className=" w-full h-72 background-image" src={item.imageUrl} alt="Shoes" />
+                                                    </LazyLoad>
                                                 </div>
                                                 <div className="pl-6 mt-5">
                                                     <p className=' text-xl font-bold font-mono'>Cast: {item.bookingCost} $</p>

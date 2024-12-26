@@ -130,7 +130,7 @@ const ReviewForm = ({ item }) => {
                                         {
                                             showImages.map((item, index) =>
                                                 <div key={index}>
-                                                    <img loading="lazy" className=" w-[100px] h-[100px]" src={item.url} alt="Drop img" />
+                                                    <img  className=" w-[100px] h-[100px]" src={item.url} alt="Drop img" />
                                                 </div>)
                                         }
                                     </div> :

@@ -46,7 +46,7 @@ const Managehotel = () => {
                 {
                     hotel.map(item => <div key={item._id}>
                         <div className="h-60 flex justify-center gap-2 bg-base-100 shadow-xl rounded-xl mb-5">
-                            <img loading="lazy" className=" rounded-lg md:w-[43%] w-[50%] h-60" src={item.imageUrl} alt="Album" />
+                            <img  className=" rounded-lg md:w-[43%] w-[50%] h-60" src={item.imageUrl} alt="Album" />
                             <div className=" w-full flex flex-col justify-center gap-2">
                                 <h2 className=" text-xl font-bold font-sans col-span-1">{item.hotelName}</h2>
                                 <p className=" font-bold font-mono">{item.title}</p>

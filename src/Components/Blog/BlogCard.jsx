@@ -4,6 +4,7 @@ import { FaComment, FaFacebook, FaInstagram, FaLinkedin, FaShareAlt } from "reac
 import './Blog.css'
 import { Link } from "react-router-dom";
 import useComment from "../Hooks/useComment";
+import LazyLoad from "react-lazyload";
 
 const BlogCard = ({ item }) => {
     const { img, date, bloggerInfo, details, title, _id, facebookId, instagramId, linkedinID } = item || {};
@@ -51,7 +52,9 @@ const BlogCard = ({ item }) => {
                     <div></div>
                 </div>
                 <div>
-                    <img loading="lazy" className=" w-full h-[500px] transition-all duration-200" src={img} alt="" />
+                    <LazyLoad>
+                    <img  className=" w-full h-[500px] transition-all duration-200" src={img} alt="" />
+                    </LazyLoad>
                 </div>
             </div>
         </div>

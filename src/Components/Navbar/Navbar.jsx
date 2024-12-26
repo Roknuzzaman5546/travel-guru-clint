@@ -80,7 +80,7 @@ const Navbar = () => {
 
     return (
         <div className={` sticky bg-[#000000] w-full top-0 left-0 z-[99999] ${isNavbarJumping ? 'animate-jump shadow-md' : ''}`} >
-            <div className="navbar w-11/12 mx-auto text-white py-3 px-2 font-bold text-xl font-mono">
+            <div className="navbar w-11/12 mx-auto text-white py-1 px-2 font-bold text-xl font-mono">
                     {/* navbar for small device */}
                 <div className="navbar-start">
                     {/* navbar dropdown */}
@@ -101,7 +101,7 @@ const Navbar = () => {
                             </details>
                         </ul>
                     </div>
-                    <Link to={'/'}><img loading="lazy" className=" w-28 h-10 lg:mx-0 mx-auto" src={logoImg} alt="" /></Link>
+                    <Link to={'/'}><img  className=" w-28 h-10 lg:mx-0 mx-auto" src={logoImg} alt="" /></Link>
                 </div>
                 {/* navbar for lg device */}
                 <div className="hidden lg:flex navbar-center">
@@ -119,7 +119,7 @@ const Navbar = () => {
                                 <div className="dropdown dropdown-end">
                                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                         <div className="w-12 rounded-full">
-                                            <img loading="lazy" src={user?.photoURL} alt="" />
+                                            <img  src={user?.photoURL} alt="" />
                                         </div>
                                     </label>
                                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] px-2 py-5 shadow bg-[#000] rounded-box w-52 border-white border-x-[2px]">

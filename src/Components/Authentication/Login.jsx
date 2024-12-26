@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Authprovider/Authprovider";
 import Swal from "sweetalert2";
 import UseaxiosPublic from "../Hooks/UseaxiosPublic";
+import LazyLoad from "react-lazyload";
 
 
 const Login = () => {
@@ -94,11 +95,13 @@ const Login = () => {
                 <div className="divider divider-neutral">OR</div>
             </div>
             {/* <div className="flex items-center justify-evenly w-1/4 mx-auto border-2 rounded-full mt-5 py-2">
-                <img loading="lazy" className="w-8 h-8" src={facebook} alt="" />
+                <img  className="w-8 h-8" src={facebook} alt="" />
                 <h2 className="font-bold">Log in with facebook</h2>
             </div> */}
             <div className="flex items-center justify-evenly w-1/4 mx-auto border-2 rounded-full my-4 py-2 cursor-pointer mb-28 btn" onClick={handleGoogleLogin}>
-                <img loading="lazy" className="w-8 h-8" src={google} alt="" />
+                <LazyLoad>
+                <img  className="w-8 h-8" src={google} alt="" />
+                </LazyLoad>
                 <h2 className="font-bold">Log in with Google</h2>
             </div>
         </div>

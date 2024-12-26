@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import { Link } from "react-router-dom";
+import LazyLoad from 'react-lazyload';
 import '../Dashbord/Globaldash/hotel.css'
 
 const Topplacedetails = ({ item }) => {
@@ -8,7 +9,9 @@ const Topplacedetails = ({ item }) => {
         <div>
             <div className="placeCard">
                 <div className="icon">
-                    <img loading="lazy" className="md:h-64 h-60 w-full" src={img} alt="" />
+                    <LazyLoad>
+                    <img  className="md:h-64 h-60 w-full" src={img} alt="" />
+                    </LazyLoad>
                 </div>
                 <p className="title">{name}</p>
                 <div className="text flex items-center justify-between">

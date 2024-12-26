@@ -4,6 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import './BlogDetails.css'
 import useComment from "../../Hooks/useComment";
 import { useState } from "react";
+import LazyLoad from "react-lazyload";
 
 const BlogDetails = () => {
     const blogs = useLoaderData()
@@ -56,7 +57,9 @@ const BlogDetails = () => {
                     <div className=" md:w-[65%] w-full">
                         {/* blog details */}
                         <div className=" border shadow-xl rounded" >
-                            <img loading="lazy" className=" rounded-t-md md:h-[700px] h-[500px] w-full" src={blog?.img} alt="" />
+                            <LazyLoad>
+                            <img  className=" rounded-t-md md:h-[700px] h-[500px] w-full" src={blog?.img} alt="" />
+                            </LazyLoad>
                             <div className=" p-5 text-slate-400">
                                 <h2>{blog?.details.slice(0, 310)}</h2>
                                 <p className="text-slate-400 italic border-x-4 border-[#002172] rounded-ss-xl rounded-ee-xl my-3 p-3">{blog?.details.slice(310, 504)}</p>
@@ -75,11 +78,13 @@ const BlogDetails = () => {
                                         {/* main comment part */}
                                         <div className=" flex md:flex-row flex-col justify-start items-center gap-8 mb-2">
                                             {/* main comment photo part */}
-                                            <img loading="lazy"
+                                            <LazyLoad>
+                                            <img 
                                                 className="h-28 w-28 rounded-full"
                                                 src={comment?.img}
                                                 alt=""
                                             />
+                                            </LazyLoad>
                                             {/* main comments name, date and message part */}
                                             <div className=" w-full">
                                                 <div className=" flex justify-between">
@@ -127,7 +132,9 @@ const BlogDetails = () => {
                                 {
                                     updateBlog.length > 0 ? updateBlog.slice(0, 5).map((item) => (
                                         <div key={item._id} className=" flex flex-col items-start lg:flex-row lg:items-center gap-2 my-5">
-                                            <img loading="lazy" className=" w-full h-full lg:w-24 lg:h-16 rounded-lg" src={item?.img} alt="" />
+                                            <LazyLoad>
+                                            <img  className=" w-full h-full lg:w-24 lg:h-16 rounded-lg" src={item?.img} alt="" />
+                                            </LazyLoad>
                                             <div>
                                                 <h2 className=" font-bold">{item?.title}</h2>
                                                 <h2 className=" text-slate-400">{item?.date}</h2>
@@ -135,7 +142,9 @@ const BlogDetails = () => {
                                         </div>
                                     )) : recentBlog.slice(0, 5).map((item) => (
                                         <div key={item._id} className=" flex flex-col items-start lg:flex-row lg:items-center gap-2 my-5">
-                                            <img loading="lazy" className=" w-full h-full lg:w-24 lg:h-16 rounded-lg" src={item?.img} alt="" />
+                                            <LazyLoad>
+                                            <img  className=" w-full h-full lg:w-24 lg:h-16 rounded-lg" src={item?.img} alt="" />
+                                            </LazyLoad>
                                             <div>
                                                 <h2 className=" font-bold">{item?.title}</h2>
                                                 <h2 className=" text-slate-400">{item?.date}</h2>

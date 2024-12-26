@@ -56,7 +56,7 @@ const Dashboard = () => {
                                 <div className="flex lg:hidden">
                                     <div className=" w-64 min-h-screen shadow-md bg-[#ff9c1c] text-black font-mono font-bold text-xlflex flex-col items-center pb-5">
                                         <div className=' flex flex-col items-center my-2'>
-                                            <img loading="lazy" className=' w-40 h-36 rounded-full' src={user?.photoURL} alt="" />
+                                            <img  className=' w-40 h-36 rounded-full' src={user?.photoURL} alt="" />
                                             <h2 className=' text-2xl font-bold font-alfa text-orange-400'>{user?.displayName}</h2>
                                             <p className=" text-xs ">{user?.email}</p>
                                         </div>
@@ -117,7 +117,7 @@ const Dashboard = () => {
                                 </div>
                             </ul>
                         </div>
-                        <Link to={'/'}><img loading="lazy" className=" w-28 h-10 md:ml-5 ml-10" src={logImg} alt="" /></Link>
+                        <Link to={'/'}><img  className=" w-28 h-10 md:ml-5 ml-10" src={logImg} alt="" /></Link>
                     </div>
                     <div className="navbar-end">
                         <div className=" lg:flex hidden">
@@ -140,7 +140,7 @@ const Dashboard = () => {
             <div className=" lg:flex hidden">
                 <div className=" w-64 min-h-screen shadow-md bg-[#ff9c1c] text-black font-mono font-bold text-xl flex flex-col items-center rounded-md border-2 pb-5">
                     <div className=' flex flex-col items-center mb-2 mt-5'>
-                        <img loading="lazy" className=' w-28 h-28 rounded-full' src={user?.photoURL} alt="" />
+                        <img  className=' w-28 h-28 rounded-full' src={user?.photoURL} alt="" />
                         <h2 className=' text-2xl mt-2 font-bold font-alfa'>{user?.displayName}</h2>
                         <p className=" text-xs ">{user?.email}</p>
                     </div>

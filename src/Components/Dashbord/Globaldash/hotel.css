@@ -37,6 +37,7 @@
     align-items: center;
     flex-direction: column;
     cursor: pointer;
+    overflow: hidden;
     font-family: 'Poppins', sans-serif;
 }
 

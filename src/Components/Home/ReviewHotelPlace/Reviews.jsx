@@ -20,7 +20,7 @@ const Reviews = ({ item }) => {
                         <div>
                             <div className="flex gap-5">
                                 <div className="min-w-[100px]">
-                                    <img loading="lazy"
+                                    <img 
                                         className="rounded-full w-[100px] h-[100px]"
                                         src={review?.reviewerImage}
                                         alt="Reviewer image"
@@ -48,7 +48,7 @@ const Reviews = ({ item }) => {
                                     </div>
                                     <div className="flex gap-5 mt-6">
                                         <div>
-                                            <img loading="lazy"
+                                            <img 
                                                 className="rounded-md w-[275px]"
                                                 src={review?.reviewImage}
                                                 alt={`${review?.propertyTitle} image`}

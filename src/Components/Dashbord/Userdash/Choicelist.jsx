@@ -46,7 +46,7 @@ const Choicelist = () => {
                 {
                     choice.map(item => <div key={item._id}>
                         <div className="h-64 flex justify-center gap-2 overflow-hidden bg-base-100 shadow-xl rounded-xl mb-5">
-                            <img loading="lazy" className="rounded-lg w-[50%] h-64" src={item.img} alt="Album" />
+                            <img  className="rounded-lg w-[50%] h-64" src={item.img} alt="Album" />
                             <div className=" w-full flex flex-col justify-center gap-[2px] scroll-my-3">
                                 <h2 className="text-2xl font-bold font-sans mt-2 col-span-1">{item.name}</h2>
                                 <p className="font-bold font-mono">{item.title}</p>

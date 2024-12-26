@@ -8,7 +8,7 @@ const Hoteldetails = ({ item }) => {
     return (
         <div>
             {/* <div className="card  card-compact bg-base-100 shadow-xl">
-                <figure><img loading="lazy" className="md:h-72 h-60 w-full background-image" src={imageUrl} alt="Shoes" /></figure>
+                <figure><img  className="md:h-72 h-60 w-full background-image" src={imageUrl} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className=" text-3xl font-bold font-mono line-clamp-1">{hotelName}</h2>
                     <p className=" text-xl font-bold">Cose: {bookingCost} $</p>
@@ -28,7 +28,7 @@ const Hoteldetails = ({ item }) => {
             </div> */}
             <div className="placeCard overflow-hidden">
                 <div className="icon">
-                    <img loading="lazy" className="md:h-64 h-60 w-full" src={imageUrl} alt="" />
+                    <img  className="md:h-64 h-60 w-full" src={imageUrl} alt="" />
                 </div>
                 <p className="title">{hotelName}</p>
                 <div className="text flex items-center justify-between">

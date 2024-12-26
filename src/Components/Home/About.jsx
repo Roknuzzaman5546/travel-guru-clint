@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import aboutimg from '../../assets/images/about.jpg'
 import about2img from '../../assets/images/about2.jpg'
+import LazyLoad from 'react-lazyload';
 
 const About = () => {
     return (
@@ -8,9 +9,13 @@ const About = () => {
             <h2 className=' text-5xl font-bold font-mono text-center text-black mb-10'>See about</h2>
             <div className=' mx-auto flex flex-col lg:flex-row lg:justify-center xl:justify-between md:gap-[100px] gap-3 md:items-center'>
                 <div className=' lg:w-2/5 w-full relative'>
-                    <img loading="lazy" className=' lg:max-w-[400px] md:min-w-[600px] lg:min-w-[450px] xl:min-w-[604px] md:min-h-[430px] xl:min-h-[504px] rounded-[5px] z-10' src={aboutimg} alt="" />
+                <LazyLoad>
+                    <img  className=' lg:max-w-[400px] md:min-w-[600px] lg:min-w-[450px] xl:min-w-[604px] md:min-h-[430px] xl:min-h-[504px] rounded-[5px] z-10' src={aboutimg} alt="" />
+                </LazyLoad>
                     <div className='absolute top-[250px] md:left-[0px] md:top-[50px] lg:left-[280px] lg:top-[250px] xl:left-[400px]  xl:top-[305px] min-w-[160px] lg:min-w-[200px] xl:min-w-[300px] min-h-[250px] hidden lg:flex'>
-                        <img loading="lazy" className='min-w-full min-h-full rounded-[5px]' src={about2img} alt="" />
+                        <LazyLoad>
+                        <img  className='min-w-full min-h-full rounded-[5px]' src={about2img} alt="" />
+                        </LazyLoad>
                     </div>
                 </div>
                 <div className=' lg:w-2/5 w-full space-y-4'>

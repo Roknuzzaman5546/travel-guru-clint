@@ -24,6 +24,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.49.3",
     "react-icons": "^4.12.0",
+    "react-lazyload": "^3.2.1",
     "react-router-dom": "^6.21.1",
     "recharts": "^2.11.0",
     "sort-by": "^1.2.0",

@@ -50,28 +50,28 @@ const Banner = () => {
                         className="mySwiper"
                     >
                         <SwiperSlide>
-                            <img loading="lazy" src={swip1} alt="" />
+                            <img  src={swip1} alt="" />
                             <h2 className=' text-white text-center text-2xl uppercase font-bold -mt-10'>Sajek</h2>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img loading="lazy" src={swip2} alt="" />
+                            <img  src={swip2} alt="" />
                             <h2 className=' text-white text-center text-2xl uppercase font-bold -mt-10'>Sremongal</h2>
                             <div className=' mt-10'></div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img loading="lazy" src={swip3} alt="" />
+                            <img  src={swip3} alt="" />
                             <h2 className=' text-white text-center text-2xl uppercase font-bold -mt-10'>Sundarbon</h2>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img loading="lazy" src={swip1} alt="" />
+                            <img  src={swip1} alt="" />
                             <h2 className=' text-white text-center text-2xl uppercase font-bold -mt-10'>Sajek</h2>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img loading="lazy" src={swip2} alt="" />
+                            <img  src={swip2} alt="" />
                             <h2 className=' text-white text-center text-2xl uppercase font-bold -mt-10'>Sremongal</h2>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img loading="lazy" src={swip3} alt="" />
+                            <img  src={swip3} alt="" />
                             <h2 className=' text-white text-center text-2xl uppercase font-bold -mt-10'>Sundarbon</h2>
                         </SwiperSlide>
                         <div className="autoplay-progress hidden" slot="container-end">
