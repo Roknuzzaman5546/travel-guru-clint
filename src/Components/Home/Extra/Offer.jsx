@@ -5,7 +5,7 @@ import LazyLoad from 'react-lazyload';
 
 const Offer = () => {
     return (
-        <div className=' offerbg bg-fixed'>
+        <div className=' offerbg'>
             <div className=" bg-[#000000B2] px-10 pt-16 pb-28">
                 <div className=' md:max-w-screen-2xl  w-11/12 mx-auto'>
                     <div className=' my-10'>

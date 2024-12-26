@@ -54,12 +54,12 @@ const Destination = () => {
                                     </label>
                                     <input type="text" name="destination" placeholder="Destination" className="input input-bordered" required />
                                 </div>
-                                <div className="form-control">
+                                {/* <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Your Ammount</span>
                                     </label>
                                     <input type="text" name="cost" placeholder="Cost" className="input input-bordered" required />
-                                </div>
+                                </div> */}
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Date</span>
