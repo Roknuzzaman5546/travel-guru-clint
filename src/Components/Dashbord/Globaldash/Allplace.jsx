@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Topplacedetails from "../../Home/topplacedetails";
 import usePlace from "../../Hooks/Useplace";
 import './Allplace.css'
@@ -164,9 +164,16 @@ const Allplace = () => {
             <div className=" mb-20">
                 <div className="md:max-w-screen-2xl w-11/12 mx-auto">
                     <div className=' grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
-                        {
+                        { currentItems.length > 0 ?
                             currentItems.map(item => <Topplacedetails key={item?.id} item={item}>
                             </Topplacedetails>)
+                            : <div className=" flex flex-col justify-center items-center ml-80">
+                            <h2 className="text-center text-violet-400 text-3xl font-bold font-mono mt-5">No data is here</h2>
+                            <h3 className=" text-center text-violet-400 text-lg my-3">Please go home page and try again after some time</h3>
+                            <Link to={`/`}>
+                                <button className=" bg-[#ff9c1c] hover:bg-[#000] text-white px-3 py-2 rounded-md text-xl font-bold font-mono transition">Home</button>
+                            </Link>
+                        </div> 
                         }
                     </div>
                     {/* pagination section */}

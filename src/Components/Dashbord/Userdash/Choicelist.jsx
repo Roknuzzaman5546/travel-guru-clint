@@ -63,7 +63,7 @@ const Choicelist = () => {
                                 </div>
                             </div>
                         </div>)
-                        : <div className=" flex flex-col justify-center items-center">
+                        : <div className=" flex flex-col justify-center items-center ml-80">
                             <h2 className="text-center text-violet-400 text-3xl font-bold font-mono mt-5">No choice added yet</h2>
                             <h3 className=" text-center text-violet-400 text-lg my-3">Please choice your favorite place and hotel</h3>
                             <Link to={`/allplace`}>
