@@ -65,11 +65,11 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
-        path: 'allplace',
+        path: '/allplace',
         element: <Allplace></Allplace>
       },
       {
-        path: 'hotel',
+        path: '/hotel',
         element: <Allhotel></Allhotel>
       },
       {
