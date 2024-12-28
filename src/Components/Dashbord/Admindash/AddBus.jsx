@@ -23,24 +23,41 @@ const AddBus = () => {
             <h2 className=" text-4xl text-center font-bold font-mono my-5">Add your new Bus</h2>
             <div className=" bg-[#eae8e8] px-8 py-10 rounded space-y-2 text-black">
                 <form onSubmit={handleSubmit(onSubmit)}>
+                    {/* name */}
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="text-xl font-mono">Bus name?</span>
                         </label>
                         <input type="text" placeholder="Type here" {...register("name", { required: true })} className="py-2 px-2 rounded-md text-xl font-mono w-full" />
                     </div>
+                    {/* title & couch */}
                     <div className=" flex items-center gap-6 w-full">
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="text-xl font-mono">Bus image Url?</span>
+                                <span className="text-xl font-mono">Bus Ttiel*</span>
                             </label>
-                            <input type="text" placeholder="Image url" {...register("img", { required: true })} className="py-2 px-2 rounded-md text-xl font-mono w-full" />
+                            <input type="text" placeholder="Title" {...register("title", { required: true })} className="py-2 px-2 rounded-md text-xl font-mono w-full" />
                         </div>
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="text-xl font-mono">Booking cost*</span>
+                                <span className="text-xl font-mono">Coach*</span>
                             </label>
-                            <input type="text" {...register("cost", { required: true })} placeholder="Type here" className="py-2 px-2 rounded-md text-xl font-mono w-full" />
+                            <input type="text" {...register("coach", { required: true })} placeholder="Coach" className="py-2 px-2 rounded-md text-xl font-mono w-full" />
+                        </div>
+                    </div>
+                    {/* start and end time */}
+                    <div className=" flex items-center gap-6 w-full">
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <span className="text-xl font-mono">Start time*</span>
+                            </label>
+                            <input type="text" placeholder="Start Time" {...register("start-time", { required: true })} className="py-2 px-2 rounded-md text-xl font-mono w-full" />
+                        </div>
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <span className="text-xl font-mono">Arr Time*</span>
+                            </label>
+                            <input type="text" {...register("arr-time", { required: true })} placeholder="Arr time" className="py-2 px-2 rounded-md text-xl font-mono w-full" />
                         </div>
                     </div>
                     <label className="label mt-4">
