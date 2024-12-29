@@ -128,6 +128,46 @@ const AddBus = () => {
             </ul>
           </div>
 
+          <label className="label">
+            <span className="text-xl font-mono">Fare with Route</span>
+          </label>
+          {/* Fare-route */}
+          <div>
+            <div className=" flex items-center gap-2">
+              <input
+                type="text"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                className="py-2 px-2 rounded-md text-xl font-mono w-full"
+                placeholder="from"
+              />
+              <input
+                type="text"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                className="py-2 px-2 rounded-md text-xl font-mono w-full"
+                placeholder="to"
+              />
+              <input
+                type="number"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                className="py-2 px-2 rounded-md text-xl font-mono w-full"
+                placeholder="Fare"
+              />
+              <button className=" bg-[#adacac] px-2.5 py-1 rounded-md">
+                Add
+              </button>
+            </div>
+            <ul className=" flex justify-start items-center gap-2 mt-2">
+              {dataArray.map((item, index) => (
+                <li className=" text-sm font-mono" key={`${item} asdf`}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <div className=" flex items-center gap-6 w-full">
             <div className="form-control w-full">
               <label className="label">
@@ -135,7 +175,7 @@ const AddBus = () => {
               </label>
               <input
                 type="text"
-                placeholder="Image url"
+                placeholder="Start From"
                 {...register("start-from", { required: true })}
                 className="py-2 px-2 rounded-md text-xl font-mono w-full"
               />
@@ -147,7 +187,7 @@ const AddBus = () => {
               <input
                 type="text"
                 {...register("end-poent", { required: true })}
-                placeholder="end-time"
+                placeholder="Ending Poent"
                 className="py-2 px-2 rounded-md text-xl font-mono w-full"
               />
             </div>
@@ -160,7 +200,7 @@ const AddBus = () => {
               </label>
               <input
                 type="text"
-                placeholder="Image url"
+                placeholder="Type"
                 {...register("type", { required: true })}
                 className="py-2 px-2 rounded-md text-xl font-mono w-full"
               />
@@ -172,7 +212,7 @@ const AddBus = () => {
               <input
                 type="text"
                 {...register("seats", { required: true })}
-                placeholder="title"
+                placeholder="How many seat in your bus"
                 className="py-2 px-2 rounded-md text-xl font-mono w-full"
               />
             </div>
