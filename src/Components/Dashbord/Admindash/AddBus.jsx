@@ -100,7 +100,7 @@ const AddBus = () => {
             </div>
           </div>
           <label className="label">
-            <span className="text-xl font-mono">Route</span>
+            <span className="text-xl font-mono">Route *</span>
           </label>
           {/* route feild */}
           <div>
@@ -196,7 +196,7 @@ const AddBus = () => {
           <div className=" flex items-center gap-6 w-full">
             <div className="form-control w-full">
               <label className="label">
-                <span className="text-xl font-mono">Type</span>
+                <span className="text-xl font-mono">Type *</span>
               </label>
               <input
                 type="text"
