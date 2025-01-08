@@ -86,7 +86,7 @@ const Dashboard = () => {
                       src={user?.photoURL}
                       alt=""
                     />
-                    <h2 className=" text-2xl font-bold font-alfa text-orange-400">
+                    <h2 className=" text-2xl font-bold font-alfa text-black">
                       {user?.displayName}
                     </h2>
                     <p className=" text-xs ">{user?.email}</p>
@@ -254,12 +254,12 @@ const Dashboard = () => {
                     Add place
                   </NavLink>
                 </li>
-                <li>
+                {/* <li>
                   <NavLink to="/Dashboard/addbus">
                   <IoMdBus />
                     Add Bus
                   </NavLink>
-                </li>
+                </li> */}
                 <li>
                   <NavLink to="/Dashboard/addhotel">
                     <FaHotel></FaHotel>

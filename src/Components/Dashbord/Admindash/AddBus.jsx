@@ -33,8 +33,8 @@ const AddBus = () => {
   return (
     <div className="md:max-w-screen-2xl w-[95%] mx-auto">
       <h2 className=" text-4xl text-center font-bold font-mono my-5">
-        Add your new Bus
-      </h2>
+        Add your new Bus with all Requerments
+       </h2>
       <div className=" bg-[#eae8e8] px-8 py-10 rounded space-y-2 text-black">
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* name */}
@@ -129,7 +129,7 @@ const AddBus = () => {
           </div>
 
           <label className="label">
-            <span className="text-xl font-mono">Fare with Route</span>
+            <span className="text-xl font-mono">Fare with Route *</span>
           </label>
           {/* Fare-route */}
           <div>
