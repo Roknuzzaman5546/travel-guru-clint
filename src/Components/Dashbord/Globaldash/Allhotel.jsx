@@ -122,7 +122,7 @@ const Allhotel = () => {
                                     name="searchbar"
                                     onChange={handleSearch}
                                     placeholder="Search by name"
-                                    className="block w-full p-4 ps-10 text-sm font-bold text-black  rounded-lg bg-[#ff9c1c]"
+                                    className="block w-full focus:outline-none p-4 ps-10 text-sm font-bold text-black  rounded-lg bg-[#ff9c1c]"
                                     required
                                 />
                                 <button

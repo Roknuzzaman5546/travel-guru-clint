@@ -126,7 +126,7 @@ const Allplace = () => {
                                     name="searchbar"
                                     onChange={handleSearch}
                                     placeholder="Search by name"
-                                    className="block w-full p-4 ps-10 text-sm font-bold text-black  rounded-lg bg-[#ff9c1c]"
+                                    className="block w-full p-4 ps-10 text-sm focus:border-none focus:outline-none font-bold text-black  rounded-lg bg-[#ff9c1c]"
                                     required
                                 />
                                 <button

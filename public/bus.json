@@ -1,0 +1,194 @@
+[
+    {
+      "id": 1,
+      "name": "Nabil Paribahan",
+      "title": "AC - Scania Business Class",
+      "start_time": "07:00 AM",
+      "arr_time": "01:00 PM",
+      "coach": "#805-AC-Scania",
+      "route": ["Dhaka", "Bogura", "Rangpur", "Dimla"],
+      "cost_route": {
+        "Dhaka-Bogura": 500,
+        "Bogura-Dhaka": 500,
+        "Dhaka-Rangpur": 800,
+        "Rangpur-Dhaka": 800,
+        "Dhaka-Dimla": 900,
+        "Dimla-Dhaka": 900
+      },
+      "type": "AC",
+      "seat": 40
+    },
+    {
+      "id": 2,
+      "name": "Ena Paribahan",
+      "title": "AC Premium",
+      "start_time": "09:00 AM",
+      "arr_time": "03:00 PM",
+      "coach": "#902-AC-Premium",
+      "route": ["Dhaka", "Gobindogonj", "Joldhaka"],
+      "cost_route": {
+        "Dhaka-Gobindogonj": 550,
+        "Gobindogonj-Dhaka": 550,
+        "Dhaka-Joldhaka": 850,
+        "Joldhaka-Dhaka": 850
+      },
+      "type": "AC",
+      "seat": 40
+    },
+    {
+      "id": 3,
+      "name": "Shohagh Paribahan",
+      "title": "Non-AC Economy",
+      "start_time": "06:30 AM",
+      "arr_time": "01:30 PM",
+      "coach": "#403-NonAC",
+      "route": ["Dhaka", "Bogura", "Rangpur"],
+      "cost_route": {
+        "Dhaka-Bogura": 400,
+        "Bogura-Dhaka": 400,
+        "Dhaka-Rangpur": 750,
+        "Rangpur-Dhaka": 750
+      },
+      "type": "Non-AC",
+      "seat": 40
+    },
+    {
+      "id": 4,
+      "name": "Hanif Enterprise",
+      "title": "AC Executive",
+      "start_time": "08:00 AM",
+      "arr_time": "02:00 PM",
+      "coach": "#601-AC-Exec",
+      "route": ["Dhaka", "Gobindogonj", "Dimla"],
+      "cost_route": {
+        "Dhaka-Gobindogonj": 600,
+        "Gobindogonj-Dhaka": 600,
+        "Dhaka-Dimla": 950,
+        "Dimla-Dhaka": 950
+      },
+      "type": "AC",
+      "seat": 40
+    },
+    {
+      "id": 5,
+      "name": "Green Line",
+      "title": "AC Business Class",
+      "start_time": "10:00 AM",
+      "arr_time": "04:00 PM",
+      "coach": "#301-AC-Business",
+      "route": ["Dhaka", "Bogura", "Joldhaka"],
+      "cost_route": {
+        "Dhaka-Bogura": 550,
+        "Bogura-Dhaka": 550,
+        "Dhaka-Joldhaka": 900,
+        "Joldhaka-Dhaka": 900
+      },
+      "type": "AC",
+      "seat": 40
+    },
+    {
+      "id": 6,
+      "name": "Desh Travels",
+      "title": "Non-AC Deluxe",
+      "start_time": "05:00 PM",
+      "arr_time": "11:00 PM",
+      "coach": "#707-NonAC-Deluxe",
+      "route": ["Dhaka", "Rangpur", "Dimla"],
+      "cost_route": {
+        "Dhaka-Rangpur": 700,
+        "Rangpur-Dhaka": 700,
+        "Dhaka-Dimla": 950,
+        "Dimla-Dhaka": 950
+      },
+      "type": "Non-AC",
+      "seat": 40
+    },
+    {
+      "id": 7,
+      "name": "Shyamoli Paribahan",
+      "title": "AC Economy",
+      "start_time": "03:00 PM",
+      "arr_time": "09:00 PM",
+      "coach": "#205-AC-Economy",
+      "route": ["Dhaka", "Bogura", "Rangpur"],
+      "cost_route": {
+        "Dhaka-Bogura": 500,
+        "Bogura-Dhaka": 500,
+        "Dhaka-Rangpur": 850,
+        "Rangpur-Dhaka": 850
+      },
+      "type": "AC",
+      "seat": 40
+    },
+    {
+      "id": 8,
+      "name": "TR Travels",
+      "title": "Non-AC Standard",
+      "start_time": "11:00 AM",
+      "arr_time": "05:00 PM",
+      "coach": "#504-NonAC-Standard",
+      "route": ["Dhaka", "Gobindogonj", "Joldhaka"],
+      "cost_route": {
+        "Dhaka-Gobindogonj": 450,
+        "Gobindogonj-Dhaka": 450,
+        "Dhaka-Joldhaka": 800,
+        "Joldhaka-Dhaka": 800
+      },
+      "type": "Non-AC",
+      "seat": 40
+    },
+    {
+      "id": 9,
+      "name": "Manik Express",
+      "title": "AC Business",
+      "start_time": "02:00 PM",
+      "arr_time": "08:00 PM",
+      "coach": "#103-AC-Business",
+      "route": ["Dhaka", "Rangpur", "Dimla"],
+      "cost_route": {
+        "Dhaka-Rangpur": 850,
+        "Rangpur-Dhaka": 850,
+        "Dhaka-Dimla": 1000,
+        "Dimla-Dhaka": 1000
+      },
+      "type": "AC",
+      "seat": 40
+    },
+    {
+      "id": 10,
+      "name": "Soudia Paribahan",
+      "title": "AC Deluxe",
+      "start_time": "12:00 PM",
+      "arr_time": "06:00 PM",
+      "coach": "#908-AC-Deluxe",
+      "route": ["Dhaka", "Gobindogonj", "Dimla"],
+      "cost_route": {
+        "Dhaka-Gobindogonj": 600,
+        "Gobindogonj-Dhaka": 600,
+        "Dhaka-Dimla": 950,
+        "Dimla-Dhaka": 950
+      },
+      "type": "AC",
+      "seat": 40
+    },
+    {
+      "id": 11,
+      "name": "Royal Coach",
+      "title": "AC Luxury",
+      "start_time": "08:00 PM",
+      "arr_time": "04:00 AM",
+      "coach": "#706-AC-Luxury",
+      "route": ["Dhaka", "Bogura", "Rangpur", "Dimla"],
+      "cost_route": {
+        "Dhaka-Bogura": 600,
+        "Bogura-Dhaka": 600,
+        "Dhaka-Rangpur": 950,
+        "Rangpur-Dhaka": 950,
+        "Dhaka-Dimla": 1000,
+        "Dimla-Dhaka": 1000
+      },
+      "type": "AC",
+      "seat": 40
+    }
+  ]
+  

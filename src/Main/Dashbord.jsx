@@ -86,7 +86,7 @@ const Dashboard = () => {
                       src={user?.photoURL}
                       alt=""
                     />
-                    <h2 className=" text-2xl font-bold font-alfa text-orange-400">
+                    <h2 className=" text-2xl font-bold font-alfa text-black">
                       {user?.displayName}
                     </h2>
                     <p className=" text-xs ">{user?.email}</p>
@@ -226,8 +226,8 @@ const Dashboard = () => {
         </div>
       </div>
       {/* navbar for lg device */}
-      <div className=" lg:flex hidden pt-20">
-        <div className=" w-64 min-h-screen shadow-md bg-[#ff9c1c] text-black font-mono font-bold text-xl flex flex-col items-center rounded-md border-2 pb-5">
+      <div className=" lg:flex hidden pt-[78px]">
+        <div className=" w-64 min-h-screen shadow-md bg-[#ff9c1c] text-black font-mono font-bold text-xl flex flex-col items-center border-2 pb-5">
           <div className=" flex flex-col items-center mb-2 mt-5">
             <img
               className=" w-28 h-28 rounded-full"
@@ -254,12 +254,12 @@ const Dashboard = () => {
                     Add place
                   </NavLink>
                 </li>
-                <li>
+                {/* <li>
                   <NavLink to="/Dashboard/addbus">
                   <IoMdBus />
                     Add Bus
                   </NavLink>
-                </li>
+                </li> */}
                 <li>
                   <NavLink to="/Dashboard/addhotel">
                     <FaHotel></FaHotel>

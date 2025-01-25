@@ -1,66 +1,196 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import UseaxiosPublic from "../../Hooks/UseaxiosPublic";
+import React, { useState } from "react";
+import SearchDropdown from "../../Shared/SearchDropdown";
 
 const AddBus = () => {
-    const axiosPublic = UseaxiosPublic();
-    const { register, handleSubmit, reset } = useForm()
-    const onSubmit = (data) => {
-        console.log(data)
-        axiosPublic.post('/place', data)
-            .then(res => {
-                console.log(res.data)
-                if (res.data) {
-                    Swal.fire(`${data.name} is added surely`)
-                }
-            })
-        reset();
+  const [inputValue, setInputValue] = useState("");
+  const [dataArray, setDataArray] = useState([]);
+  const axiosPublic = UseaxiosPublic();
+  const { register, handleSubmit, reset } = useForm();
+
+  const handleAdd = () => {
+    if (inputValue.trim() !== "") {
+      setDataArray([...dataArray, inputValue.trim()]);
+      setInputValue("");
     }
+  };
+  console.log(dataArray);
 
-    return (
-        <div className="md:max-w-screen-2xl w-[95%] mx-auto">
-            <h2 className=" text-4xl text-center font-bold font-mono my-5">Add your new Bus</h2>
-            <div className=" bg-[#eae8e8] px-8 py-10 rounded space-y-2 text-black">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="form-control w-full">
-                        <label className="label">
-                            <span className="text-xl font-mono">Bus name?</span>
-                        </label>
-                        <input type="text" placeholder="Type here" {...register("name", { required: true })} className="py-2 px-2 rounded-md text-xl font-mono w-full" />
-                    </div>
-                    <div className=" flex items-center gap-6 w-full">
-                        <div className="form-control w-full">
-                            <label className="label">
-                                <span className="text-xl font-mono">Bus image Url?</span>
-                            </label>
-                            <input type="text" placeholder="Image url" {...register("img", { required: true })} className="py-2 px-2 rounded-md text-xl font-mono w-full" />
-                        </div>
-                        <div className="form-control w-full">
-                            <label className="label">
-                                <span className="text-xl font-mono">Booking cost*</span>
-                            </label>
-                            <input type="text" {...register("cost", { required: true })} placeholder="Type here" className="py-2 px-2 rounded-md text-xl font-mono w-full" />
-                        </div>
-                    </div>
-                    <label className="label mt-4">
-                        <span className="text-xl font-mono">Route</span>
-                    </label>
-                    <textarea {...register("details")} className="py-2 px-2 rounded-md text-xl font-mono w-full" placeholder="Details"></textarea>
+  const onSubmit = (data) => {
+    console.log(data);
+    // axiosPublic.post("/place", data).then((res) => {
+    //   console.log(res.data);
+    //   if (res.data) {
+    //     Swal.fire(`${data.name} is added surely`);
+    //   }
+    // });
+    reset();
+  };
 
-                    <div className=" flex items-center gap-6 w-full">
-                        <div className="form-control w-full">
-                            <label className="label">
-                                <span className="text-xl font-mono">Start Time</span>
-                            </label>
-                            <input type="text" placeholder="Image url" {...register("start-time", { required: true })} className="py-2 px-2 rounded-md text-xl font-mono w-full" />
-                        </div>
-                        <div className="form-control w-full">
-                            <label className="label">
-                                <span className="text-xl font-mono">Ending Time</span>
-                            </label>
-                            <input type="text" {...register("cost", { required: true })} placeholder="end-time" className="py-2 px-2 rounded-md text-xl font-mono w-full" />
-                        </div>
-                    </div>
+  return (
+    <div className="md:max-w-screen-2xl w-[95%] mx-auto">
+      <h2 className=" text-4xl text-center font-bold font-mono my-5">
+        Add your new Bus with all Requerments
+       </h2>
+      <div className=" bg-[#eae8e8] px-8 py-10 rounded space-y-2 text-black">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {/* name */}
+          <div className="form-control w-full">
+            <label className="label">
+              <span className="text-xl font-mono">Bus name?</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Type here"
+              {...register("name", { required: true })}
+              className="py-2 px-2 rounded-md text-xl font-mono w-full"
+            />
+          </div>
+          {/* title & couch */}
+          <div className=" flex items-center gap-6 w-full">
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="text-xl font-mono">Bus Ttiel*</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Title"
+                {...register("title", { required: true })}
+                className="py-2 px-2 rounded-md text-xl font-mono w-full"
+              />
+            </div>
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="text-xl font-mono">Coach*</span>
+              </label>
+              <input
+                type="text"
+                {...register("coach", { required: true })}
+                placeholder="Coach"
+                className="py-2 px-2 rounded-md text-xl font-mono w-full"
+              />
+            </div>
+          </div>
+          {/* start and end time */}
+          <div className=" flex items-center gap-6 w-full">
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="text-xl font-mono">Start time*</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Start Time"
+                {...register("start-time", { required: true })}
+                className="py-2 px-2 rounded-md text-xl font-mono w-full"
+              />
+            </div>
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="text-xl font-mono">Arr Time*</span>
+              </label>
+              <input
+                type="text"
+                {...register("arr-time", { required: true })}
+                placeholder="Arr time"
+                className="py-2 px-2 rounded-md text-xl font-mono w-full"
+              />
+            </div>
+          </div>
+          <label className="label">
+            <span className="text-xl font-mono">Route *</span>
+          </label>
+          {/* route feild */}
+          <div>
+            <div className=" flex items-center ">
+              <input
+                type="text"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                className="py-2 px-2 rounded-md text-xl font-mono w-full"
+                placeholder="Enter data"
+              />
+              <button
+                className="-ml-16 bg-[#adacac] px-2.5 py-1 rounded-md"
+                onClick={handleAdd}
+              >
+                Add
+              </button>
+            </div>
+            <ul className=" flex justify-start items-center gap-2 mt-2">
+              {dataArray.map((item, index) => (
+                <li className=" text-sm font-mono" key={`${item} asdf`}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <label className="label">
+            <span className="text-xl font-mono">Fare with Route *</span>
+          </label>
+          {/* Fare-route */}
+          <div>
+            <div className=" flex items-center gap-2">
+              <input
+                type="text"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                className="py-2 px-2 rounded-md text-xl font-mono w-full"
+                placeholder="from"
+              />
+              <input
+                type="text"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                className="py-2 px-2 rounded-md text-xl font-mono w-full"
+                placeholder="to"
+              />
+              <input
+                type="number"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                className="py-2 px-2 rounded-md text-xl font-mono w-full"
+                placeholder="Fare"
+              />
+              <button className=" bg-[#adacac] px-2.5 py-1 rounded-md">
+                Add
+              </button>
+            </div>
+            <ul className=" flex justify-start items-center gap-2 mt-2">
+              {dataArray.map((item, index) => (
+                <li className=" text-sm font-mono" key={`${item} asdf`}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className=" flex items-center gap-6 w-full">
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="text-xl font-mono">Start From</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Start From"
+                {...register("start-from", { required: true })}
+                className="py-2 px-2 rounded-md text-xl font-mono w-full"
+              />
+            </div>
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="text-xl font-mono">Ending Poent</span>
+              </label>
+              <input
+                type="text"
+                {...register("end-poent", { required: true })}
+                placeholder="Ending Poent"
+                className="py-2 px-2 rounded-md text-xl font-mono w-full"
+              />
+            </div>
+          </div>
 
                     <div className=" flex items-center gap-6 w-full">
                         <div className="form-control w-full">
@@ -91,7 +221,9 @@ const AddBus = () => {
                             <input type="text" {...register("rating", { required: true })} placeholder="Type here" className="py-2 px-2 rounded-md text-xl font-mono w-full max-w-xs" />
                         </div>
                     </div>
-                    <button className="text-xl mt-4 w-28 h-12 font-semibold bg-[#ff9c1c] text-black relative overflow-hidden group z-10 hover:text-[#ff9c1c] duration-1000"><span className="absolute bg-[#46433f] size-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span><span className="absolute bg-black size-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>Submit</button>
+                    <button className="bg-[#000] hover:bg-[#ff9c1c] text-white px-6 py-4 rounded-md text-xl font-bold font-mono mt-3 flex justify-between gap-2 items-center">
+                        Add items <FaLocationArrow className="text-xl"></FaLocationArrow>
+                    </button>
                 </form>
             </div>
         </div>
