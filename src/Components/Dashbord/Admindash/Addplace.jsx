@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import { FaLocationArrow } from "react-icons/fa";
 import Swal from "sweetalert2";
 import UseaxiosPublic from "../../Hooks/UseaxiosPublic";
 
@@ -61,9 +60,7 @@ const Addplace = () => {
                             <input type="text" {...register("rating", { required: true })} placeholder="Type here" className="py-2 px-2 rounded-md text-xl font-mono w-full max-w-xs" />
                         </div>
                     </div>
-                    <button className="bg-[#000] hover:bg-[#ff9c1c] text-white px-6 py-4 rounded-md text-xl font-bold font-mono mt-3 flex justify-between gap-2 items-center">
-                        Add items <FaLocationArrow className="text-xl"></FaLocationArrow>
-                    </button>
+                    <button className="text-xl mt-4 w-28 h-12 font-semibold bg-[#ff9c1c] text-black relative overflow-hidden group z-10 hover:text-[#ff9c1c] duration-1000"><span className="absolute bg-[#46433f] size-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span><span className="absolute bg-black size-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>Submit</button>
                 </form>
             </div>
         </div>

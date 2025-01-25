@@ -23,10 +23,10 @@ const Contact = () => {
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores pariatur a eius ea similique quod dicta ipsa vel quidem repellendus, beatae nulla veniam, quaerat veritatis architecto. 
                     </p>
                     <div className=" flex items-center gap-5 text-xl">
-                        <a target="blank" href="https://www.facebook.com/roknujjamansajib" className=" bg-[#ff9c1c]  rounded-full text-[#000] text-xl p-2"><FaFacebook></FaFacebook></a>
-                        <a target="blank" href="https://twitter.com/Roknuzzaman5546" className="bg-[#ff9c1c] text-xl  rounded-full text-[#000] p-2"><FaTwitter></FaTwitter></a>
-                        <a target="blank" href="https://www.instagram.com/roknujjamansajib/" className="bg-[#ff9c1c]  rounded-full text-[#000] text-xl p-2"><FaInstagram></FaInstagram></a>
-                        <a target="blank" href="https://www.linkedin.com/in/roknuzzaman-sojib-b794552a3/" className="bg-[#ff9c1c]  rounded-full text-[#000] text-xl p-2"><FaLinkedin></FaLinkedin></a>
+                        <a target="blank" href="https://www.facebook.com/roknujjamansajib" className=" bg-[#ff9c1c]  rounded-full text-[#000] text-2xl p-2 transition-all duration-300 hover:bg-black hover:text-[#ff9c1c]"><FaFacebook></FaFacebook></a>
+                        <a target="blank" href="https://twitter.com/Roknuzzaman5546" className="bg-[#ff9c1c]  rounded-full text-[#000] text-2xl p-2 transition-all duration-300 hover:bg-black hover:text-[#ff9c1c]"><FaTwitter></FaTwitter></a>
+                        <a target="blank" href="https://www.instagram.com/roknujjamansajib/" className="bg-[#ff9c1c]  rounded-full text-[#000] text-2xl p-2 transition-all duration-300 hover:bg-black hover:text-[#ff9c1c]"><FaInstagram></FaInstagram></a>
+                        <a target="blank" href="https://www.linkedin.com/in/roknuzzaman-sojib-b794552a3/" className="bg-[#ff9c1c]  rounded-full text-[#000] text-2xl p-2 transition-all duration-300 hover:bg-black hover:text-[#ff9c1c]"><FaLinkedin></FaLinkedin></a>
                     </div>
                 </div>
                 <div className=" md:w-1/2 w-11/12">
