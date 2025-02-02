@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import UseaxiosPublic from "../../Hooks/UseaxiosPublic";
 import React, { useState } from "react";
 import SearchDropdown from "../../Shared/SearchDropdown";
+import { FaLocationArrow } from "react-icons/fa";
 
 const AddBus = () => {
   const [inputValue, setInputValue] = useState("");
@@ -16,7 +17,7 @@ const AddBus = () => {
       setInputValue("");
     }
   };
-  console.log(dataArray);
+  // console.log(dataArray);
 
   const onSubmit = (data) => {
     console.log(data);
@@ -119,7 +120,7 @@ const AddBus = () => {
               </button>
             </div>
             <ul className=" flex justify-start items-center gap-2 mt-2">
-              {dataArray.map((item, index) => (
+              {dataArray.map((item) => (
                 <li className=" text-sm font-mono" key={`${item} asdf`}>
                   {item}
                 </li>
@@ -159,7 +160,7 @@ const AddBus = () => {
               </button>
             </div>
             <ul className=" flex justify-start items-center gap-2 mt-2">
-              {dataArray.map((item, index) => (
+              {dataArray.map((item) => (
                 <li className=" text-sm font-mono" key={`${item} asdf`}>
                   {item}
                 </li>
